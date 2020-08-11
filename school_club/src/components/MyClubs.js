@@ -4,7 +4,7 @@ import React from 'react';
 
 
 
-class MyClub extends React.Component {
+class MyClubs extends React.Component {
     
     render(){
         return (
@@ -13,4 +13,4 @@ class MyClub extends React.Component {
 }
 }
 
-export default MyClub;
+export default MyClubs;
