@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React , { useState , useEffect} from "react";
+import axios from 'axios'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Routes from './routes';
+import "./App.css";
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+  //eslint-disable-next-line
+ const [items, setItems] = useState([])
+ //eslint-disable-next-line
+ const [isLoading,setIsLoading] = useState(true)
+
+useEffect(()=>{
+  const fetchItems = async()=>{
+    const result = await axios(`http://127.0.0.1:8000/clubs/`)
+    console.log(result.data)
+    setItems(result.data)
+    setIsLoading(false)
+  }
+  fetchItems()
+}, [])
+
+    return (
+      <Router>
+        <Switch>
+          <Route path="/">
+              <Navigation/>
+              <Footer/>
+              <Routes/>
+          </Route>
+        </Switch>
+    </Router>
+    );
+  
 }
-
 export default App;

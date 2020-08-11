@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Thasadith&display=swap');
+
+.header{
+   
+    height: 25vh;
+}
+
+.header_logo{
+    margin-top: 2px;
+    margin-left: 30px;
+    width: 200px; 
+    color: black;
+    float: left;
+    
+}
+
+
+
+.nav-items{
+    margin-left: 400px;
+    padding-top: 80px;
+    font-family: 'Thasadith', sans-serif;
+    font-size: 25px;
+    
+}
+
+
+
+
+  
+  #btn {
+    
+    height: 40px;
+   width: 80px;
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-family: 'Cookie', cursive;
+    position: relative;
+    transition: 0.75s;
+    -webkit-tap-highlight-color: transparent;
+    
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+  }
+  
+  #btn #circle {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    overflow: hidden;
+    transition: 500ms;
+  }
+  
+  .noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  }
+  
+  #btn:hover {
+ 
+    background: rgb(0, 0, 0);
+    color: white;
+  }
+  
+  #btn:hover #circle {
+    height: 50px;
+    width: 150px;
+    left: 0;
+    color:rgb(201, 40, 40);
+    border-radius: 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
