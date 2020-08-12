@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Team member :
 Aakash Dangol : aakash.dangol101@gmail.com
 Abishek bhattarai : absekbhattarai@gmail.com
-Megha Shrestha : meghashrestha3@gmail.com
+Megha Shrestha : meghashrestha30@gmail.com
 
 ### `npm start`
 
