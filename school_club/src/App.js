@@ -5,6 +5,7 @@ import Routes from './routes';
 import "./App.css";
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import Gallery from './components/Gallery';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ useEffect(()=>{
         <Switch>
           <Route path="/">
               <Navigation/>
+              <Gallery/>
               <Footer/>
               <Routes/>
           </Route>

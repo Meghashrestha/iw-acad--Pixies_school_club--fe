@@ -1,16 +1,19 @@
 import React from 'react';
+import image from '../images/Main-image.jpg';
+import '../css/gallery.css'
 
 
 
 
 
-class Gallery extends React.Component {
+function Gallery() {
+    return <div className="main-image">
+        <img className="image" src={image} alt= "" />
+        
+        
+       
+    </div>;
     
-    render(){
-        return (
-            <div >This is Gallery</div>
-        );
-}
 }
 
 export default Gallery;
