@@ -9,29 +9,17 @@ import Gallery from './components/Gallery';
 
 
 const App = () => {
-  //eslint-disable-next-line
- const [items, setItems] = useState([])
- //eslint-disable-next-line
- const [isLoading,setIsLoading] = useState(true)
 
-useEffect(()=>{
-  const fetchItems = async()=>{
-    const result = await axios(`http://127.0.0.1:8000/clubs/`)
-    console.log(result.data)
-    setItems(result.data)
-    setIsLoading(false)
-  }
-  fetchItems()
-}, [])
 
     return (
       <Router>
         <Switch>
           <Route path="/">
               <Navbar/>
-              <Gallery/>
-              <Footer/>
+              
+              
               <Routes/>
+              <Footer/>
           </Route>
         </Switch>
     </Router>
