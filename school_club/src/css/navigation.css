@@ -74,3 +74,7 @@
   border-radius: 0;
   border-bottom: 2px solid rgb(0, 0, 0);
 }
+
+#myclub:hover{
+  text-decoration: underline;
+}

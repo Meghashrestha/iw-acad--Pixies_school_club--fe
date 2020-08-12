@@ -3,7 +3,7 @@ import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Routes from './routes';
 import "./App.css";
-import Navigation from './components/Navigation';
+import Navbar from './components/Navigation';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 
@@ -28,7 +28,7 @@ useEffect(()=>{
       <Router>
         <Switch>
           <Route path="/">
-              <Navigation/>
+              <Navbar/>
               <Gallery/>
               <Footer/>
               <Routes/>
