@@ -10,4 +10,6 @@
 
 .category-tabs{
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
 }

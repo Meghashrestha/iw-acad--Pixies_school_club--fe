@@ -16,8 +16,6 @@ const App = () => {
         <Switch>
           <Route path="/">
               <Navbar/>
-              
-              
               <Routes/>
               <Footer/>
           </Route>
