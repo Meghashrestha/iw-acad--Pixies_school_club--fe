@@ -11,7 +11,7 @@ import messenger from '../images/icons/012-messenger.png';
 class Footer extends Component {
     render() {
         return (
-            <div>
+            <div className="footer-container">
                         <div className="row">
                             <div className="column">
                                 <ul className="list">

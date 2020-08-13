@@ -1,4 +1,5 @@
 import React from 'react';
+import image from '../images/hero_1.jpg';
 
 
 
@@ -8,7 +9,7 @@ class Home extends React.Component {
     
     render(){
         return (
-            <div >This is Home</div>
+           <h1>This is home</h1>
         );
 }
 }
