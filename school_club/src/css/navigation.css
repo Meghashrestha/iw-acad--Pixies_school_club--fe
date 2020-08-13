@@ -112,20 +112,23 @@ nav{
 }
 
 .main-image{
-  position: relative;
+ 
   margin-left: -28px; 
+  scroll-behavior: smooth;
+
 }
 
 .main-subclass-image{
-  height: 102%;
-  width: 103%;
+  position: absolute;
+  height: 100%;
+  width: 105%;
   margin-left: -28px;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
-
+  filter: blur(0.5px);
+  -webkit-filter: blur(0.5px);
+  
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-    position: fixed;
+    
 }
