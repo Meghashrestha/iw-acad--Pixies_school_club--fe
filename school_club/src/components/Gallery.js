@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Tabs, Tab} from 'react-mdl'
+import logo from '../images/pixies-logo.jpg';
 
-import '../css/gallery.css'
+
 
 
 
@@ -23,13 +23,44 @@ class Gallery extends Component {
     }
     render() {
         return(
-            <div className="category-tabs" >
-                <Tabs activeTab = {this.state.activeTab} onChange= {(tabId)=> this.setState({activeTab: tabId})} style={{backgroundColor:'white'}}ripple>
-                    <Tab>Club 1</Tab>
-                    <Tab>Club 2</Tab>
-                    
-                </Tabs>
+            <div className="site-section">
+            <div className="container">
+              <div className="row mb-5">
+                <div className="col-12 text-center">
+                  <span className="text-cursive h5 text-red d-block">Our Gallery</span>
+                  <h2 className="text-black">School Clubs events</h2>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                <div className="col-md-3 mb-4">
+                  <img src={logo} alt="Image" className="img-fluid"/>
+                </div>
+                
+               
+              </div>
             </div>
+          </div>
         )
     }
 }
