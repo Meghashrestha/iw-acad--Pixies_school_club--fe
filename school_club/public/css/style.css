@@ -464,6 +464,7 @@ h1, h2, h3, h4, h5,
   position: absolute;
   top: 0;
   width: 100%;
+  
   padding: 1rem; }
   @media (max-width: 991.98px) {
     .site-navbar {
@@ -1896,19 +1897,56 @@ h1, h2, h3, h4, h5,
   background: #16c3b0; }
 
 .site-footer{
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 8rem;
+  padding-bottom:4rem;
+  
 }
 
 .img-fluid-logo{
-  width:8%;
-  height: 10%;
+  width:11%;
+  height: 5%;
 }
 
 .img-fluid{
-  width: 400%;
+  width: 200%;
 }
 
 body{
   background-color: rgb(255, 255, 255);
+}
+
+.list-unstyled{
+  padding-left: 50px;
+}
+
+.copyright-footer{
+  padding-left: 490px;
+}
+
+.ftco-blocks-cover-1{
+ 
+background: linear-gradient(to right, #ACB6E5, #74ebd5); 
+
+}
+
+.news-wrap{
+  border-radius: 20px;
+  background-color: rgb(192, 158, 224);
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+.news{
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.social-site-icon{
+  width: 22px;
+
+}
+
+.list-icons{
+  padding: 10px;
 }

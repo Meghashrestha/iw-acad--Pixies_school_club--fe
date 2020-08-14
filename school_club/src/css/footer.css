@@ -1,19 +1,23 @@
 .social-site-icon {
-  height: 45px;
-  width: 45px;
-}
-ul.list li{
-  display: inline;
-  padding-left: 10px;
-  /* padding-top: 150px; */
-}
-ol {
-  list-style-type: none;
-  font-size: large;
-}
-p .copyright-footer {
-  text-align: center;
-}
-.list-unstyled {
-  text-align: left;
-}
+    height: 45px;
+    width: 45px;
+  }
+  ul.list li{
+    display: inline;
+    padding-left: 10px;
+    /* padding-top: 150px; */
+  }
+  ol {
+    list-style-type: none;
+    font-size: large;
+  }
+  p .copyright-footer {
+    text-align: center;
+  }
+  .list-unstyled {
+    text-align: left;
+  }
+
+  .social-site-icon:hover{
+      transform: scale(1.2);
+  }

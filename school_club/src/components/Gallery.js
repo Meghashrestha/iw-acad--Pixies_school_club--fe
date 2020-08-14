@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../images/pixies-logo.jpg';
 
-
+import "../css/gallery.css";
 
 
 
@@ -27,7 +27,7 @@ class Gallery extends Component {
             <div className="container">
               <div className="row mb-5">
                 <div className="col-12 text-center">
-                  <span className="text-cursive h5 text-red d-block">Our Gallery</span>
+                  <span className="text-cursive h1 text-red d-block">Our Gallery</span>
                   <h2 className="text-black">School Clubs events</h2>
                 </div>
               </div>
