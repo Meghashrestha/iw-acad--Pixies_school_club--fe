@@ -6,6 +6,8 @@ import drama from '../images/drama.png';
 import music from '../images/music.png';
 import sports from '../images/sports.png';
 import photography from '../images/photography.png';
+import { Link } from 'react-router-dom'
+
 
 
 class Clubs extends React.Component {
@@ -24,9 +26,9 @@ class Clubs extends React.Component {
                             <div class="row">
                             <div class="col-lg-4 mb-4 mb-lg-0">
                                 <div class="package text-center bg-white">
-                                <span class="img-wrap"><img src={science} alt="Image" class="img-fluid" /></span>
+                                <span class="img-wrap" id="science"><img src={science} alt="Image" class="img-fluid" /></span>
                                 <h3 class="text-teal">SCIENCE CLUB</h3>
-                                <p><a href="/" class="btn btn-info btn-custom-1 mt-4">Learn More</a></p>
+                                <p><Link to="/clubs/description" class="btn btn-info btn-custom-1 mt-4">Learn More</Link></p>
                             </div>
                             </div>
                             <div class="col-lg-4 mb-4 mb-lg-0">

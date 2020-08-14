@@ -5,6 +5,7 @@ import Clubs from "./components/Clubs";
 import Gallery from "./components/Gallery";
 import MyClubs from "./components/MyClubs";
 import About from "./components/About";
+import description from "./components/Club_description";
 
 
 const Routes = () => (
@@ -14,6 +15,7 @@ const Routes = () => (
     <Route exact path="/clubs" component={Clubs} />
     <Route exact path="/my-club" component={MyClubs} />
     <Route exact path="/about" component={About} />
+    <Route exact path="/clubs/description" component={description} />
     
     
   </div>

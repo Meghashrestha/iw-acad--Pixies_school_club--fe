@@ -34,7 +34,7 @@ render(){
                   <li><Link to="/clubs">Clubs</Link></li>
                   <li><Link to="/gallery">Gallery</Link></li>
                   <li><Link to="/my-clubs">My Clubs</Link></li>
-                  <li><Link to="/login"><h6 className="text-red">Be a Member</h6></Link></li>
+                  <li><Link to="/login"><h5 className="text-red">SIGN IN</h5></Link></li>
                   
                 </ul>
               </nav>
