@@ -28,8 +28,8 @@ class Home extends React.Component {
                 <div className="block-2 yellow">
                   <h2>Exhibition</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Minima nesciunt, mollitia, hic enim id culpa.
+                    Lorem ipsum dolor sit, consectetur adipisicing elit. Minima
+                    nesciunt, mollitia, hic enim id culpa.
                   </p>
                 </div>
               </div>
@@ -44,7 +44,7 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <News/>
+          <News />
         </div>
       </React.Fragment>
     );
