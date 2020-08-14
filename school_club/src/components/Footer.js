@@ -37,7 +37,7 @@ class Footer extends Component {
                   <h2 className="footer-heading mb-4">QUICK LINKS</h2>
                   <ul className="list-unstyled">
                   <li><Link to="/home">Home</Link></li>
-                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="#">About</Link></li>
                   <li><Link to="/clubs">Clubs</Link></li>
                   <li><Link to="/gallery">Gallery</Link></li>
                   <li><Link to="/my-clubs">My Clubs</Link></li>
