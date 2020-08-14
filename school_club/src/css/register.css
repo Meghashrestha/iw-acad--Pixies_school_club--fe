@@ -1,0 +1,22 @@
+body{
+    overflow: hidden;
+}
+
+form{
+    width: 22%;
+    margin-top: 12%;
+    margin-left: 37%;
+}
+
+button{
+    margin-left: 100px;
+}
+
+svg{
+    margin-top: 10px;
+}
+
+.go-Login{
+    margin-top: 20px;
+    margin-left: 47%;
+}

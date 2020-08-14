@@ -17,7 +17,7 @@ class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-4">
-              <h2 className="footer-heading mb-3">ABOUT US</h2>
+              <h2 className="footer-heading mb-2">ABOUT US</h2>
               <p className="mb-5">
                 <ul className="list">
                     <li><img src={facebook} alt= "" className="social-site-icon"></img></li>
@@ -48,13 +48,13 @@ class Footer extends Component {
                   <ul className="list-unstyled">
                    
                     <li>
-                      <a href="/">Address: kathmandu, Nepal</a>
+                      <p>Address: kathmandu, Nepal</p>
                     </li>
                     <li>
                       <a href="/">Email : clubadmin@gmail.com</a>
                     </li>
                     <li>
-                      <a href="/">Contact: +977-9812345678</a>
+                      <p>Contact: +977-9812345678</p>
                     </li>
                   </ul>
                 </div>
@@ -62,7 +62,7 @@ class Footer extends Component {
             </div>
                   <p className="copyright-footer">
                    Copyright &copy; All rights reserved.
-                </p>
+                  </p>
           </div>
       </div>
        
