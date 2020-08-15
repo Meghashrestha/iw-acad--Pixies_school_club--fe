@@ -10,6 +10,7 @@ const Auth = () => (
     <Route exact path="/login/register" component={Register} />
     
     
+    
   </div>
 );
 

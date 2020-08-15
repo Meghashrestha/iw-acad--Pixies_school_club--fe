@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "../css/navigation.css";
 import logo from '../images/transparent-pixies-logo.png';
-import image from '../images/hero_1.jpg';
 
 import { Link } from 'react-router-dom'
 
@@ -41,25 +40,7 @@ render(){
           </div>
         </div>
     </div>
-    <div className="ftco-blocks-cover-1">
-       
-      <div className="site-section-cover overlay">
-        <div className="container">
-          <div className="row align-items-center ">
-            <div className="col-md-5 mt-5 pt-5">
-              <span className="text-cursive h2 text-red">Welcome To Pixies</span>
-              <h1 className="mb-3 font-weight-bold text-teal">The School Club</h1>
-              <p>Amazing Place for your creativity.</p>
-              <p className="mt-5"><a href="/about" className="btn btn-primary py-4 btn-custom-1">Learn More</a></p>
-            </div>
-            <div className="col-md-7 ml-auto align-center">
-              <img src={image} alt="Image" className="img-fluid" />
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     
       
   </div>   

@@ -6,11 +6,16 @@ import "./App.css";
 import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import Auth from "./Auth";
+import Des from "./Des";
 
 const App = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/clubs/description">
+          {/* <Navbar/> */}
+          <Des />
+        </Route>
         <Route path="/login">
           <Auth />
         </Route>
