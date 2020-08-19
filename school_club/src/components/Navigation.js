@@ -7,21 +7,12 @@ import { Link } from 'react-router-dom'
 
 
 class Navigation extends React.Component {  
-
-
-
-    
-   
-
-
-
 render(){
     return (
 <div>
         
         <div className="site-navbar site-navbar-target" role="banner">
              
-        
         <div className="container">
           <div className="menu-wrap d-flex align-items-center">
             <span className="d-inline-block d-lg-none"><a href="/" className="text-black site-menu-toggle py-2"><span className="icon-menu h3 text-black"></span></a></span>
@@ -33,6 +24,7 @@ render(){
                   <li><Link to="/clubs">Clubs</Link></li>
                   <li><Link to="/gallery">Gallery</Link></li>
                   <li><Link to="/my-clubs">My Clubs</Link></li>
+                  <li><Link to="/panel">Panel</Link></li>
                   <li><Link to="/login"><h5 className="text-red">SIGN IN</h5></Link></li>
                   
                 </ul>
