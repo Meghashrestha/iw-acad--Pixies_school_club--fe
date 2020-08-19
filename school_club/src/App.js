@@ -7,8 +7,28 @@ import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import Auth from "./Auth";
 import Des from "./Des";
+import Event from "./components/Event/Event";
 
 const App = () => {
+  const [items, setItems] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  
+  useEffect(() => {
+    const fetchItems = async () => {
+      const result = await axios(`https://www.breakingbadapi.com/api/characters`)
+      console.log(result.data)
+
+      setItems(result.data)
+      setIsLoading(false)
+
+    }
+    fetchItems()
+
+  
+  }, [])
+
+
+
   return (
     <Router>
       <Switch>
@@ -22,6 +42,7 @@ const App = () => {
         <Route path="/">
           <Navbar />
           <Routes />
+          <Event isLoading={isLoading} items={items} />
           <Footer />
         </Route>
       </Switch>
