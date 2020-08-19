@@ -1,0 +1,15 @@
+.form-group{
+    box-shadow: grey;
+}
+form{
+   border: solid red;
+   padding-left:40px;
+   padding-top: 20px;
+   padding-bottom:20px;
+   padding-right: 40px;
+   margin-bottom:40px ;
+}
+
+button{
+    margin-left: 1%;
+}

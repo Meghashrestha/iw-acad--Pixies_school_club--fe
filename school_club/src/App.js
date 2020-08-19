@@ -42,7 +42,7 @@ const App = () => {
         <Route path="/">
           <Navbar />
           <Routes />
-          <Event isLoading={isLoading} items={items} />
+          {/* <Event isLoading={isLoading} items={items} /> */}
           <Footer />
         </Route>
       </Switch>
