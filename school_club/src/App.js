@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Auth from "./Auth";
 import Des from "./Des";
 import Event from "./components/Event/Event";
+import Panel from "./components/panel";
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -42,8 +43,11 @@ const App = () => {
         <Route path="/">
           <Navbar />
           <Routes />
-          <Event isLoading={isLoading} items={items} />
+          {/* <Event isLoading={isLoading} items={items} /> */}
           <Footer />
+        </Route>
+        <Route path='/panel'>
+          <Panel/>
         </Route>
       </Switch>
     </Router>
