@@ -6,7 +6,11 @@ export default class CreateClub extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className="tryclass">ttttttttttttttttttttttttttttttttt</h1>
+                <div className='comp-sub-body'>
+                    <label>News Title</label><input type='text'></input><br></br>
+                    <label>News Description</label><input type='text'></input><br></br>
+                    <button type='submit'>Create</button>
+                </div>
             </React.Fragment>
         )
     }

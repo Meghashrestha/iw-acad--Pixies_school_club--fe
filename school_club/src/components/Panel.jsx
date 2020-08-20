@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import logo from '../images/transparent-pixies-logo.png';
 import '../css/panel.css';
+import '../css/main_body.css';
 // import Sidebar from './sidebar';
 
 
@@ -17,14 +18,14 @@ class Panel extends Component{
                 <ul>
                     <li className='nav-branch'><Link to="/panel/create-club">Create Club</Link></li>
                     <li className='nav-branch'><Link to="/panel/create-news">Create News</Link></li>
-                    <li className='nav-branch'><Link to="/create-events">Create Events</Link></li>
-                    <li className='nav-branch'><Link to="/application">Application</Link></li>
-                    <li className='nav-branch'><Link to="/news">News</Link></li>
-                    <li className='nav-branch'><Link to="/events">Events</Link></li>
-                    <li className='nav-branch'><Link to="/gallery">Gallery</Link></li>
-                    <li className='nav-branch'><Link to="/message">Message</Link></li>
-                    <li className='nav-branch'><Link to="/logout">Logout</Link></li>
-                    </ul>
+                    <li className='nav-branch'><Link to="/panel/create-events">Create Events</Link></li>
+                    <li className='nav-branch'><Link to="/panel/application">Application</Link></li>
+                    <li className='nav-branch'><Link to="/panel/news">News</Link></li>
+                    <li className='nav-branch'><Link to="/panel/events">Events</Link></li>
+                    <li className='nav-branch'><Link to="/panel/gallery">Gallery</Link></li>
+                    <li className='nav-branch'><Link to="/panel/message">Message</Link></li>
+                    <li className='nav-branch'><Link to="/panel/logout">Logout</Link></li>
+                </ul>
             </div>
         ); 
     }
