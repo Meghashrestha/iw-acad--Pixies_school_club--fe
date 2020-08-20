@@ -14,21 +14,21 @@
 }
 
 .display-pic{
-    height: 150px;
-    width: 150px;
-    margin-left: 43px;
+    height: 170px;
+    width: 170px;
+    margin: 20px 0 20px 35px;
     background-color: wheat;
     text-align: center;
 }
 
 .dp{
-    height: 75%;
-    width: 75%;
+    height: 100px;
+    width: 100px;
 }
 
 .nav-branch{
     height: 50px;
-    background-color: tomato;
+    background-color: wheat;
     text-align: center;
     padding-top: 15px;
 }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class CreateClub extends Component{
+class CreateNews extends Component{
     render(){
         return(
             <div>
-                <h1>Create Club</h1>
+                <h1>Create News</h1>
             </div>
         );
     }
 }
 
-export default CreateClub
+export default CreateNews

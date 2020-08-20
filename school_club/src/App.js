@@ -10,6 +10,7 @@ import Des from "./Des";
 import Event from "./components/Event/Event";
 import Panel from "./components/panel";
 import PanelRouter from './components/panelrouter';
+import App2 from "./App2";
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -41,15 +42,15 @@ const App = () => {
         <Route path="/login">
           <Auth />
         </Route>
+        <Route path="/panel">
+          <Panel/>
+          <App2/>
+        </Route>
         <Route path="/">
           <Navbar />
           <Routes />
           {/* <Event isLoading={isLoading} items={items} /> */}
           <Footer />
-        </Route>
-        <Route path='/panel'>
-          <Panel/>
-          <PanelRouter/>
         </Route>
       </Switch>
     </Router>
