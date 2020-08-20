@@ -8,10 +8,11 @@ import Footer from "./components/Footer";
 import Auth from "./Auth";
 import Des from "./Des";
 import Event from "./components/Event/Event";
-import Panel from "./components/panel";
+import Panel from "./components/Panel";
 import PanelRouter from './components/panelrouter';
 // import App2 from "./App2";
 import Create from "./components/CreateClub";
+import MainBody from './components/MainBody'
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -44,8 +45,7 @@ const App = () => {
           <Auth />
         </Route>
         <Route path="/panel">
-          <Panel/>
-          <PanelRouter />
+         <MainBody/>
         </Route>
 
         <Route path="/">
