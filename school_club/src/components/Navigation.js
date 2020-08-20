@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import "../css/navigation.css";
 import logo from '../images/transparent-pixies-logo.png';
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 
