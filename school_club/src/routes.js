@@ -14,7 +14,7 @@ const Routes = () => (
     <Route exact path="/clubs" component={Clubs} />
     <Route exact path="/my-club" component={MyClubs} />
     <Route exact path="/about" component={About} />
-    <Route exact path='/panel' component={Panel} /> 
+    <Route exact path="/panel" component={Panel} />
   </div>
 );
 
