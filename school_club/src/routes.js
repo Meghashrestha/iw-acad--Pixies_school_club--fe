@@ -12,11 +12,8 @@ const Routes = () => (
     <Route exact path="/gallery" component={Gallery} />
     <Route exact path="/" component={Home} />
     <Route exact path="/clubs" component={Clubs} />
-    <Route exact path="/my-club" component={ContactForm} />
+    <Route exact path="/my-clubs" component={ContactForm} />
     <Route exact path="/about" component={About} />
-    
-    
-    
   </div>
 );
 
