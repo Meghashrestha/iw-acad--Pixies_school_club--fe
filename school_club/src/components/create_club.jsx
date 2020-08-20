@@ -1,5 +1,4 @@
-import React from 'react';
-import {Component} from 'React';
+import React, { Component } from 'react';
 
 class CreateClub extends Component{
     render(){

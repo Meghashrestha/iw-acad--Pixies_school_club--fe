@@ -1,7 +1,5 @@
-import React from 'react'
-import {Component} from 'React'
-import { Route } from "react-router-dom"
-
+import React from "react";
+import { Route } from "react-router-dom";
 import CreateClub from './create_club';
 
 const PanelRouter = () => (
