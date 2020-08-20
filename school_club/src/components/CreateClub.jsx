@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import "../css/CreateClub.css";
 
-class CreateClub extends Component{
-    render(){
-        return(
-            <div>
-                <p>Create Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasda
-                te Clubaksjdaksjdasj dasasdate Clubaksjdaksjdasj dasasdasdasdasd</p>
-            </div>
-        );
+
+export default class CreateClub extends Component {
+    render() {
+        return (
+            <React.Fragment>
+                <h1 className="tryclass">hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</h1>
+            </React.Fragment>
+        )
     }
 }
-
-export default CreateClub

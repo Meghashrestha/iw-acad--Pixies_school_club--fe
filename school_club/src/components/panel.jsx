@@ -16,7 +16,7 @@ class Panel extends Component{
                     </div>
                 <ul>
                     <li className='nav-branch'><Link to="/panel/create-club">Create Club</Link></li>
-                    <li className='nav-branch'><Link to="/create-news">Create News</Link></li>
+                    <li className='nav-branch'><Link to="/panel/create-news">Create News</Link></li>
                     <li className='nav-branch'><Link to="/create-events">Create Events</Link></li>
                     <li className='nav-branch'><Link to="/application">Application</Link></li>
                     <li className='nav-branch'><Link to="/news">News</Link></li>

@@ -9,9 +9,10 @@ import Events from './Events';
 import Gallery from './Gallery';
 import Message from './Message';
 import Logout from './Logout';
+import Switch from "react-bootstrap/esm/Switch";
 
 const PanelRouter = () => (
-    <div>
+    <Switch>
         <Route exact path="/panel/create-club" component={CreateClub} />
         <Route exact path="/panel/create-news" component={CreateNews} />
         <Route exact path="/create-events" component={CreateEvents} />
@@ -21,7 +22,7 @@ const PanelRouter = () => (
         <Route exact path="/gallery" component={Gallery} />
         <Route exact path="/message" component={Message} />
         <Route exact path="/logout" component={Logout} />
-    </div>
+    </Switch>
 );
 
 export default PanelRouter;
