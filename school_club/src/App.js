@@ -9,6 +9,7 @@ import Auth from "./Auth";
 import Des from "./Des";
 import Event from "./components/Event/Event";
 import Panel from "./components/panel";
+import PanelRouter from './components/panelrouter';
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -48,6 +49,7 @@ const App = () => {
         </Route>
         <Route path='/panel'>
           <Panel/>
+          <PanelRouter/>
         </Route>
       </Switch>
     </Router>
