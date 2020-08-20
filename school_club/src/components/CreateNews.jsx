@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import "../css/CreateClub.css";
 
-class CreateNews extends Component{
-    render(){
-        return(
-            <div>
-                <h1>Create News</h1>
-            </div>
-        );
+
+export default class CreateClub extends Component {
+    render() {
+        return (
+            <React.Fragment>
+                <h1 className="tryclass">ttttttttttttttttttttttttttttttttt</h1>
+            </React.Fragment>
+        )
     }
 }
-
-export default CreateNews

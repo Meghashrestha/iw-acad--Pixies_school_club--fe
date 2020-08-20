@@ -10,7 +10,8 @@ import Des from "./Des";
 import Event from "./components/Event/Event";
 import Panel from "./components/panel";
 import PanelRouter from './components/panelrouter';
-import App2 from "./App2";
+// import App2 from "./App2";
+import Create from "./components/CreateClub";
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -44,11 +45,13 @@ const App = () => {
         </Route>
         <Route path="/panel">
           <Panel/>
-          <App2/>
+          <PanelRouter />
         </Route>
+
         <Route path="/">
           <Navbar />
           <Routes />
+          <Create />
           {/* <Event isLoading={isLoading} items={items} /> */}
           <Footer />
         </Route>
