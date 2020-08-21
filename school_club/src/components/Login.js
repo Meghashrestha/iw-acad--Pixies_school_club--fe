@@ -1,9 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import {login} from './config/'
+
 import "../css/login.css";
 
+// const api = axios.create({
+//   baseURL: `127.0.0.1:8000/`
+// })
+
 class Login extends React.Component {
+
+  constructor(props){
+    super(props);
+      this.state = {
+        username: '',
+        password: ''
+      };
+  }
+
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+  // const {username, password} = this.state;
+  // try{
+  //   api.post('/login/',{
+  //     user: {
+  //       username: username,
+  //       password: password
+  //     }
+  //   }).then(response => {
+  //     console.log(response)
+  //   })
+  // }
+  
+  // catch(err){
+  //   console.log(err)
+  // }
+    
+    event.preventDefault();
+  }
+
   render() {
+    const {username, password} = this.state;
     return (
       <React.Fragment>
         <Link to="/">
@@ -31,24 +75,30 @@ class Login extends React.Component {
         
         </Link>
        
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div class="form-group">
-            <label for="InputEmail">Email address</label>
+            <label for="InputEmail">Username</label>
             <input
-              type="email"
+              type="text"
+              name='username'
+              value={username}
               class="form-control"
               id="InputEmail"
               aria-describedby="emailHelp"
               placeholder="Enter email"
+              onChange={this.handleChange}
             />
           </div>
           <div class="form-group">
             <label for="InputPassword">Password</label>
             <input
               type="password"
+              name='password'
+              value={password}
               class="form-control"
               id="InputPassword"
               placeholder="Password"
+              onChange={this.handleChange}
             />
           </div>
 
