@@ -4,99 +4,62 @@ import axios from 'axios';
 import {login} from './config/'
 
 import "../css/login.css";
+import BackArrow from "./back-arrow";
 
 // const api = axios.create({
 //   baseURL: `127.0.0.1:8000/`
 // })
 
 class Login extends React.Component {
-
-  constructor(props){
-    super(props);
-      this.state = {
-        username: '',
-        password: ''
-      };
-  }
-
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  handleSubmit = (event) => {
-  // const {username, password} = this.state;
-  // try{
-  //   api.post('/login/',{
-  //     user: {
-  //       username: username,
-  //       password: password
-  //     }
-  //   }).then(response => {
-  //     console.log(response)
-  //   })
-  // }
-  
-  // catch(err){
-  //   console.log(err)
-  // }
+  state ={
     
-    event.preventDefault();
+    Email: '',
+    Password: '',
+   
+
+  };
+
+  onSubmit = e =>{
+    e.preventDefault();
+    console.log('submit');
   }
+
+  onChange =e =>{
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+
+
 
   render() {
-    const {username, password} = this.state;
+    const { email,password}=
+    this.state;
     return (
       <React.Fragment>
-        <Link to="/">
-        <svg
-          width="5em"
-          height="2em"
-          viewBox="0 0 16 16"
-          class="bi bi-arrow-left-circle"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"
-          />
-        </svg>
-        
-        </Link>
-       
-        <form onSubmit={this.handleSubmit}>
+       <BackArrow/>
+        <form>
           <div class="form-group">
             <label for="InputEmail">Username</label>
             <input
-              type="text"
-              name='username'
-              value={username}
+              type="Email"
               class="form-control"
-              id="InputEmail"
-              aria-describedby="emailHelp"
+              name="Email"
+              onChange={this.onChange}
+              value= {email}
               placeholder="Enter email"
               onChange={this.handleChange}
             />
           </div>
           <div class="form-group">
-            <label for="InputPassword">Password</label>
+            <label for="Password">Password</label>
             <input
               type="password"
               name='password'
               value={password}
               class="form-control"
-              id="InputPassword"
+              name="Password"
+              onChange={this.onChange}
+              value= {password}
               placeholder="Password"
               onChange={this.handleChange}
             />
