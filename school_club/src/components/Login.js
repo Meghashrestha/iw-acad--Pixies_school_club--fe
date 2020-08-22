@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import {login} from './config/'
+
 import "../css/login.css";
 import BackArrow from "./back-arrow";
+
+// const api = axios.create({
+//   baseURL: `127.0.0.1:8000/`
+// })
 
 class Login extends React.Component {
   state ={
@@ -29,11 +36,10 @@ class Login extends React.Component {
     this.state;
     return (
       <React.Fragment>
-        
        <BackArrow/>
         <form>
           <div class="form-group">
-            <label for="InputEmail">Email address</label>
+            <label for="InputEmail">Username</label>
             <input
               type="Email"
               class="form-control"
@@ -41,17 +47,21 @@ class Login extends React.Component {
               onChange={this.onChange}
               value= {email}
               placeholder="Enter email"
+              onChange={this.handleChange}
             />
           </div>
           <div class="form-group">
             <label for="Password">Password</label>
             <input
               type="password"
+              name='password'
+              value={password}
               class="form-control"
               name="Password"
               onChange={this.onChange}
               value= {password}
               placeholder="Password"
+              onChange={this.handleChange}
             />
           </div>
 

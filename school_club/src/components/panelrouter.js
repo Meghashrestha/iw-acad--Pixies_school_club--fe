@@ -10,18 +10,21 @@ import Gallery from './Gallery';
 import Message from './Message';
 import Logout from './Logout';
 import Switch from "react-bootstrap/esm/Switch";
+import '../css/main_body.css'
 
 const PanelRouter = () => (
     <Switch>
+        <section className='comp-body'>
         <Route exact path="/panel/create-club" component={CreateClub} />
         <Route exact path="/panel/create-news" component={CreateNews} />
-        <Route exact path="/create-events" component={CreateEvents} />
-        <Route exact path="/application" component={Application} />
-        <Route exact path="/news" component={News} />
-        <Route exact path="/events" component={Events} />
-        <Route exact path="/gallery" component={Gallery} />
-        <Route exact path="/message" component={Message} />
-        <Route exact path="/logout" component={Logout} />
+        <Route exact path="/panel/create-events" component={CreateEvents} />
+        <Route exact path="/panel/application" component={Application} />
+        <Route exact path="/panel/news" component={News} />
+        <Route exact path="/panel/events" component={Events} />
+        <Route exact path="/panel/gallery" component={Gallery} />
+        <Route exact path="/panel/message" component={Message} />
+        <Route exact path="/panel/logout" component={Logout} />
+        </section>
     </Switch>
 );
 

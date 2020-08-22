@@ -17,6 +17,11 @@ import {loadUser} from "./actions/auth";
 // import App2 from "./App2";
 import Create from "./components/CreateClub";
 
+// import App2 from "./App2";
+import Create from "./components/CreateClub";
+import MainBody from './components/MainBody'
+
+
 class App extends Component {
  
   componentDidMount(){
@@ -34,15 +39,23 @@ render(){
         <Route path="/login">
           <Auth />
         </Route>
+
         <PrivateRoute path="/panel">
           <Panel/>
           <PanelRouter />
         </PrivateRoute>
 
+        <Route path="/panel">
+         <MainBody/>
+
+
         <Route path="/">
           <Navbar />
           <Routes />
-          
+
+          <Create />
+          {/* <Event isLoading={isLoading} items={items} /> */}
+
           <Footer />
         </Route>
       </Switch>

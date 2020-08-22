@@ -1,0 +1,26 @@
+.main-body{
+    display: flex;
+}
+
+.comp-body{
+    height: 500px;
+    width: 500px;
+    margin: 50px 0 0 200px;
+    border-style: double;
+    border-radius: 20px;
+    border-color: black;
+    text-align: center;
+    /* background-color: black; */
+}
+
+.comp-sub-body{
+    margin-top: 50px;
+}
+
+section Route:nth-child(odd){
+    background-color: dodgerblue;
+}
+
+ul, li:nth-child(odd){
+    background-color: #B4ADEA;
+}
