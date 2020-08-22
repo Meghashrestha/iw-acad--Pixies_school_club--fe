@@ -4,8 +4,9 @@ body{
 
 form{
     width: 22%;
-    margin-top: 12%;
+    margin-top: 1%;
     margin-left: 37%;
+    height: 60vh;
 }
 
 button{

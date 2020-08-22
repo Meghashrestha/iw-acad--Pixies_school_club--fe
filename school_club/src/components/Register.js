@@ -1,45 +1,93 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/register.css";
+import BackArrow from "./back-arrow";
 
 class Register extends React.Component {
+  state ={
+    First_Name: '',
+    Last_Name: '',
+    Date_of_Birth: '',
+    Address: '',
+    Phone_Number: '',
+    Email: '',
+    Password1: '',
+    Password2: ''
+
+  };
+
+  onSubmit = e =>{
+    e.preventDefault();
+    console.log('submit');
+  }
+
+  onChange =e =>{
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+
+
   render() {
+    const { firstName,lastName,dob,address,phone,email,password1,password2}=
+    this.state;
     return (
       <React.Fragment>
-        <Link to="/">
-        <svg
-          width="5em"
-          height="2em"
-          viewBox="0 0 16 16"
-          class="bi bi-arrow-left-circle"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"
-          />
-          <path
-            fill-rule="evenodd"
-            d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"
-          />
-        </svg>
-        
-        </Link>
+        <BackArrow/>
        
         <form>
         <div class="form-group">
-            <label for="Name">Name</label>
+            <label for="Name">First Name</label>
             <input
               type="text"
               class="form-control"
-              id="Name"
-              
+              name="Name"
+              onChange={this.onChange}
+              value= {firstName}
               placeholder="Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Name">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="Name"
+              onChange={this.onChange}
+              value= {lastName}
+              placeholder="Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Date_of_Birth">Date of Birth</label>
+            <input
+              type="text"
+              class="form-control"
+              name="Date_of_Birth"
+              onChange={this.onChange}
+              value= {dob}
+              placeholder="Date of Birth"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Address">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              name="Address"
+              onChange={this.onChange}
+              value= {address}
+              placeholder="Address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Phone_Number">Phone Number</label>
+            <input
+              type="number"
+              class="form-control"
+              name="Phone_Number"
+              onChange={this.onChange}
+              value= {phone}
+              placeholder="Phone Number"
             />
           </div>
           <div class="form-group">
@@ -47,8 +95,10 @@ class Register extends React.Component {
             <input
               type="email"
               class="form-control"
-              id="InputEmail"
+              name="InputEmail"
               aria-describedby="emailHelp"
+              onChange={this.onChange}
+              value= {email}
               placeholder="Enter email"
             />
           </div>
@@ -57,8 +107,21 @@ class Register extends React.Component {
             <input
               type="password"
               class="form-control"
-              id="InputPassword"
+              name="InputPassword1"
+              onChange={this.onChange}
+              value= {password1}
               placeholder="Password"
+            />
+          </div>
+          <div class="form-group">
+            <label for="InputPassword">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="InputPassword2"
+              onChange={this.onChange}
+              value= {password2}
+              placeholder="Confirm Password"
             />
           </div>
 
