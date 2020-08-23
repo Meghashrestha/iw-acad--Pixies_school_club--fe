@@ -1,9 +1,6 @@
 import React from 'react';
 
-
-
-
-
+import {getRequest} from '../config/axios.config' 
 
 class News extends React.Component {
     

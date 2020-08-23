@@ -2,9 +2,6 @@ import React from 'react';
 import {Component} from 'react';
 import axios from 'axios';
 
-const api = axios.create({
-    baseURL: `127.0.0.1:8000/api/`
-})
 
 class Forms extends Component{
     constructor(props){
@@ -13,22 +10,9 @@ class Forms extends Component{
             p_name: '',
             c_name: '',
             desc: '',
-            articles: []
         }
     }
-
-    // createEvent = async () => {
-    //     let res = await api.post('/event', this.state)
-    // }
-
-    componentDidMount(){
-        api.get('/').then(res => {
-            this.state({
-                articles: res.data
-            });
-            console.log(res.data);
-        })
-    }
+    
     handleSubmit = (event) => {
         event.preventDefault();
     }
@@ -52,7 +36,7 @@ class Forms extends Component{
                 <textarea type='text' name='desc' value={desc} onChange={this.handleChange} placeholder='Description'/>
                 <label>Logo</label>
                 {/* <input type='file' value={this.state.value} onChange={this.handleChange}/> */}
-                <button type='submit' onClick={this.createEvent}>Create</button>
+                <button type='submit'>Create</button>
             </form>
             </div>
         );

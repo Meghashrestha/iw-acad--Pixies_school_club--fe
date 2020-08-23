@@ -10,10 +10,10 @@ class Main extends Component{
     render(){
         return(
             <React.Fragment>
-            <div className='main-body'>
-            <Panel/>
-            <PanelRouter />
-            </div>
+                <div className='main-body'>
+                <Panel/>
+                <PanelRouter />
+                </div>
             </React.Fragment>
         );
     }

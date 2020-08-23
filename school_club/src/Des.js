@@ -8,9 +8,6 @@ import description from "./components/Club_description";
 const Des = () => (
   <div>
     <Route exact path="/clubs/description" component={description} />
-
-    
-    
   </div>
 );
 

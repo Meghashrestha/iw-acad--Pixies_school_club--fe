@@ -7,8 +7,6 @@ class ContactForm extends Component {
     super(props);
     this.state = { messageTitle: "" , messageBody: "" };
 
-  
-
   }
 
   handleChange = (event) => {
