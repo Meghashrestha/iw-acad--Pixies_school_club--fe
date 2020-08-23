@@ -8,16 +8,13 @@ import Footer from "./components/Footer";
 import Auth from "./Auth";
 import Des from "./Des";
 import Event from "./components/Event/Event";
-import Panel from "./components/panel";
+import Panel from "./components/Panel";
 import PanelRouter from './components/panelrouter';
-import { Provider} from 'react-redux';
+import {Provider} from 'react-redux';
 import store from './store';
 import PrivateRoute from "./common/PrivateRoute";
 import {loadUser} from "./actions/auth";
-// import App2 from "./App2";
-import Create from "./components/CreateClub";
 
-// import App2 from "./App2";
 import Create from "./components/CreateClub";
 import MainBody from './components/MainBody'
 
@@ -33,21 +30,25 @@ render(){
       <Router>
       <Switch>
         <Route path="/clubs/description">
-          
           <Des />
         </Route>
         <Route path="/login">
           <Auth />
         </Route>
 
-        <PrivateRoute path="/panel">
+        {/* <PrivateRoute path="/panel">
           <Panel/>
           <PanelRouter />
-        </PrivateRoute>
+        </PrivateRoute> */}
+
+        {/* <Route path='/panel'>
+          <Panel/>
+          <PanelRouter />
+        </Route> */}
 
         <Route path="/panel">
          <MainBody/>
-
+        </Route>
 
         <Route path="/">
           <Navbar />

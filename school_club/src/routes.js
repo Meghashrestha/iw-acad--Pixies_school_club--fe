@@ -7,7 +7,6 @@ import Gallery from "./components/Gallery";
 import About from "./components/About";
 
 import ContactForm from "./components/ContactForm";
-=======
 import Panel from "./components/Panel";
 
 
