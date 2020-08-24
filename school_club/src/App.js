@@ -54,7 +54,7 @@ render(){
           <Navbar />
           <Routes />
 
-          <Create />
+          {/* <Create /> */}
           {/* <Event isLoading={isLoading} items={items} /> */}
 
           <Footer />

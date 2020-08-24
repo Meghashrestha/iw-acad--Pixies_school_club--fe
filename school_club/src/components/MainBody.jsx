@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import PanelRouter from './panelrouter'
 import Panel from './Panel'
 import '../css/main_body.css'
+import '../css/panel.css'
 
 class Main extends Component{
     render(){

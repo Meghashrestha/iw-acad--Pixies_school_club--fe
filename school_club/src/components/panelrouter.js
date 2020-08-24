@@ -20,7 +20,7 @@ const PanelRouter = () => (
         <Route exact path="/panel/create-events" component={CreateEvents} />
         <Route exact path="/panel/application" component={Application} />
         <Route exact path="/panel/news" component={News} />
-        <Route exact path="/panel/events" component={Events} />
+        {/* <Route exact path="/panel/events" component={Events} /> */}
         <Route exact path="/panel/gallery" component={Gallery} />
         <Route exact path="/panel/message" component={Message} />
         <Route exact path="/panel/logout" component={Logout} />
