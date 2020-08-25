@@ -3,10 +3,14 @@ body{
 }
 
 form{
-    width: 22%;
+    margin-top: 10px;;
+}
+
+.form-group{
+   
     margin-top: 1%;
-    margin-left: 37%;
-    height: 60vh;
+    margin-left: 10%;
+    
 }
 
 button{

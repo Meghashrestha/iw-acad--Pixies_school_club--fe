@@ -6,8 +6,8 @@ class News extends React.Component {
     
     render(){
         return (
-            <div class="site-section">
-            <div class="container">
+            <div className="site-section">
+            <div className="container">
               <div className="col-12 text-center">
                 <span className="text-cursive h1 text-red d-block">News</span>
               </div>

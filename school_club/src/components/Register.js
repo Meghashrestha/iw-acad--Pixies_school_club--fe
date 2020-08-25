@@ -19,10 +19,12 @@ class Register extends React.Component {
   onSubmit = e =>{
     e.preventDefault();
     console.log('submit');
+    console.log(this.state);
   }
 
   onChange =e =>{
     this.setState({[e.target.name]: e.target.value});
+    
   }
 
 
@@ -35,66 +37,66 @@ class Register extends React.Component {
         <BackArrow/>
        
         <form>
-        <div class="form-group">
-            <label for="Name">First Name</label>
+        <div className="form-group">
+            <label >First Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="Name"
               onChange={this.onChange}
               value= {firstName}
               placeholder="Name"
             />
           </div>
-          <div class="form-group">
-            <label for="Name">Last Name</label>
+          <div className="form-group">
+            <label >Last Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="Name"
               onChange={this.onChange}
               value= {lastName}
               placeholder="Name"
             />
           </div>
-          <div class="form-group">
-            <label for="Date_of_Birth">Date of Birth</label>
+          <div className="form-group">
+            <label >Date of Birth</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="Date_of_Birth"
               onChange={this.onChange}
               value= {dob}
               placeholder="Date of Birth"
             />
           </div>
-          <div class="form-group">
-            <label for="Address">Address</label>
+          <div className="form-group">
+            <label >Address</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="Address"
               onChange={this.onChange}
               value= {address}
               placeholder="Address"
             />
           </div>
-          <div class="form-group">
-            <label for="Phone_Number">Phone Number</label>
+          <div className="form-group">
+            <label >Phone Number</label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               name="Phone_Number"
               onChange={this.onChange}
               value= {phone}
               placeholder="Phone Number"
             />
           </div>
-          <div class="form-group">
-            <label for="InputEmail">Email address</label>
+          <div className="form-group">
+            <label >Email address</label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               name="InputEmail"
               aria-describedby="emailHelp"
               onChange={this.onChange}
@@ -102,22 +104,22 @@ class Register extends React.Component {
               placeholder="Enter email"
             />
           </div>
-          <div class="form-group">
-            <label for="InputPassword">Password</label>
+          <div className="form-group">
+            <label >Password</label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               name="InputPassword1"
               onChange={this.onChange}
               value= {password1}
               placeholder="Password"
             />
           </div>
-          <div class="form-group">
-            <label for="InputPassword">Confirm Password</label>
+          <div className="form-group">
+            <label >Confirm Password</label>
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               name="InputPassword2"
               onChange={this.onChange}
               value= {password2}
@@ -125,7 +127,7 @@ class Register extends React.Component {
             />
           </div>
 
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Register
           </button>
         </form>

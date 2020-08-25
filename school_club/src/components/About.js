@@ -9,7 +9,7 @@ class About extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <img src={image} alt="Image" className="img-fluid" />
+              <img src={image} alt="" className="img-fluid" />
             </div>
             <div className="col-md-5 ml-auto pl-md-5">
               <span className="text-cursive h5 text-red">About Us</span>

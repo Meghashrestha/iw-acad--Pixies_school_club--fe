@@ -20,7 +20,3 @@
 section Route:nth-child(odd){
     background-color: dodgerblue;
 }
-
-/* ul, li:nth-child(odd){
-    background-color: #B4ADEA;
-} */
