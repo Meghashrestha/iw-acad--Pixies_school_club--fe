@@ -18,7 +18,7 @@ class Footer extends Component {
           <div className="row">
             <div className="col-lg-4">
               <h2 className="footer-heading mb-2">ABOUT US</h2>
-              <p className="mb-5">
+              <span className="mb-5">
                 <ul className="list">
                     <li><img src={facebook} alt= "" className="social-site-icon"></img></li>
                     <li><img src={twitter} alt= "" className="social-site-icon"></img></li>
@@ -27,7 +27,7 @@ class Footer extends Component {
                     <li><img src={insta} alt= "" className="social-site-icon"></img></li>
 
                   </ul>      
-                </p>
+                </span>
 
               
             </div>

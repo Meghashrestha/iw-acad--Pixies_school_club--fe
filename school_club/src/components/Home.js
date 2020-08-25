@@ -32,11 +32,11 @@ class Home extends React.Component {
 
         <div className="site-section">
           <div className="container">
-            <div class="col-12 text-center">
-              <span class="text-cursive h2 text-red d-block">
+            <div className="col-12 text-center">
+              <span className="text-cursive h2 text-red d-block">
                 Pixies: The School Club
               </span>
-              <h2 class="text-white h2">OUR CLUBS</h2>
+              <h2 className="text-white h2">OUR CLUBS</h2>
             </div>
             <div className="row">
               <div className="col-lg-4">

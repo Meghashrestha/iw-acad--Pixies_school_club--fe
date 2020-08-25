@@ -21,7 +21,7 @@ export const loadUser = () => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get("/api/auth/user", config)
+    .get("/api/user", config)
     .then((res) => {
       dispatch({
         type: USER_LOADED,
