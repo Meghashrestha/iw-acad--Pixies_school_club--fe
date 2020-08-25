@@ -36,27 +36,7 @@ class Gallery extends Component {
                 <div className="col-md-3 mb-4">
                   <img src={logo} alt="Image" className="img-fluid"/>
                 </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
+               
                 
                
               </div>

@@ -4,9 +4,7 @@ class CreateEvents extends Component{
     render(){
         return(
             <section>
-                <form onSubmit={this.handleSubmit}>
-                    
-                </form>
+                
             </section>
         );
     }
