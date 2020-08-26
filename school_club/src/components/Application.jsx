@@ -1,19 +1,28 @@
 import React from 'react';
-import {Component, useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 import {getRequest, postRequest} from '../config/axios.config'
 
 export function Application(){
-    const [members, setMembers] = useState('')
-    const [interestedClub, setInterestedClub] = useState([])
-    const [status, setStatus] = useState(false)
+    // const [members, setMembers] = useState('')
+    // const [interestedClub, setInterestedClub] = useState([])
+    // const [status, setStatus] = useState(false)
+    // const [data, setData] = useState([])
+
+    const[application, setApplication] = useState({
+        members: '',
+        interestedClub: '',
+        status: false
+    })
+
+    const [data, setData] = useState([])
 
     useEffect(() => {
         async function fetchMyAPI() {
             try{
                 let response = await getRequest('/posts')
                 console.log(response.data.title)
-                setInterestedClub(response.data)
+                setData(response.data)
             }
             catch(err){
                 console.log(err)
@@ -29,41 +38,43 @@ export function Application(){
             try{
                 let response = await postRequest('/post',{
                         user: {
-                            member: members,
-                            interestedClub: interestedClub,
-                            status: status
+                            member: application.members,
+                            interested_club: application.interestedClub,
+                            status: application.status
                         }
                 })
             }catch(err){
                 console.log(err)
             }
         }
+        
         postMyApi()
+        
     }
 
     const handleChange = (event) => {
-        setMembers({
-            [event.target.name]: event.target.value
-        })
-        console.log(members)
+       const copy = Object.assign({}, application)
+       const e = event.currentTarget
+       copy[e.name] = e.value
+       setApplication(copy) 
     }
-
+   
     return(
         <React.Fragment>
-            <div>
+            <section>
                 <form onSubmit={handleSubmit}>
                     <label>Members
-                        <input type='text' name={members} value={members} placeholder='Member' onChange={handleChange}/>
-                        <input type='radio' name={status} value={status} onChange={handleChange}/>Status
-                        <select name={interestedClub} value={interestedClub}>
+                        <input type='text' name='members' value={application.members} placeholder='Member' onChange={handleChange}/>
+                    </label>
+                        <input type='radio' name='status' value={application.status} onChange={handleChange}/>Status
+                        <select name='interestedClub'  value={application.interestedClub} onChange={handleChange}>
                             {
-                                interestedClub.map(opt => <option>{opt.title}</option>)
+                               data.map(opt => <option key={opt.id}>{opt.title}</option>)
                             }
                         </select>
                         <button type='submit'>Submit</button>
-                    </label>
                 </form>
-            </div>
+            </section>
         </React.Fragment>
     )
 }
