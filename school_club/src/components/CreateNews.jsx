@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import {postRequest, getRequest} from '../config/axios.config'
-import "../css/CreateClub.css";
+import "../css/CreateNews.css";
 
 
 function CreateNews(){

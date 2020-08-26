@@ -75,7 +75,7 @@ function CreateClub(props){
         <form className="create-form" onSubmit={handleSubmit}>
           <div className="wrap-input">
             <span className="label-input">Club Name</span>
-            <select name='clubName' className="class_name" value={club.clubName} onChange={handleChange}>
+            <select name='clubName' className="class_name" value={club.clubName} onChange={handleChange} placeholder="Name">
                           {
                               data.map(opt => <option key={opt.id}>{opt.title}</option>)
                           }
@@ -83,7 +83,7 @@ function CreateClub(props){
           </div>
           <div className="wrap-input">
             <span className="label-input">Description: </span>
-            <textarea type='text' name='description' value={club.description} onChange={handleChange}></textarea>
+            <textarea type='text' name='description' value={club.description} onChange={handleChange} placeholder="Give a description"></textarea>
           </div>
           <div className="logo-div">
             <span className="label-input">Logo: </span>
