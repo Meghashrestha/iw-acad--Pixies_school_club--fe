@@ -1,60 +1,70 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import {postRequest} from '../config/axios.config'
+import {postRequest, getRequest} from '../config/axios.config'
 import "../css/CreateClub.css";
 
-export default class CreateClub extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            article_title: '',
-            article_description: '',
-            all: '',
+
+function CreateNews(){
+
+    const [articleTitle, setArticleTitle] = useState('')
+    const [articleDescription, setArticleDescription] = useState('')
+    const [all, setAll] = useState(false)
+
+    useEffect(() => {
+        async function fetchMyApi() {
+            try{
+                let response = await getRequest('/post')
+                console.log(response.data)
+            }
+            catch(err){
+                console.log(err)
+            }
         }
-    }
-   
-    handleSubmit = async(event) => {
-        const {article_title, article_description, all} = this.state;
-        try{
-            let response = await postRequest('/article',{
-                user: {
-                    article_title: article_title,
-                    article_description: article_description,
-                    all: all,
-                }
-            })
+        fetchMyApi()
+    }, [])
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        async function postMyApi() {    
+            try{
+                let response = await postRequest('/post',{
+                    user: {
+                        article_title: articleTitle,
+                        article_description: articleDescription,
+                        all: all
+                    }
+                })
+            }    
+            catch(err){
+                console.log(err)
+            }    
         }
-        catch(err){
-            console.log(err)
-        }
+        postMyApi()
     }
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+    const handleChange = (event) => {
+        setArticleTitle(event.target.name.value)
+        setArticleDescription(event.target.name.value)
+        setAll(event.target.name.value)
+        console.log(articleTitle)
     }
 
-    render() {
-        const {article_title, article_description, all} = this.state;
-        return (
+    return(
+        <React.Fragment>
             <section>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Artile Title:
-                        <input type='text' name='article_title' value={article_title} placeholder='Article Title' onChange={this.handleChange} />
+                <form onSubmit={handleSubmit}>
+                    <label>Article Title:
+                        <input type='text' name={articleTitle} value={articleTitle} placeholder='Title' onChange={handleChange}></input>
                     </label>
-                    <label>Artile Description:
-                        <input type='text' name='article_description' value={article_description} placeholder='Article Description' onChange={this.handleChange} />
+                    <label>Article Description:
+                        <textarea type='text' name={articleDescription} value={articleDescription} placeholder='Description' onChange={handleChange}></textarea>
                     </label>
-                    <label>All:
-                        <select type='radio button' name='all' value={all} onChange={this.handleChange}>
-                            <option>Admin</option>
-                            <option>Staff</option>
-                            <option>Member</option>
-                        </select>    
-                    </label>
+                    <button type='submit'>Submit</button>
                 </form>
             </section>
-        )
-    }
+        </React.Fragment>
+    )
+
 }
+
+export default CreateNews;
