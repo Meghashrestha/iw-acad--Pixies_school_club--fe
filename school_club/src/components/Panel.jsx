@@ -32,6 +32,7 @@ class Panel extends Component {
             <div className="user-logo">
               <img src={logo} alt="Image" className="img-logo-fluid" />
               <h3>Catriona Henderson</h3>
+
             </div>
           </div>
         </div>

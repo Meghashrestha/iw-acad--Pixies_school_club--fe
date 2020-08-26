@@ -53,8 +53,6 @@ render(){
         <Route path="/">
           <Navbar />
           <Routes />
-
-          {/* <Create /> */}
           {/* <Event isLoading={isLoading} items={items} /> */}
 
           <Footer />

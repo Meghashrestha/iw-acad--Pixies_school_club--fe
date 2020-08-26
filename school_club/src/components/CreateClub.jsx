@@ -1,90 +1,104 @@
-import React, { Component } from "react";
-import Forms from "./Forms";
+import React, { useState, useEffect } from 'react'
 
-import { postRequest } from "../config/axios.config";
+import {getRequest, postRequest} from '../config/axios.config'
 import "../css/CreateClub.css";
 
 
-export default class CreateClub extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      club_name: "",
-      description: "",
-      logo: "",
-    };
-  }
 
-  handleSubmit = async (event) => {
-    const { club_name, description, logo } = this.state;
-    try {
-      let response = await postRequest("/club/", {
-        user: {
-          club_name: club_name,
-          description: description,
-          logo: logo,
-        },
-      });
-    } catch (err) {
-      console.log(err);
-    }
+function CreateClub(props){
+    // const [clubName, setClubName] = useState('')
+    // const [description, setDescription] = useState('')
+    // const [logo, setLogo] = useState()
+    // const [data, setData] = useState([])
 
-    event.preventDefault();
-  };
+    const [club, setClub] = useState({
+        clubName: '',
+        description: '',
+        logo: '',
+        
+    })
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
+    const [data, setData] = useState([])
 
-  render() {
-    const { club_name, description, logo } = this.state;
-    return (
+    useEffect(() => {
+        async function fetchMyApi() {
+            try{
+                let response = await getRequest('/posts')
+                console.log(response)
+                setData(response.data)
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+        fetchMyApi()
+            
+            }, [])
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+
+                async function postMyApi() {
+                    try{
+                        let response = await postRequest('/post',{
+                            user: {
+                                club_name: club.clubName,
+                                description: club.description,
+                                logo: club.logo
+                            }
+                        })
+                    } 
+                    catch(err){
+                        console.log(err)
+                    }   
+                    postMyApi()   
+                    console.log(club.clubName)     
+                }        
+            }    
+
+ const handleChange = (event) => {
+    // setClubName(event.target.name.value)
+    // setDescription(event.target.name.value)   
+    // console.log(description)
+    // console.log(clubName)  
+    
+    const copy = Object.assign({}, club)
+    const e = event.currentTarget
+    copy[e.name] = e.value
+    setClub(copy)
+   }
+
+    return(
       <React.Fragment>
-        <header className="text-cursive text-red d-block">Create Club</header>
-        <section className="section-form">
-          <form className="create-form" onSubmit={this.handleSubmit}>
-            <div className="wrap-input">
-              <span className="label-input">Club Name</span>
-              <input
-              
-                type="text"
-                name="club_name"
-                value={club_name}
-                placeholder="Club Name"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="wrap-input">
-              <span className="label-input">Description: </span>
-              <input
-             
-                type="text"
-                name="description"
-                value={description}
-                placeholder="Description"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="logo-div">
-              <span className="label-input">Logo: </span>
-              <input
-                className="logo-input"
-                type="file"
-                name="club_name"
-                value={logo}
-                onChange={this.handleChange}
-              />
-            </div>
+      <header className="text-cursive text-red d-block">Create Club</header>
+      <section className="section-form">
+        <form className="create-form" onSubmit={handleSubmit}>
+          <div className="wrap-input">
+            <span className="label-input">Club Name</span>
+            <select name='clubName' className="class_name" value={club.clubName} onChange={handleChange}>
+                          {
+                              data.map(opt => <option key={opt.id}>{opt.title}</option>)
+                          }
+                      </select>
+          </div>
+          <div className="wrap-input">
+            <span className="label-input">Description: </span>
+            <textarea type='text' name='description' value={club.description} onChange={handleChange}></textarea>
+          </div>
+          <div className="logo-div">
+            <span className="label-input">Logo: </span>
+            <input type='file' name='logo' value={club.logo} onChange={handleChange}></input>
+          </div>
 
-            <div class="form-btn-class">
-              <button class="form-btn" type="submit" >Create</button>
-             
-            </div>
-          </form>
-        </section>
-      </React.Fragment>
-    );
-  }
+          <div class="form-btn-class">
+            <button class="form-btn" type="submit" >Create</button>
+           
+          </div>
+        </form>
+      </section>
+    </React.Fragment>
+    )
+
 }
+
+export default CreateClub;
