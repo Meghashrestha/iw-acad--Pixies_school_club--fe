@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import {postRequest, getRequest} from '../config/axios.config'
-import "../css/CreateClub.css";
+import "../css/CreateEvent.css";
 
 
 function CreateEvents(){
@@ -66,18 +66,26 @@ function CreateEvents(){
 
 
     return(
-            <section>
-                <form onSubmit={handleSubmit}>
-                    <label>Event Title:
-                        <input type='text' name='eventTitle' value={event.eventTitle} placeholder='Title' onChange={handleChange}></input>
-                    </label>
-                    <label>Event Description:
-                        <textarea name='eventDescription' value={event.eventDescription} placeholder='Description' onChange={handleChange}></textarea>
-                    </label>
-                    <input name='eventDate' type='date' value={event.eventDate} onChange={handleChange}></input>
-                    <button type='submit'>Submit</button>
+            <div className="container">
+                <header className="text-left text-lg h2 text-cursive text-red">Events</header>
+                <form  className="col-md-8" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                    <label>Event Title:</label>
+                        <input type='text' className="form-control" name='eventTitle' value={event.eventTitle} placeholder='Title' onChange={handleChange}></input>
+                        </div>
+                        <div className="form-group">
+                    
+                        <textarea name='eventDescription' className="form-control" value={event.eventDescription} placeholder='Write a description' onChange={handleChange}></textarea>
+                    </div>
+                    <div className="form-group">
+                    <input name='eventDate' type='date' value={event.eventDate}  onChange={handleChange}></input>
+                    </div>
+                    <div className="form-group">
+                    <button className="btn btn-success btn-lg" type='submit'>Submit</button>
+                    </div>
+                    
                 </form>
-            </section>
+            </div>
     )
 
 }

@@ -63,7 +63,7 @@ function CreateNews(){
         </div>
         <div className="news-wrap-input">
          
-        <textarea type='text' name={articleDescription} value={articleDescription} placeholder='Description' onChange={handleChange}></textarea>
+        <textarea type='text' name={articleDescription} value={articleDescription} placeholder='Write a description' onChange={handleChange}></textarea>
         </div>
        
         <div className="news-form-btn-class">

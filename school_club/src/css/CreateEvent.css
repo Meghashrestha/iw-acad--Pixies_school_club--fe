@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+form {
+   margin-top: 20px;
+   margin-left: 5px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 30px;
+  line-height: 3;
+  background-color: white;
+   
+}
+
+header{
+   margin-left: 1px;
+}
+
+.form-group{
+    width: 80%;
+    background-color: white;
+    
+    
+}
+
+.form-group label{
+    font-family: "Indie Flower", cursive;
+    color: red;
+}
+
+.form-group input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ae69ee;
+
+   
+}
+
+.form-group textarea{
+    height:150px ;
+    border:none;
+    outline: none;
+    border-bottom: 2px solid #ae69ee;
+    padding-bottom: 10px;
+}
+
+.form-group button{
+    margin-bottom: 20px;
+    margin-left: 40%;
+}
