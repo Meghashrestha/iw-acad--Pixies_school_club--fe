@@ -31,35 +31,30 @@ class ContactForm extends Component {
   render() {
       const {messageTitle,messageBody} = this.state
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="message-title">
+      <React.Fragment>
+      <header className="text-lg text-cursive text-red text-left">Message</header>
+      <form className="message-form "onSubmit={this.handleSubmit}>
+        <div className="form-group">
         <label>
-          Message Title:
+          Message Header
+          </label>
           <input
             type="text"
             value={messageTitle}
             name="messageTitle"
             className="form-control"
             id="message-title"
-            placeholder="Title"
+            placeholder="Header"
             onChange={this.handleChange}
           />
-        </label></div> 
-        <div className="message-body">
-        <label>
-          Message Title:
-          <input
-            type="text"
-            value={messageBody}
-            name="messageBody"
-            className="form-control"
-            id="message-body"
-            placeholder="Title"
-            onChange={this.handleChange}
-          />
-        </label></div>
-       <input type="submit" value="Submit"/>
+       </div> 
+        <div className="form-group">
+        
+          <textarea name='eventDescription' className="form-control" value={messageBody} placeholder='Write a Message' onChange={this.handleChange}></textarea>
+        </div>
+       <button className="btn btn-warning " type="submit" value="Submit"> Message</button>
       </form>
+      </React.Fragment>
     );
   }
 }
