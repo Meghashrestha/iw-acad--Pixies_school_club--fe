@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import {postRequest, getRequest} from '../config/axios.config'
+
 import "../css/CreateNews.css";
 
 
@@ -48,8 +49,6 @@ function CreateNews(){
         setAll(event.target.name.value)
         console.log(articleTitle)
     }
-
-
     return(
         <React.Fragment>
         <header className="text-cursive text-red d-block">Publish News</header>

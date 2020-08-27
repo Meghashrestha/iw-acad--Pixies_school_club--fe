@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react'
 import {getRequest, postRequest} from '../config/axios.config'
 import "../css/CreateClub.css";
 
-
-
 function CreateClub(props){
     // const [clubName, setClubName] = useState('')
     // const [description, setDescription] = useState('')
@@ -99,6 +97,8 @@ function CreateClub(props){
     </React.Fragment>
     )
 
+
+        
 }
 
 export default CreateClub;
