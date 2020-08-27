@@ -1,18 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
-header {
-  margin-top: 10px;
-  margin-left: 30px;
+.header {
+  margin-top: 5%;
+  margin-left: 40%;
   padding-bottom: 30px;
-  text-align: center;
+  text-align: center
+
 }
 
 
-
-
-.section-form {
-  
-  margin-left: 100px;
+.section-form {  
   height: max-content;
   display: flex;
   flex-wrap: wrap;
@@ -28,7 +25,6 @@ header {
 }
 
 .wrap-input {
-  width: 80%;
   position: relative;
   line-height: 5;
   border-bottom: 2px solid #ae69ee;

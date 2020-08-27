@@ -36,7 +36,7 @@ function CreateEvents(){
         async function postMyApi() {    
             try{
                 let response = await postRequest('/post',{
-                    user: {
+                    Event: {
                         event_title: event.eventTitle,
                         event_description: event.eventDescription,
                         event_date: event.eventDate,
