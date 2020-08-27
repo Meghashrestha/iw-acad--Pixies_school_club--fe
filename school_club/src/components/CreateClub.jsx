@@ -7,16 +7,16 @@ function CreateClub(props){
     const [club, setClub] = useState({
         clubName: '',
         description: '',
-        logo: '',
-        
     })
+
+    const[logo, setLogo] = useState(null)
 
     const [data, setData] = useState([])
 
     useEffect(() => {
         async function fetchMyApi() {
             try{
-                let response = await getRequest('login/admin/add-club/')
+                let response = await getRequest('posts/')
                 console.log(response)
                 setData(response.data)
             }
@@ -32,14 +32,21 @@ function CreateClub(props){
         event.preventDefault();
 
                 async function postMyApi() {
+                  const fd = new FormData();
+                  fd.append('image', logo, logo.name)
                     try{
-                        let response = await postRequest('login/admin/add-club/',{
+                        let response = await postRequest('posts',{
                             Club: {
                                 club_name: club.clubName,
                                 description: club.description,
-                                logo: club.logo
-                            }
+                                logo: fd
+                            },
+                            //     onUploadProgress: progressEvent => {
+                            //       console.log('uploaded:' + (progressEvent.loaded / progressEvent.total *100))
+                                
+                            // }
                         })
+                        
                     } 
                     catch(err){
                         console.log(err)
@@ -54,6 +61,12 @@ function CreateClub(props){
     const e = event.currentTarget
     copy[e.name] = e.value
     setClub(copy)
+   }
+
+   const handleFileChange = (event) => {
+    setLogo(event.currentTarget.files[0])
+    console.log('data',event.currentTarget.files[0])
+    console.log('pic', logo)
    }
 
     return(
@@ -75,8 +88,7 @@ function CreateClub(props){
           </div>
           <div className="logo-div">
             <span className="label-input">Logo: </span>
-            <input type='file' name='logo' value={club.logo} onChange={handleChange}></input>
-            
+            <input type='file' name='logo' onChange={handleFileChange}></input>
           </div>
 
           <div class="form-btn-class">
