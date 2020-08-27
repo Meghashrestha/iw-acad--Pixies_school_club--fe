@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 header {
-  margin-top: 20%;
-  margin-left:40%;
   padding-bottom: 30px;
   text-align:center;
   font-size: 32px;
@@ -11,15 +9,10 @@ header {
 }
 
 .news-section-form {
-  margin-top: 10%;
-  margin-left: 40%;
-  height:480px;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  
   border-radius: 30px;
-  width: 200%;
 }
 
 .news-create-form {

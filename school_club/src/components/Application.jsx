@@ -3,12 +3,7 @@ import {useState, useEffect} from 'react';
 
 import {getRequest, postRequest} from '../config/axios.config'
 
-export function Application(){
-    // const [members, setMembers] = useState('')
-    // const [interestedClub, setInterestedClub] = useState([])
-    // const [status, setStatus] = useState(false)
-    // const [data, setData] = useState([])
-
+function Application(){
     const[application, setApplication] = useState({
         members: '',
         interestedClub: '',

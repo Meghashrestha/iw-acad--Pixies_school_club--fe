@@ -4,11 +4,6 @@ import {getRequest, postRequest} from '../config/axios.config'
 import "../css/CreateClub.css";
 
 function CreateClub(props){
-    // const [clubName, setClubName] = useState('')
-    // const [description, setDescription] = useState('')
-    // const [logo, setLogo] = useState()
-    // const [data, setData] = useState([])
-
     const [club, setClub] = useState({
         clubName: '',
         description: '',
@@ -21,7 +16,7 @@ function CreateClub(props){
     useEffect(() => {
         async function fetchMyApi() {
             try{
-                let response = await getRequest('/posts')
+                let response = await getRequest('login/admin/add-club/')
                 console.log(response)
                 setData(response.data)
             }
@@ -38,8 +33,8 @@ function CreateClub(props){
 
                 async function postMyApi() {
                     try{
-                        let response = await postRequest('/post',{
-                            user: {
+                        let response = await postRequest('login/admin/add-club/',{
+                            Club: {
                                 club_name: club.clubName,
                                 description: club.description,
                                 logo: club.logo
@@ -48,18 +43,13 @@ function CreateClub(props){
                     } 
                     catch(err){
                         console.log(err)
-                    }   
-                    postMyApi()   
-                    console.log(club.clubName)     
-                }        
+                    }    
+                }  
+                postMyApi()   
+                console.log(club.clubName)          
             }    
 
  const handleChange = (event) => {
-    // setClubName(event.target.name.value)
-    // setDescription(event.target.name.value)   
-    // console.log(description)
-    // console.log(clubName)  
-    
     const copy = Object.assign({}, club)
     const e = event.currentTarget
     copy[e.name] = e.value

@@ -10,12 +10,14 @@ import '../css/panel.css'
 class Main extends Component{
     render(){
         return(
-            <React.Fragment>
-                <div className='main-body'>
+            <div className="test">
+                <div className='main-body '>
                 <Panel/>
-                <PanelRouter />
+                <div className="right_main">
+                    <PanelRouter />
                 </div>
-            </React.Fragment>
+                </div>
+            </div>
         );
     }
 }

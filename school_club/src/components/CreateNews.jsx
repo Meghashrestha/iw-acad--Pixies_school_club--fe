@@ -29,7 +29,7 @@ function CreateNews(){
         async function postMyApi() {    
             try{
                 let response = await postRequest('/post',{
-                    user: {
+                    Article: {
                         article_title: articleTitle,
                         article_description: articleDescription,
                         all: all

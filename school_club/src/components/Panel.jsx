@@ -73,11 +73,6 @@ class Panel extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/panel/gallery">
-              Gallery
-            </Link>
-          </li>
-          <li>
             <Link to="/panel/message">
               Message
             </Link>
