@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 import {postRequest, getRequest} from '../config/axios.config'
-import "../css/CreateClub.css";
+
+import "../css/CreateNews.css";
 
 
 function CreateNews(){
@@ -48,22 +49,32 @@ function CreateNews(){
         setAll(event.target.name.value)
         console.log(articleTitle)
     }
-
     return(
         <React.Fragment>
-            <section>
-                <form onSubmit={handleSubmit}>
-                    <label>Article Title:
-                        <input type='text' name={articleTitle} value={articleTitle} placeholder='Title' onChange={handleChange}></input>
-                    </label>
-                    <label>Article Description:
-                        <textarea type='text' name={articleDescription} value={articleDescription} placeholder='Description' onChange={handleChange}></textarea>
-                    </label>
-                    <button type='submit'>Submit</button>
-                </form>
-            </section>
+        <header className="text-cursive text-red d-block">Publish News</header>
+        
+
+
+        <section className="news-section-form">
+      <form className="news-create-form" onSubmit={handleSubmit}>
+        <div className="news-wrap-input">
+          
+        <input type='text' name={articleTitle} value={articleTitle} placeholder='Title' onChange={handleChange}></input>
+        </div>
+        <div className="news-wrap-input">
+         
+        <textarea type='text' name={articleDescription} value={articleDescription} placeholder='Description' onChange={handleChange}></textarea>
+        </div>
+       
+        <div className="news-form-btn-class">
+          <button className="news-form-btn" type="submit" >Publish</button>
+         
+        </div>
+      </form>
+    </section>
         </React.Fragment>
     )
+
 
 }
 
