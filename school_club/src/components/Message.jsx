@@ -6,7 +6,7 @@ import {postRequest} from '../config/axios.config'
 class Message extends Component{
     render(){
         return(
-            <div>
+            <div className="container">
                 <ContactForm/>
             </div>
         );

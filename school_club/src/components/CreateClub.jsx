@@ -58,9 +58,9 @@ function CreateClub(props){
 
     return(
       <React.Fragment>
-      <header className="text-cursive text-red d-block">Create Club</header>
+      <header className="text-left text-cursive text-red d-block">Create Club</header>
       <section className="section-form">
-        <form className="create-form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="wrap-input">
             <span className="label-input">Club Name</span>
             <select name='clubName' className="class_name" value={club.clubName} onChange={handleChange} placeholder="Name">
@@ -70,12 +70,13 @@ function CreateClub(props){
                       </select>
           </div>
           <div className="wrap-input">
-            <span className="label-input">Description: </span>
+            
             <textarea type='text' name='description' value={club.description} onChange={handleChange} placeholder="Give a description"></textarea>
           </div>
           <div className="logo-div">
             <span className="label-input">Logo: </span>
             <input type='file' name='logo' value={club.logo} onChange={handleChange}></input>
+            
           </div>
 
           <div class="form-btn-class">

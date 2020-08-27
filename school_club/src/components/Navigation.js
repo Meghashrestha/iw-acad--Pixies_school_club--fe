@@ -23,7 +23,7 @@ render(){
                   <li><Link to="/about">About</Link></li>
                   <li><Link to="/clubs">Clubs</Link></li>
                   <li><Link to="/gallery">Gallery</Link></li>
-                  <li><Link to="/my-clubs">My Clubs</Link></li>
+                  
                   <li><Link to="/panel">Panel</Link></li>
                   <li><Link to="/login"><h5 className="text-red">SIGN IN</h5></Link></li>
                   
