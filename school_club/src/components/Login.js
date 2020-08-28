@@ -118,10 +118,8 @@ function Login(){
     async function postMyApi(){
       try{
         let response = await postRequest('/login/',{
-          User: {
             username: login.username,
             password: login.password,
-          }
 
           })
           if (response) {

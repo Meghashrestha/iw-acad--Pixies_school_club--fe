@@ -22,7 +22,7 @@ function Register(){
     async function postMyApi(){
       try{
         let response = await postRequest('/add-user/',{
-          User: {
+          
             first_name: register.firstname,
             last_name: register.lastname,
             middle_name: register.middlename,
@@ -30,17 +30,11 @@ function Register(){
             username: register.username,
             password: register.password,
           }
-
-          })
-          if (response) {
-            return { status: 200, msg: "registration completed" }
-          } else {
-            return { status: 500, msg: "error occur" }
-          }
-          // console.log(response)
+)
+          console.log(response)
         }
         catch(err){
-          console.log(err)
+          console.log(err.response.data)
       }
     }
     postMyApi()

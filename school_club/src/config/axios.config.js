@@ -1,15 +1,17 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: `127.0.0.1:8000/`,
-    // baseURL: 'https://jsonplaceholder.typicode.com/'
+    baseURL: `http://127.0.0.1:8000/`,
+    headers: {
+        Accept: 'application/json'
+    }
 })
 
 export const getRequest = (url) => {
     return api.get(url)
 }
 
-export const postRequest = (url, data) => {
+export const postRequest = (url, data) => { 
     return api.post(url, data)
 }  
 

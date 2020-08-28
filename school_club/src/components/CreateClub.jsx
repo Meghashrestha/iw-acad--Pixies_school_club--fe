@@ -36,15 +36,9 @@ function CreateClub(props){
                   fd.append('image', logo, logo.name)
                     try{
                         let response = await postRequest('/login/admin/add-club/',{
-                            Club: {
                                 club_name: club.clubName,
                                 description: club.description,
                                 logo: fd
-                            },
-                            //     onUploadProgress: progressEvent => {
-                            //       console.log('uploaded:' + (progressEvent.loaded / progressEvent.total *100))
-                                
-                            // }
                         })
                         
                     } 
