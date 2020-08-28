@@ -28,7 +28,7 @@ function CreateNews(){
         event.preventDefault();
         async function postMyApi() {    
             try{
-                let response = await postRequest('/post',{
+                let response = await postRequest('/login/post-article/',{
                     Article: {
                         article_title: articleTitle,
                         article_description: articleDescription,
