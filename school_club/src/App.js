@@ -18,60 +18,16 @@ import {loadUser} from "./actions/auth";
 import Create from "./components/CreateClub";
 import MainBody from './components/MainBody'
 
+import Login from './components/Login';
+import Register from './components/Register';
 
 class App extends Component {
  
   componentDidMount(){
     store.dispatch(loadUser());
   }
-render(){
-  return (
-    <Provider store={store}>
-      <Router>
-      <Switch>
-      <Route path="/">
-          <Navbar />
-          <Routes />
-          {/* <Event isLoading={isLoading} items={items} /> */}
 
-          <Footer />
-        </Route>
-        <Route path="/clubs/description">
-          <Des />
-        </Route>
-        <Route path="/login">
-          <Auth />
-        </Route>
-
-        {/* <PrivateRoute path="/panel">
-          <Panel/>
-          <PanelRouter />
-        </PrivateRoute> */}
-
-        {/* <Route path='/panel'>
-          <Panel/>
-          <PanelRouter />
-        </Route> */}
-
-        <Route path="/panel">
-         <MainBody/>
-        </Route>
-
-       
-      </Switch>
-    </Router>
-    
-    </Provider>
-    
-  );
-}
- 
-};
-export default App;
-
-
-
-// /**
+  // /**
 //  * /home -> home 
 //  * /login ->, login noavabar
 //  * /register ->  register nonavbar
@@ -81,3 +37,49 @@ export default App;
 //  * /about
  
 //  */
+render(){
+  return (
+    <Provider store={store}>
+    <Router>
+    <Switch>
+      <Route path="/clubs/description">
+        <Des />
+      </Route>
+      <Route path="/login">
+        <Auth />
+      </Route>
+
+      {/* <PrivateRoute path="/panel">
+        <Panel/>
+        <PanelRouter />
+      </PrivateRoute> */}
+
+      {/* <Route path='/panel'>
+        <Panel/>
+        <PanelRouter />
+      </Route> */}
+
+      <Route path="/panel">
+       <MainBody/>
+      </Route>
+
+      <Route path="/">
+        <Navbar />
+        <Routes />
+        {/* <Event isLoading={isLoading} items={items} /> */}
+
+        <Footer />
+      </Route>
+    </Switch>
+  </Router>
+  
+  </Provider>
+  );
+}
+ 
+};
+export default App;
+
+
+
+
