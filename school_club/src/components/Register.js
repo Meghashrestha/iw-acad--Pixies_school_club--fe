@@ -1,51 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import {postRequest} from '../config/axios.config'
 import "../css/register.css";
 import BackArrow from "./back-arrow";
 
-class Register extends React.Component {
-  state ={
-    First_Name: '',
-    Last_Name: '',
-    Date_of_Birth: '',
-    Address: '',
-    Phone_Number: '',
-    Email: '',
-    Password1: '',
-    Password2: ''
+function Register(){
 
-  };
+  const[register, setRegister] = useState({
+    firstname: '',
+    lastname: '',
+    middlename: '',
+    email: '',
+    username: '',
+    password: '',
+  })
 
-  onSubmit = e =>{
-    e.preventDefault();
-    console.log('submit');
-    console.log(this.state);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    async function postMyApi(){
+      try{
+        let response = await postRequest('/add-user/',{
+          User: {
+            first_name: register.firstname,
+            last_name: register.lastname,
+            middle_name: register.middlename,
+            email: register.email,
+            username: register.username,
+            password: register.password,
+          }
+
+          })
+          if (response) {
+            return { status: 200, msg: "registration completed" }
+          } else {
+            return { status: 500, msg: "error occur" }
+          }
+          // console.log(response)
+        }
+        catch(err){
+          console.log(err)
+      }
+    }
+    postMyApi()
   }
 
-  onChange =e =>{
-    this.setState({[e.target.name]: e.target.value});
-    
-  }
+  const handleChange = (event) => {
+    const copy = Object.assign({}, register)
+    const e = event.currentTarget
+    copy[e.name] = e.value
+    setRegister(copy)
+   }
 
-
-
-  render() {
-    const { firstName,lastName,dob,address,phone,email,password1,password2}=
-    this.state;
     return (
       <React.Fragment>
         <BackArrow/>
        
-        <form>
+        <form onSubmit={handleSubmit}>
         <div className="form-group">
             <label >First Name</label>
             <input
               type="text"
               className="form-control"
-              name="Name"
-              onChange={this.onChange}
-              value= {firstName}
+              name="firstname"
+              value= {register.firstname}
               placeholder="Name"
+              onChange={handleChange}
             />
           </div>
           <div className="form-group">
@@ -53,13 +74,24 @@ class Register extends React.Component {
             <input
               type="text"
               className="form-control"
-              name="Name"
-              onChange={this.onChange}
-              value= {lastName}
+              name="lastname"
+              value= {register.lastname}
               placeholder="Name"
+              onChange={handleChange}
             />
           </div>
           <div className="form-group">
+            <label >Middle Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="middlename"
+              value= {register.middlename}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          {/* <div className="form-group">
             <label >Date of Birth</label>
             <input
               type="text"
@@ -91,17 +123,28 @@ class Register extends React.Component {
               value= {phone}
               placeholder="Phone Number"
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label >Email address</label>
             <input
               type="email"
               className="form-control"
-              name="InputEmail"
+              name="email"
               aria-describedby="emailHelp"
-              onChange={this.onChange}
-              value= {email}
+              value= {register.email}
               placeholder="Enter email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Username</label>
+            <input
+              type="text"
+              className="form-control"
+              name="username"
+              value= {register.username}
+              placeholder="username"
+              onChange={handleChange}
             />
           </div>
           <div className="form-group">
@@ -109,13 +152,13 @@ class Register extends React.Component {
             <input
               type="password"
               className="form-control"
-              name="InputPassword1"
-              onChange={this.onChange}
-              value= {password1}
+              name="password"
+              value= {register.password}
               placeholder="Password"
+              onChange={handleChange}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label >Confirm Password</label>
             <input
               type="password"
@@ -125,7 +168,7 @@ class Register extends React.Component {
               value= {password2}
               placeholder="Confirm Password"
             />
-          </div>
+          </div> */}
 
           <button type="submit" className="btn btn-primary">
             Register
@@ -137,7 +180,6 @@ class Register extends React.Component {
         </div>
       </React.Fragment>
     );
-  }
 }
 
 export default Register;

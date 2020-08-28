@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-    // baseURL: `127.0.0.1:8000/`,
-    baseURL: 'https://jsonplaceholder.typicode.com/'
+    baseURL: `127.0.0.1:8000/`,
+    // baseURL: 'https://jsonplaceholder.typicode.com/'
 })
 
 export const getRequest = (url) => {
