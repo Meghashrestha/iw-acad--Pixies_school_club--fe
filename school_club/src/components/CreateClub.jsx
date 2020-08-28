@@ -16,7 +16,7 @@ function CreateClub(props){
     useEffect(() => {
         async function fetchMyApi() {
             try{
-                let response = await getRequest('posts/')
+                let response = await getRequest('/view-club')
                 console.log(response)
                 setData(response.data)
             }
@@ -35,7 +35,7 @@ function CreateClub(props){
                   const fd = new FormData();
                   fd.append('image', logo, logo.name)
                     try{
-                        let response = await postRequest('posts',{
+                        let response = await postRequest('/login/admin/add-club/',{
                             Club: {
                                 club_name: club.clubName,
                                 description: club.description,
