@@ -78,7 +78,7 @@ function CreateEvents(){
                         <textarea name='eventDescription' className="form-control" value={event.eventDescription} placeholder='Write a description' onChange={handleChange}></textarea>
                     </div>
                     <div className="form-group">
-                    <input name='eventDate' type='date' value={event.eventDate}  onChange={handleChange}></input>
+                    <input className="event-date" name='eventDate' type='date' value={event.eventDate}  onChange={handleChange}></input>
                     </div>
                     <div className="form-group">
                     <button className="btn btn-success btn-lg" type='submit'>Submit</button>

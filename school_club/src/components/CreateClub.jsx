@@ -87,7 +87,7 @@ function CreateClub(props){
             <textarea type='text' name='description' value={club.description} onChange={handleChange} placeholder="Give a description"></textarea>
           </div>
           <div className="logo-div">
-            <span className="label-input">Logo: </span>
+            <span className="label-input md-col-3">Logo: </span><br/>
             <input type='file' name='logo' onChange={handleFileChange}></input>
           </div>
 

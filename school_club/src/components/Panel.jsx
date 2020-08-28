@@ -18,7 +18,7 @@ class Panel extends Component {
             <img src={background} alt="Image" className="img-fluid-all" />
             <div className="user-logo">
               <img src={logo} alt="Image" className="img-rounded img-logo-fluid" />
-              <h3>Catriona Henderson</h3>
+              <h3>Abhishek Bhattarai</h3>
 
             </div>
           </div>
