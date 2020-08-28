@@ -12,12 +12,13 @@ import Panel from "./components/Panel";
 
 const Routes = () => (
   <div>
-    <Route exact path="/gallery" component={Gallery} />
+
     <Route exact path="/" component={Home} />
-    <Route exact path="/clubs" component={Clubs} />
-    <Route exact path="/my-clubs" component={ContactForm} />
-    <Route exact path="/about" component={About} />
-    <Route exact path="/panel" component={Panel} />
+    <Route  path="/gallery" component={Gallery} />
+    <Route  path="/clubs" component={Clubs} />
+    <Route  path="/my-clubs" component={ContactForm} />
+    <Route  path="/about" component={About} />
+    <Route  path="/panel" component={Panel} />
 
   </div>
 );

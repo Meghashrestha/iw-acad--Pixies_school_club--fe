@@ -29,6 +29,13 @@ render(){
     <Provider store={store}>
       <Router>
       <Switch>
+      <Route path="/">
+          <Navbar />
+          <Routes />
+          {/* <Event isLoading={isLoading} items={items} /> */}
+
+          <Footer />
+        </Route>
         <Route path="/clubs/description">
           <Des />
         </Route>
@@ -50,13 +57,7 @@ render(){
          <MainBody/>
         </Route>
 
-        <Route path="/">
-          <Navbar />
-          <Routes />
-          {/* <Event isLoading={isLoading} items={items} /> */}
-
-          <Footer />
-        </Route>
+       
       </Switch>
     </Router>
     
@@ -67,3 +68,16 @@ render(){
  
 };
 export default App;
+
+
+
+// /**
+//  * /home -> home 
+//  * /login ->, login noavabar
+//  * /register ->  register nonavbar
+//  * /panel -> panel home -> /panel/* no navbar
+//  * /gallery -> gallery
+//  * /clubs - > clubs
+//  * /about
+ 
+//  */
