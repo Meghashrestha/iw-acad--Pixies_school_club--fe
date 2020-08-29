@@ -116,18 +116,15 @@ function Login(){
   const handleSubmit = (event) => {
     event.preventDefault();
     async function postMyApi(){
+      const token = ''
       try{
         let response = await postRequest('/login/',{
             username: login.username,
             password: login.password,
-
-          })
-          if (response) {
-            return { status: 200, msg: "registration completed" }
-          } else {
-            return { status: 500, msg: "error occur" }
-          }
-          // console.log(response)
+          
+          }, false)
+          token = localStorage.setItem('access_token', response.data.token )
+          console.log('token:',   token)
         }
         catch(err){
           console.log(err)
