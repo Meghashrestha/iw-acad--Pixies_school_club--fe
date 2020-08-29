@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import {getRequest, postRequest} from '../config/axios.config'
-import "../css/CreateClub.css";
+import {getRequest, postRequest} from '../../config/axios.config'
+import "../../css/CreateClub.css";
 
 function CreateClub(props){
     const [club, setClub] = useState({

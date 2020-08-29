@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import science from '../images/description/science.png';
+import science from '../../images/description/science.png';
 import { Link } from 'react-router-dom'
 
 

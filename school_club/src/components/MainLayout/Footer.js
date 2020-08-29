@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "../css/footer.css";
-import facebook from "../images/icons/001-facebook.png";
-import twitter from "../images/icons/013-twitter.png";
-import linkedin from "../images/icons/010-linkedin.png";
-import insta from "../images/icons/011-instagram.png";
-import messenger from "../images/icons/012-messenger.png";
+import "../../css/footer.css";
+import facebook from "../../images/icons/001-facebook.png";
+import twitter from "../../images/icons/013-twitter.png";
+import linkedin from "../../images/icons/010-linkedin.png";
+import insta from "../../images/icons/011-instagram.png";
+import messenger from "../../images/icons/012-messenger.png";
 import { Link } from 'react-router-dom'
 
 

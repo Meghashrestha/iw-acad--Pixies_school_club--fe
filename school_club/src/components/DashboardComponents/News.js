@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../css/News.css";
-import logo from "../images/music.png";
-import { getRequest } from "../config/axios.config";
+import "../../css/News.css";
+import logo from "../../images/music.png";
+import { getRequest } from "../../config/axios.config";
 
 function News() {
   const [articleTitle, setArticleTitle] = useState("hwasdasdasdy");

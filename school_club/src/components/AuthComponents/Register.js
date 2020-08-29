@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import {postRequest} from '../config/axios.config'
-import "../css/register.css";
+import {postRequest} from '../../config/axios.config'
+import "../../css/register.css";
 import BackArrow from "./back-arrow";
 
 function Register(){

@@ -3,20 +3,20 @@ import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Routes from "./routes";
 import "./App.css";
-import Navbar from "./components/Navigation";
-import Footer from "./components/Footer";
+import Navbar from "./components/MainLayout/Navigation";
+import Footer from "./components/MainLayout/Footer";
 import Auth from "./Auth";
 import Des from "./Des";
-import Event from "./components/Event/Event";
-import Panel from "./components/Panel";
+// import Event from "./components/Event/Event";
+import Panel from "./components/DashboardComponents/Panel";
 import PanelRouter from './components/panelrouter';
 import {Provider} from 'react-redux';
 import store from './store';
 import PrivateRoute from "./common/PrivateRoute";
 import {loadUser} from "./actions/auth";
 
-import Create from "./components/CreateClub";
-import MainBody from './components/MainBody'
+import Create from "./components/DashboardComponents/CreateClub";
+import MainBody from './components/DashboardComponents/MainBody'
 
 
 class App extends Component {

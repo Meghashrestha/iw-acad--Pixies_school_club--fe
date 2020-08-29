@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 
-import {getRequest, postRequest} from '../config/axios.config'
+import {getRequest, postRequest} from '../../config/axios.config'
 
 function Application(){
     const[application, setApplication] = useState({

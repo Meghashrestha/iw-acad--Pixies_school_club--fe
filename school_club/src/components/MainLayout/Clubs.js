@@ -1,11 +1,11 @@
 import React from 'react';
-import "../css/Club.css";
-import science  from '../images/science.png';
-import art from '../images/art.png';
-import drama from '../images/drama.png';
-import music from '../images/music.png';
-import sports from '../images/sports.png';
-import photography from '../images/photography.png';
+import "../../css/Club.css";
+import science  from '../../images/science.png';
+import art from '../../images/art.png';
+import drama from '../../images/drama.png';
+import music from '../../images/music.png';
+import sports from '../../images/sports.png';
+import photography from '../../images/photography.png';
 import { Link } from 'react-router-dom'
 
 

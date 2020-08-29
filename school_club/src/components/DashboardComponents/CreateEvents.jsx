@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest} from '../config/axios.config'
-import "../css/CreateEvent.css";
+import {postRequest, getRequest} from '../../config/axios.config'
+import "../../css/CreateEvent.css";
 
 
 function CreateEvents(){

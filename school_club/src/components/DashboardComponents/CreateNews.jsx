@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { postRequest, getRequest } from "../config/axios.config";
+import { postRequest, getRequest } from "../../config/axios.config";
 
-import "../css/CreateNews.css";
+import "../../css/CreateNews.css";
 
 function CreateNews() {
   const [articleTitle, setArticleTitle] = useState("");
