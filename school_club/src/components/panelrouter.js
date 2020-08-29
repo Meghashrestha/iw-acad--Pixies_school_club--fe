@@ -1,5 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
+
+import PrivateRoute from '../common/PrivateRoute'
 import CreateClub from './CreateClub';
 import CreateNews from './CreateNews';
 import CreateEvents from './CreateEvents';
@@ -16,14 +18,15 @@ import '../css/sub_body.css'
 const PanelRouter = () => (
     <Switch>
         <section className='comp-body'>
-        <Route exact path="/panel/create-club" component={CreateClub} />
-        <Route exact path="/panel/create-news" component={CreateNews} />
-        <Route exact path="/panel/create-events" component={CreateEvents} />
-        <Route exact path="/panel/application" component={Application} />
-        <Route exact path="/panel/news" component={News} />
+        <PrivateRoute path="/panel"/>
+        <PrivateRoute exact path="/panel/create-club" component={CreateClub}/>
+        <PrivateRoute exact path="/panel/create-news" component={CreateNews} />
+        <PrivateRoute exact path="/panel/create-events" component={CreateEvents} />
+        <PrivateRoute exact path="/panel/application" component={Application} />
+        <PrivateRoute exact path="/panel/news" component={News} />
         {/* <Route exact path="/panel/events" component={Events} /> */}
-        <Route exact path="/panel/message" component={Message} />
-        <Route exact path="/panel/logout" component={Logout} />
+        <PrivateRoute exact path="/panel/message" component={Message} />
+        <PrivateRoute exact path="/panel/logout" component={Logout} />
         </section>
     </Switch>
 );

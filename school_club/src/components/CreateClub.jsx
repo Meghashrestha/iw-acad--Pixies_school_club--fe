@@ -11,14 +11,12 @@ function CreateClub(props){
 
     const[logo, setLogo] = useState(null)
 
-    const [data, setData] = useState([])
 
     useEffect(() => {
         async function fetchMyApi() {
             try{
                 let response = await getRequest('/view-club')
                 console.log(response)
-                setData(response.data)
             }
             catch(err){
                 console.log(err)
@@ -70,11 +68,15 @@ function CreateClub(props){
         <form onSubmit={handleSubmit}>
           <div className="wrap-input">
             <span className="label-input">Club Name</span>
-            <select name='clubName' className="class_name" value={club.clubName} onChange={handleChange} placeholder="Name">
+            {/* <select name='clubName' className="class_name" value={club.clubName} onChange={handleChange} placeholder="Name">
                           {
                               data.map(opt => <option key={opt.id}>{opt.title}</option>)
                           }
-                      </select>
+                      </select> */}
+                      <input type='text'
+                      name='clubName' className="class_name" 
+                      value={club.clubName} onChange={handleChange}
+                       placeholder="Name" />
           </div>
           <div className="wrap-input">
             

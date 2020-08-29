@@ -49,19 +49,7 @@ render(){
         <Auth />
       </Route>
 
-      {/* <PrivateRoute path="/panel">
-        <Panel/>
-        <PanelRouter />
-      </PrivateRoute> */}
-
-      {/* <Route path='/panel'>
-        <Panel/>
-        <PanelRouter />
-      </Route> */}
-
-      <Route path="/panel">
-       <MainBody/>
-      </Route>
+      <PrivateRoute path="/panel" component={MainBody}/>
 
       <Route path="/">
         <Navbar />
