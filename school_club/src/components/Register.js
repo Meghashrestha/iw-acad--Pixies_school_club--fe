@@ -18,19 +18,22 @@ function Register() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    async function postMyApi() {
-      try {
-        let response = await postRequest("/add-user/", {
-          first_name: register.firstname,
-          last_name: register.lastname,
-          middle_name: register.middlename,
-          email: register.email,
-          username: register.username,
-          password: register.password,
-        });
-        console.log(response);
-      } catch (err) {
-        console.log(err.response.data);
+    async function postMyApi(){
+      try{
+        let response = await postRequest('/add-user/',{
+          
+            first_name: register.firstname,
+            last_name: register.lastname,
+            middle_name: register.middlename,
+            email: register.email,
+            username: register.username,
+            password: register.password,
+          }
+)
+          console.log(response)
+        }
+        catch(err){
+          console.log(err.response.data)
       }
     }
     postMyApi();
