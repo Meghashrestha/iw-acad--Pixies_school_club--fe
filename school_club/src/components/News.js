@@ -7,16 +7,11 @@ function News() {
   const [articleDescription, setArticleDescription] = useState("eaasdasdsdd");
   const [id, setId] = useState(1);
 
-  // const[article, setArticle] = useState({
-  //   id: '',
-  //   articleTitle: '',
-  //   articleDescription: '',
-  // })
 
   useEffect(() => {
     async function fetchMyApi(event) {
       try {
-        let response = await getRequest(`/posts/1`);
+        let response = await getRequest(`/post/`);
         // setArticle({...article, articleTitle: response.data.title})
         // console.log(article.articleTitle)
         // console.log(response.data.id)

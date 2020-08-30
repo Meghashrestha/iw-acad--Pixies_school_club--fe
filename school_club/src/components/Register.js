@@ -34,7 +34,7 @@ function Register(){
           console.log(response)
         }
         catch(err){
-          console.log(err.response.data)
+          console.log(err)
       }
     }
     postMyApi()
@@ -46,6 +46,7 @@ function Register(){
     copy[e.name] = e.value
     setRegister(copy)
    }
+
 
     return (
       <React.Fragment>
@@ -85,39 +86,6 @@ function Register(){
               onChange={handleChange}
             />
           </div>
-          {/* <div className="form-group">
-            <label >Date of Birth</label>
-            <input
-              type="text"
-              className="form-control"
-              name="Date_of_Birth"
-              onChange={this.onChange}
-              value= {dob}
-              placeholder="Date of Birth"
-            />
-          </div>
-          <div className="form-group">
-            <label >Address</label>
-            <input
-              type="text"
-              className="form-control"
-              name="Address"
-              onChange={this.onChange}
-              value= {address}
-              placeholder="Address"
-            />
-          </div>
-          <div className="form-group">
-            <label >Phone Number</label>
-            <input
-              type="number"
-              className="form-control"
-              name="Phone_Number"
-              onChange={this.onChange}
-              value= {phone}
-              placeholder="Phone Number"
-            />
-          </div> */}
           <div className="form-group">
             <label >Email address</label>
             <input
@@ -152,17 +120,6 @@ function Register(){
               onChange={handleChange}
             />
           </div>
-          {/* <div className="form-group">
-            <label >Confirm Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="InputPassword2"
-              onChange={this.onChange}
-              value= {password2}
-              placeholder="Confirm Password"
-            />
-          </div> */}
 
           <button type="submit" className="btn btn-primary">
             Register
