@@ -1,27 +1,6 @@
-body{
-    overflow: hidden;
-}
 
-form{
-    margin-top: 10px;;
-}
-
-.form-group{
-   
-    margin-top: 1%;
-    margin-left: 10%;
-    
-}
-
-button{
-    margin-left: 100px;
-}
 
 svg{
     margin-top: 10px;
 }
 
-.go-Login{
-    margin-top: 20px;
-    margin-left: 47%;
-}

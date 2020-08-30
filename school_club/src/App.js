@@ -7,7 +7,7 @@ import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import Auth from "./Auth";
 import Des from "./Des";
-import Event from "./components/Event/Event";
+// import Event from "./components/Event/Event";
 import Panel from "./components/Panel";
 import PanelRouter from './components/panelrouter';
 import {Provider} from 'react-redux';

@@ -10,8 +10,16 @@
    
 }
 
-.message-form textarea{
+.form-group textarea{
     width: 90%;
+    
+}
+
+.form-group input{
+    width: 90%;
+    border: none;
+    outline: none;
+    
 }
 
 .message-form button{
