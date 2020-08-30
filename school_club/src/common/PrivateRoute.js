@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
 
+
 const isUserAuthenticated = () => {
   const token = localStorage.getItem("access_token")
   if (token){
@@ -26,7 +27,13 @@ return(
         // } else {
         //   console.log(isUserAuthenticated())
         //     return <Component {...props} />;
+        if(isUserAuthenticated()){
+          return <Component {...props} />;
+        }
+        else{
+
         return <Redirect to="/login" />
+        }
         }
       
     }

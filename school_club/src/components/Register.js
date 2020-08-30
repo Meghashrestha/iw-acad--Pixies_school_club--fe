@@ -33,7 +33,7 @@ function Register() {
           console.log(response)
         }
         catch(err){
-          console.log(err.response.data)
+          console.log(err)
       }
     }
     postMyApi();
@@ -46,58 +46,68 @@ function Register() {
     setRegister(copy);
   };
 
-  return (
-    <React.Fragment>
-      <BackArrow />
-      <div className="container col-10 justify-content-lg-center">
-        <form className="col-lg-8 d-inline-flex" onSubmit={handleSubmit}>
-          <div className="container-fluid d-block">
-            <div className="form-group">
-              <label className="mt-5">First Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="firstname"
-                value={register.firstname}
-                placeholder="Name"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label>Last Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="lastname"
-                value={register.lastname}
-                placeholder="Name"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label>Middle Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="middlename"
-                value={register.middlename}
-                placeholder="Name"
-                onChange={handleChange}
-              />
-            </div>
 
-            <div className="form-group">
-              <label>Email address</label>
-              <input
-                type="email"
-                className="form-control mb-5"
-                name="email"
-                aria-describedby="emailHelp"
-                value={register.email}
-                placeholder="Enter email"
-                onChange={handleChange}
-              />
-            </div>
+
+    return (
+      <React.Fragment>
+        <BackArrow/>
+       
+        <form onSubmit={handleSubmit}>
+        <div className="form-group">
+            <label >First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="firstname"
+              value= {register.firstname}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="lastname"
+              value= {register.lastname}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Middle Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="middlename"
+              value= {register.middlename}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              aria-describedby="emailHelp"
+              value= {register.email}
+              placeholder="Enter email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Username</label>
+            <input
+              type="text"
+              className="form-control"
+              name="username"
+              value= {register.username}
+              placeholder="username"
+              onChange={handleChange}
+            />
           </div>
           <div className="container-fluid d-block ">
             <div className="form-group">
@@ -132,17 +142,11 @@ function Register() {
               <Link to="/login">Login</Link>
             </div>
           </div>
-          {/* <div className="form-group">
-            <label >Confirm Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="InputPassword2"
-              onChange={this.onChange}
-              value= {password2}
-              placeholder="Confirm Password"
-            />
-          </div> */}
+
+
+          <button type="submit" className="btn btn-primary">
+            Register
+          </button>
         </form>
       </div>
     </React.Fragment>
