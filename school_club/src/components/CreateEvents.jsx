@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest} from '../../config/axios.config'
-import "../../css/CreateEvent.css";
+import {postRequest, getRequest} from '../config/axios.config'
+import "../css/CreateEvent.css";
 
 
 function CreateEvents(){
@@ -36,12 +36,10 @@ function CreateEvents(){
         async function postMyApi() {    
             try{
                 let response = await postRequest('/post',{
-                    Event: {
                         event_title: event.eventTitle,
                         event_description: event.eventDescription,
                         event_date: event.eventDate,
                         all: event.all,
-                    }
                 })
             }    
             catch(err){

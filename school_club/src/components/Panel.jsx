@@ -2,9 +2,9 @@ import React from "react";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../images/default-image.png";
-import background from "../../images/dashboard-background.jpg";
-import "../../css/panel.css";
+import logo from "../images/default-image.png";
+import background from "../images/dashboard-background.jpg";
+import "../css/panel.css";
 
 // import Sidebar from './sidebar';
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import image from "../../images/hero_1.jpg";
+import image from "../images/hero_1.jpg";
 
 class About extends React.Component {
   render() {

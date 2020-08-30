@@ -1,13 +1,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Home from "./components/MainLayout/Home";
-import Clubs from "./components/MainLayout/Clubs";
-import Gallery from "./components/MainLayout/Gallery";
+import Home from "./components/Home";
+import Clubs from "./components/Clubs";
+import Gallery from "./components/Gallery";
 // import MyClubs from "./components/MyClubs";
-import About from "./components/MainLayout/About";
+import About from "./components/About";
 
-import ContactForm from "./components/DashboardComponents/ContactForm";
-import Panel from "./components/DashboardComponents/Panel";
+import ContactForm from "./components/ContactForm";
+import Panel from "./components/Panel";
 
 
 const Routes = () => (

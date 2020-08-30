@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../../images/pixies-logo.jpg';
+import logo from '../images/pixies-logo.jpg';
 
-import {getRequest} from '../../config/axios.config'
-import "../../css/gallery.css";
+import {getRequest} from '../config/axios.config'
+import "../css/gallery.css";
 
 
 

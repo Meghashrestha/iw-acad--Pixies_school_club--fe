@@ -1,8 +1,8 @@
 import React from "react";
-import image from '../../images/background1.png';
+import image from '../images/background1.png';
 
 import {Navbar, Nav} from 'react-bootstrap';
-import logo from '../../images/transparent-pixies-logo.png';
+import logo from '../images/transparent-pixies-logo.png';
 
 
 

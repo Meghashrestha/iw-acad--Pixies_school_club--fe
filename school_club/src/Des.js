@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import description from "./components/MainLayout/Club_description";
+import description from "./components/Club_description";
 
 
 
