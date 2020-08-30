@@ -1,17 +1,15 @@
-body{
-    overflow: hidden;
+
+
+input{
+    outline: none;
+    border: none;
 }
 
-form{
-    width: 22%;
-    margin-top: 12%;
-    margin-left: 37%;
-}
 
-button{
-    margin-left: 100px;
-}
 
+.btn::hover{
+    color: black;
+}
 .Go-home{
     margin-top: 20px;
     margin-left: 20px;
@@ -20,12 +18,10 @@ button{
     font-size: 20px;
 }
 
-.Register{
-    margin-top: 20px;
-    margin-left: 45%;
-}
+
 
 svg{
     margin-top: 10px;
+   
 }
 
