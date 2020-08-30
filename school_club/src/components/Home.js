@@ -1,6 +1,6 @@
 import React from "react";
 import image from '../images/background1.png';
-import News from "./News";
+
 import {Navbar, Nav} from 'react-bootstrap';
 import logo from '../images/transparent-pixies-logo.png';
 
@@ -68,7 +68,7 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <News />
+          
         </div>
       </React.Fragment>
     );

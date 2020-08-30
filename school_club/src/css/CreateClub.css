@@ -2,15 +2,15 @@
 
 header  {
   padding-top: 50px;
-    padding-bottom: 30px;
-    margin-left: 30px;
+    margin-bottom: 8px;
+    
     font-size: 35px;
     color: red;
 
 }
 
 
-.section-form {  
+.section-form form{  
   height: max-content;
   display: flex;
   flex-wrap: wrap;
@@ -19,15 +19,19 @@ header  {
   border-radius: 30px;
   width: 60%;
   background-color: white;
-  
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 
-.wrap-input {
+.section-form .wrap-input {
   position: relative;
   line-height: 2;
   border-bottom: 2px solid #ae69ee;
   padding-bottom: 1px;
   margin-bottom: 27px;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 15px;
   width: 80%;
 }
 
@@ -41,7 +45,7 @@ header  {
 
 .wrap-input input {
   display: block;
-  width: 100%;
+  width: 80%;
   background: transparent;
   font-family: Poppins-Medium;
   font-size: 18px;
@@ -50,7 +54,7 @@ header  {
 
   height: 40px;
 
-  border: none;
+  
   border: none;
   outline: none;
 }
@@ -59,7 +63,7 @@ header  {
   width: 80%;
   position: relative;
   line-height: 3;
-
+  margin-left: 20px;
   padding-bottom: 13px;
   margin-bottom: 27px;
 }
@@ -84,6 +88,7 @@ header  {
   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
   text-align: center;
   transition: all 0.2s;
+  height: fit-content;
 }
 
 .form-btn:hover {

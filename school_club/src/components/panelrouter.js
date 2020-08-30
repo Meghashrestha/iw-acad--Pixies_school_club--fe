@@ -12,8 +12,8 @@ import Gallery from './Gallery';
 import Message from './Message';
 import Logout from './Logout';
 import Switch from "react-bootstrap/esm/Switch";
-import '../css/main_body.css'
-import '../css/sub_body.css'
+import "../css/main_body.css";
+import "../css/sub_body.css";
 
 const PanelRouter = () => (
     <Switch>
