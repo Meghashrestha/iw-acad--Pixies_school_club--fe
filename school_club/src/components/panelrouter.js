@@ -18,7 +18,6 @@ import "../css/sub_body.css";
 const PanelRouter = () => (
     <Switch>
         <section className='comp-body'>
-        <PrivateRoute path="/panel"/>
         <PrivateRoute exact path="/panel/create-club" component={CreateClub}/>
         <PrivateRoute exact path="/panel/create-news" component={CreateNews} />
         <PrivateRoute exact path="/panel/create-events" component={CreateEvents} />

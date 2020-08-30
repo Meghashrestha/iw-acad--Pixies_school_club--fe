@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {connect} from 'react-redux';
 import {postRequest} from '../config/axios.config'
-import BackArrow from './back-arrow'
+
+import {setsuperAdmin} from '../actions/message'
+
 import "../css/login.css";
 
-
-
-
-function Login(){
+function Login(props){
 
   const [login, setLogin] = useState({
     username: '',
@@ -24,7 +24,8 @@ function Login(){
             password: login.password,
           
           }, false)
-          token = localStorage.setItem('access_token', response.data.token )
+          localStorage.setItem('access_token', response.data.token )
+          props.setIsSuperAdmin(true)
           console.log('token:',   token)
         }
         catch(err){
@@ -89,4 +90,12 @@ const handleChange = (event) => {
 
 }
 
-export default Login;
+// const mapStateToProps = () => ({
+
+// })
+
+const mapDispatchToProps = (dispatch) => ({
+  setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status))
+})
+
+export default connect(null, mapDispatchToProps)(Login);

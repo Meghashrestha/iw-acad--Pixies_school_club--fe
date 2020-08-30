@@ -1,10 +1,10 @@
-import { CREATE_MESSAGE} from './types';
+import { CREATE_MESSAGE, SET_IS_SUPERADMIN} from './types';
 
-//CREATE MSG
-export default createMessage = msg =>{
+
+export const setsuperAdmin = status =>{
     return {
-        type: CREATE_MESSAGE,
-        payload: msg
+        type: SET_IS_SUPERADMIN,
+        payload: status
 
     };
 };
