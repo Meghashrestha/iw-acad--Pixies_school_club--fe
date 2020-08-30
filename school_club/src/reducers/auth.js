@@ -1,10 +1,13 @@
-import { USER_LOADED, USER_LOADING, AUTH_ERROR} from '../actions/types';
+import { USER_LOADED, USER_LOADING, AUTH_ERROR, SET_IS_SUPERADMIN, SET_IS_STAFF, SET_IS_MEMBER} from '../actions/types';
 
 const initialsState ={
     token : localStorage.getItem('token'),
     isAuthenticated: null,
     isLoading: false,
-    user: null
+    user: null,
+    isSuperAdmin: false,
+    isStaff: false,
+    isMember: false,
 }
 
 export default function (state= initialsState,action) {
@@ -30,6 +33,21 @@ export default function (state= initialsState,action) {
                     isAuthenticated: false,
                     isLoading: false
                 }
+            case SET_IS_SUPERADMIN:
+                return{
+                    ...state,
+                    isSuperAdmin: action.payload
+                }    
+            case SET_IS_STAFF:
+                    return{
+                        ...state,
+                        isStaff: action.payload
+                    }    
+            case SET_IS_MEMBER:
+                        return{
+                            ...state,
+                            isMember: action.payload
+                        }    
         default: 
             return state;
     }

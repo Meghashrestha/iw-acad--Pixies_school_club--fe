@@ -2,22 +2,42 @@ import React from "react";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
+import {getRequest} from '../config/axios.config'
 import logo from "../images/default-image.png";
 import background from "../images/dashboard-background.jpg";
 import "../css/panel.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
 // import Sidebar from './sidebar';
 
-class Panel extends Component {
-  render() {
+function Panel() {
+
+  const [user, setUser] = useState([])
+  
+  useEffect(() => {
+    async function fetchMyApi() {
+        try{
+            let response = await getRequest('/view-staff/')
+            console.log(response)
+            setUser(response.data.results)
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+    fetchMyApi()
+        
+        }, [])
+
     return (
      
       <nav id="sidebar">
         <div className="custom-menu">
           <div className="img bg-wrap text-center py-4">
-            <img src={background} alt="Image" className="img-fluid-all" />
+            <img src={user.club_name} alt="Image" className="img-fluid-all" />
             <div className="user-logo">
-              <img src={logo} alt="Image" className="img-rounded img-logo-fluid" />
+              <img src={user.logo} alt="Image" className="img-rounded img-logo-fluid" />
               <h3>Catriona Henderson</h3>
 
             </div>
@@ -45,7 +65,7 @@ class Panel extends Component {
           </li>
           <li>
             <Link to="/panel/application">
-              Application <spam className="badge bg-danger">10</spam>
+              Application <span className="badge bg-danger">10</span>
             </Link> 
           </li>
           <li>
@@ -61,7 +81,7 @@ class Panel extends Component {
           </li>
           <li>
             <Link to="/panel/message">
-              Message <spam className="badge bg-danger">10</spam>
+              Message <span className="badge bg-danger">10</span>
             </Link>
           </li>
           <li>
@@ -74,6 +94,5 @@ class Panel extends Component {
      
     );
   }
-}
 
 export default Panel;

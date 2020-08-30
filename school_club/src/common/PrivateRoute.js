@@ -28,6 +28,7 @@ return(
         //   console.log(isUserAuthenticated())
         //     return <Component {...props} />;
         if(isUserAuthenticated()){
+          console.log('data')
           return <Component {...props} />;
         }
         else{

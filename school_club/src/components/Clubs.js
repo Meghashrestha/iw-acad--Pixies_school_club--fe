@@ -82,18 +82,26 @@ function Clubs(){
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
 
+    const [clubs, setClubs] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
     useEffect(() => {
         async function fetchMyApi() {
+            setIsLoading(true)
             try{
                 let response = await getRequest('/view-club/')
-                setName(response.data.club_name)
-                setDescription(response.data.description)
-                console.log('data', response.data.results[0].club_name)
-                setName(response.data.results[0].club_name)
-                setDescription(response.data.results[0].description)
+                // setName(response.data.club_name)
+                // setDescription(response.data.description)
+                // console.log('data', response.data.results[0].club_name)
+                // setName(response.data.results[0].club_name)
+                // setDescription(response.data.results[0].description)
+                console.log(response)
+                setClubs(response.data.results)
+                setIsLoading(false)
             }
             catch(err){
                 console.log(err)
+                setIsLoading(false)
             }
         }
         fetchMyApi()
@@ -111,15 +119,18 @@ function Clubs(){
                             </div>
                             </div>
                             <div class="row">
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                                <div class="package text-center bg-white">
-                                {/* <span class="img-wrap" id="science"><img src={science} alt="Image" class="img-fluid" /></span> */}
-                           <span>{description}</span>
-                                <h3 class="text-teal">{name}</h3>
-                                <p><Link to="/clubs/description" class="btn btn-info btn-custom-1 mt-4">Learn More</Link></p>
-                            </div>
-                            </div>
-                           
+                                {clubs.map(club => {
+                                    return (
+                                    <div class="col-lg-4 mb-4 mb-lg-0">
+                                    <div class="package text-center bg-white">
+                                    {/* <span class="img-wrap" id="science"><img src={science} alt="Image" class="img-fluid" /></span> */}
+                                        <span>{club.description}</span>
+                                    <h3 class="text-teal">{club.club_name}</h3>
+                                    <p><Link to="/clubs/description" class="btn btn-info btn-custom-1 mt-4">Learn More</Link></p>
+                                </div>
+                                </div>
+                                )
+                                })}
                             </div>
                         </div>
                     </div>
