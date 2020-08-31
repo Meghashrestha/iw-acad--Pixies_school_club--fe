@@ -29,9 +29,7 @@ function CreateEvents(){
         }
         postMyApi()
     }
-
     
-
     const handleChange = (event) => {
         const copy = Object.assign({}, events)
 
