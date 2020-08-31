@@ -4,7 +4,7 @@ import {postRequest, getRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
 
 
-function CreateEvents(){
+function AddStaffs(){
     const [events, setEvents] = useState({
         eventTitle: '',
         eventDescription: '',
@@ -66,4 +66,4 @@ function CreateEvents(){
 
 }
 
-export default CreateEvents;
+export default AddStaffs;
