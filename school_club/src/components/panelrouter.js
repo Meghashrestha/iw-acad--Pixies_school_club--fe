@@ -23,7 +23,7 @@ const PanelRouter = () => (
         <PrivateRoute exact path="/panel/create-events" component={CreateEvents} />
         <PrivateRoute exact path="/panel/application" component={Application} />
         <PrivateRoute exact path="/panel/news" component={News} />
-        {/* <Route exact path="/panel/events" component={Events} /> */}
+        <Route exact path="/panel/events" component={Events} />
         <PrivateRoute exact path="/panel/message" component={Message} />
         <PrivateRoute exact path="/panel/logout" component={Logout} />
         </section>

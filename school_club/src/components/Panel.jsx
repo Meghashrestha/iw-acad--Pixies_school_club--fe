@@ -15,20 +15,20 @@ function Panel() {
 
   const [user, setUser] = useState([])
   
-  useEffect(() => {
-    async function fetchMyApi() {
-        try{
-            let response = await getRequest('/view-staff/')
-            console.log(response)
-            setUser(response.data.results)
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
-    fetchMyApi()
+  // useEffect(() => {
+  //   async function fetchMyApi() {
+  //       try{
+  //           let response = await getRequest('/view-staff/')
+  //           console.log(response)
+  //           setUser(response.data.results)
+  //       }
+  //       catch(err){
+  //           console.log(err)
+  //       }
+  //   }
+  //   fetchMyApi()
         
-        }, [])
+  //       }, [])
 
     return (
      

@@ -7,31 +7,32 @@ import "../css/CreateNews.css";
 
 function CreateNews(){
 
-    const [articleTitle, setArticleTitle] = useState('')
-    const [articleDescription, setArticleDescription] = useState('')
-    const [all, setAll] = useState(false)
-
-    useEffect(() => {
-        async function fetchMyApi() {
-            try{
-                let response = await getRequest('/post')
-                console.log(response.data)
-            }
-            catch(err){
-                console.log(err)
-            }
-        }
-        fetchMyApi()
-    }, [])
+  const [article, setArticle] = useState({
+    articleTitle: '',
+    articleDescription: '',
+    all: true
+  })
+    // useEffect(() => {
+    //     async function fetchMyApi() {
+    //         try{
+    //             let response = await getRequest('/post')
+    //             console.log(response.data)
+    //         }
+    //         catch(err){
+    //             console.log(err)
+    //         }
+    //     }
+    //     fetchMyApi()
+    // }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault();
         async function postMyApi() {    
             try{
-                let response = await postRequest('/login/post-article/',{
-                        article_title: articleTitle,
-                        article_description: articleDescription,
-                        all: all
+                let response = await postRequest('/post-article/',{
+                        article_title: article.articleTitle,
+                        article_description: article.articleDescription,
+                        all: article.all
                 })
             }    
             catch(err){
@@ -42,11 +43,12 @@ function CreateNews(){
     }
 
     const handleChange = (event) => {
-        setArticleTitle(event.target.name.value)
-        setArticleDescription(event.target.name.value)
-        setAll(event.target.name.value)
-        console.log(articleTitle)
+       const copy = Object.assign({}, article)
+       const e = event.currentTarget
+       copy[e.name] = e.value
+       setArticle(copy)
     }
+
     return(
         <React.Fragment>
         <header className="text-cursive text-red d-block">Publish News</header>
@@ -57,11 +59,11 @@ function CreateNews(){
       <form className="news-create-form" onSubmit={handleSubmit}>
         <div className="news-wrap-input">
           
-        <input type='text' name={articleTitle} value={articleTitle} placeholder='Title' onChange={handleChange}></input>
+        <input type='text' name='articleTitle' value={article.articleTitle} placeholder='Title' onChange={handleChange}></input>
         </div>
         <div className="news-wrap-input">
          
-        <textarea type='text' name={articleDescription} value={articleDescription} placeholder='Write a description' onChange={handleChange}></textarea>
+        <textarea type='text' name='articleDescription' value={article.articleDescription} placeholder='Write a description' onChange={handleChange}></textarea>
         </div>
        
         <div className="news-form-btn-class">

@@ -98,17 +98,6 @@ function Register() {
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label >Username</label>
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              value= {register.username}
-              placeholder="username"
-              onChange={handleChange}
-            />
-          </div>
           <div className="container-fluid d-block ">
             <div className="form-group">
               <label className="mt-5">Username</label>
@@ -148,7 +137,6 @@ function Register() {
             Register
           </button>
         </form>
-      </div>
     </React.Fragment>
   );
 }
