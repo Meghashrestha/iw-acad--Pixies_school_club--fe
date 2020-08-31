@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {connect} from 'react-redux';
 import {postRequest} from '../config/axios.config'
 
+import BackArrow from './back-arrow'
 import {setsuperAdmin} from '../actions/message'
 
 import "../css/login.css";

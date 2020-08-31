@@ -9,14 +9,13 @@ function CreateClub(props){
         description: '',
     })
 
-    const[logo, setLogo] = useState(null)
-
+    const[logo, setLogo] = useState('hi')
 
     useEffect(() => {
         async function fetchMyApi() {
             try{
                 let response = await getRequest('/view-club')
-                console.log(response)
+                console.log(response.data)
             }
             catch(err){
                 console.log(err)
@@ -30,13 +29,13 @@ function CreateClub(props){
         event.preventDefault();
 
                 async function postMyApi() {
-                  const fd = new FormData();
-                  fd.append('image', logo, logo.name)
+                  // const fd = new FormData();
+                  // fd.append('image', logo, logo.name)
                     try{
-                        let response = await postRequest('/login/admin/add-club/',{
+                        let response = await postRequest('/add-club/',{
                                 club_name: club.clubName,
                                 description: club.description,
-                                logo: fd
+                                // logo: fd
                         })
                         
                     } 
@@ -82,10 +81,10 @@ function CreateClub(props){
             
             <textarea type='text' name='description' value={club.description} onChange={handleChange} placeholder="Give a description"></textarea>
           </div>
-          <div className="logo-div">
+          {/* <div className="logo-div">
             <span className="label-input md-col-3">Logo: </span><br/>
             <input type='file' name='logo' onChange={handleFileChange}></input>
-          </div>
+          </div> */}
 
           <div class="form-btn-class">
             <button class="form-btn" type="submit" >Create</button>
