@@ -5,9 +5,11 @@ import {getRequest, postRequest} from '../config/axios.config'
 
 function Application(){
     const[application, setApplication] = useState({
-        members: '',
-        interestedClub: '',
-        status: false
+        firstname: "",
+        lastname: "",
+        middlename: "",
+        email: "",
+        club_name: '',
     })
 
     const [data, setData] = useState([])
@@ -15,9 +17,9 @@ function Application(){
     useEffect(() => {
         async function fetchMyAPI() {
             try{
-                let response = await getRequest('/posts')
-                console.log(response.data.title)
-                setData(response.data)
+                let response = await getRequest('/view-club/')
+                console.log(response.data.results)
+                setData(response.data.results)
             }
             catch(err){
                 console.log(err)
@@ -31,13 +33,16 @@ function Application(){
         event.preventDefault();
         async function postMyApi(){
             try{
-                let response = await postRequest('/post',{
-                        user: {
-                            member: application.members,
-                            interested_club: application.interestedClub,
-                            status: application.status
-                        }
+                let response = await postRequest('member-application/',
+                {
+                            first_name: application.firstname,
+                            last_name: application.lastname,
+                            middle_name: application.middlename,
+                            email: application.email,
+                            club_name: application.club_name
+                       
                 })
+                console.log(application.firstname)
             }catch(err){
                 console.log(err)
             }
@@ -52,22 +57,64 @@ function Application(){
        const e = event.currentTarget
        copy[e.name] = e.value
        setApplication(copy) 
+       console.log(application.club_name)
     }
    
     return(
         <React.Fragment>
             <section>
                 <form onSubmit={handleSubmit}>
-                    <label>Members
-                        <input type='text' name='members' value={application.members} placeholder='Member' onChange={handleChange}/>
-                    </label>
-                        <input type='radio' name='status' value={application.status} onChange={handleChange}/>Status
-                        <select name='interestedClub'  value={application.interestedClub} onChange={handleChange}>
-                            {
-                               data.map(opt => <option key={opt.id}>{opt.title}</option>)
-                            }
-                        </select>
-                        <button type='submit'>Submit</button>
+                <div className="form-group">
+            <label >First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="firstname"
+              value= {application.firstname}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="lastname"
+              value= {application.lastname}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Middle Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="middlename"
+              value= {application.middlename}
+              placeholder="Name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label >Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              aria-describedby="emailHelp"
+              value= {application.email}
+              placeholder="Enter email"
+              onChange={handleChange}
+            />
+          </div>
+                <select name='club_name'  value={application.club_name} onChange={handleChange}>
+                    {
+                            data.map(opt => <option key={opt.id}>{opt.club_name}</option>)
+                    }
+                </select>
+                    <button type='submit'>Submit</button>
                 </form>
             </section>
         </React.Fragment>

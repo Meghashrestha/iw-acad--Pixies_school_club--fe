@@ -53,17 +53,27 @@ function Panel() {
           <li >
             <Link to="/panel/create-club">Create Club</Link>
           </li>
-
+          <li>
+            <Link to="/panel/create-events">
+              Create Events
+            </Link>
+          </li>
           <li>
             <Link to="/panel/create-news">
               Create News
             </Link>
           </li>
           <li>
-            <Link to="/panel/create-events">
-             Create Events
+            <Link to="/panel/add-staffs">
+             Add Staffs
             </Link>
           </li>
+          <li>
+            <Link to="/panel/add-members">
+             Add Members
+            </Link>
+          </li>
+         
           <li>
             <Link to="/panel/application">
               Application <span className="badge bg-danger">10</span>
@@ -74,6 +84,11 @@ function Panel() {
              
               News
             </Link>
+          </li>
+          <li>
+            <Link to="/panel/view-application">
+              View Application <span className="badge bg-danger">10</span>
+            </Link> 
           </li>
           <li>
             <Link to="/panel/events">
