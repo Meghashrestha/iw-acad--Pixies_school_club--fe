@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
-class Logout extends Component{
-    render(){
+function Logout (){
+
+    const logout = () => {
+        localStorage.clear('access_token');
+        console.log('data', localStorage.key)
+      }
+
         return(
             <div>
-                <h1>Logout</h1>
+                <button type='submit' onClick={logout}> Logout </button>
             </div>
         );
-    }
 }
 
-export default Logout
+export default Logout;

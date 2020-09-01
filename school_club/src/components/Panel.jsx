@@ -1,35 +1,27 @@
 import React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter, useHistory } from "react-router-dom";
 
-import {getRequest} from '../config/axios.config'
+import { getRequest } from "../config/axios.config";
 import logo from "../images/default-image.png";
 import background from "../images/dashboard-background.jpg";
 import "../css/panel.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-// import Sidebar from './sidebar';
-
 function Panel() {
 
-  const [user, setUser] = useState([])
-  
-  // useEffect(() => {
-  //   async function fetchMyApi() {
-  //       try{
-  //           let response = await getRequest('/view-staff/')
-  //           console.log(response)
-  //           setUser(response.data.results)
-  //       }
-  //       catch(err){
-  //           console.log(err)
-  //       }
-  //   }
-  //   fetchMyApi()
-        
-  //       }, [])
 
+  const [user, setUser] = useState([])
+
+  
+  const history = useHistory()
+
+  const logout = () => {
+    localStorage.clear();
+    history.push('/login')
+  }
+  
     return (
      
       <nav id="sidebar">
@@ -44,63 +36,64 @@ function Panel() {
             </div>
           </div>
         </div>
+      </div>
 
-        <ul className="list-unstyled components mb-5">
-        <li className="active">
+      <div className="navigation">
+        <ul className="list-unstyled pl-0 line-height-3">
+        <li className=" mr-auto text-center pt-4 pb-2 text-primary d-block d-sm-block d-md-none">
+            Abhishek Bhattarai<hr/>
+          </li>
+
+          <li className="active mr-auto text-center text-black pt-5 pb-2">
             <Link to="/"> Go To Homepage</Link>
           </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel">Dashboard</Link>
+          </li>
 
-          <li >
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-club">Create Club</Link>
           </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/create-events">Create Events</Link>
+          </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/create-news">Create News</Link>
+          </li>
+
           <li>
-            <Link to="/panel/create-events">
-              Create Events
+            <Link to="/panel/add-president">
+             Add President
             </Link>
           </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/add-members">Add Members</Link>
+          </li>
+
           <li>
-            <Link to="/panel/create-news">
-              Create News
+            <Link to="/panel/flags">
+             Flags
             </Link>
           </li>
-          <li>
-            <Link to="/panel/add-staffs">
-             Add Staffs
-            </Link>
-          </li>
-          <li>
-            <Link to="/panel/add-members">
-             Add Members
-            </Link>
-          </li>
-         
           <li>
             <Link to="/panel/application">
               Application <span className="badge bg-danger">10</span>
             </Link> 
           </li>
-          <li>
-            <Link to="/panel/news">
-             
-              News
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/news">News</Link>
+          </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/view-application">View Application</Link>
+          </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/events">Events</Link>
+          </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/message">Message</Link>
           </li>
           <li>
-            <Link to="/panel/view-application">
-              View Application <span className="badge bg-danger">10</span>
-            </Link> 
-          </li>
-          <li>
-            <Link to="/panel/events">
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link to="/panel/message">
-              Message <span className="badge bg-danger">10</span>
-            </Link>
-          </li>
-          <li>
+
             <Link to="/panel/upload-gallery">
               Upload Gallery <span className="badge bg-danger">10</span>
             </Link> 
@@ -109,11 +102,15 @@ function Panel() {
             <Link to="/panel/logout">
               Logout
             </Link>
+
+            <button onClick={logout}>Logout</button>
+
+
           </li>
         </ul>
-      </nav>
-     
-    );
-  }
+      </div>
+    </nav>
+  );
+}
 
-export default Panel;
+export default withRouter(Panel);

@@ -8,113 +8,14 @@ header {
   
 }
 
-.news-section-form form{
-  display: flex;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+form{  
+  padding-left: 40%;
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
   border-radius: 30px;
+  
   background-color: white;
-  width: 80%;
-  margin: 0;
-}
-
-
-.news-wrap-input {
-  width: 80%;
-  position: relative;
-  line-height: 5;
-  border-bottom: 2px solid #ae69ee;
-  padding-top: 20px;
-  padding-bottom: 13px;
-  margin-bottom: 27px;
- margin-left: 30px;
- 
-}
-
-.news-label-input {
-  margin-top: 15px;
-  font-family: "Indie Flower", cursive;
-  font-size: 16px;
-  color: #666666;
-  line-height: 1.5;
-  padding-left: 5px;
-}
-
-.news-wrap-input input {
-  display: block;
-  width: 100%;
-  background: transparent;
-  font-family: Poppins-Medium;
-  font-size: 18px;
-  color: #333333;
-  line-height: 1.2;
-  padding: 0 10px;
-  height: 40px;
-  
-  border: none;
-  border: none;
-  outline: none;
-}
-
-.news-logo-div select {
-    border-radius: 2px;
-	color: #666;
-	
-	margin-top:1rem;
-	max-width: 300px;
-    margin-left: 10px;
-    margin-bottom:20px;
-    padding-bottom:3px;
-    height: 30px;
-    width: 40%;
-    
-    
-	position: relative;
-	
-	z-index: 1;
-}
-
-
-.news-form-btn-class{
-  margin-left:40% ;
-}
-
-.news-form-btn {
-  
-  margin-left: 10%;
-  display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 6em 3em 2em 1em;
-  border: 0.16em solid rgba(255, 255, 255, 0);
-  border-radius: 2em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  background-color: rgb(170, 31, 170);
-  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-  text-align: center;
-  transition: all 0.2s;
-}
-
-.news-form-btn:hover{
-  background-color:rgb(255, 4, 255);
-  color: rgb(0, 0, 0);
-  transform: scale(1.2);
-}
-
-.news-wrap-input textarea{
-  font-family: Poppins-Medium;
-  border: none;
-  min-height: 110px;
-  width: 100%;
-  padding-top: 9px;
-  padding-bottom: 1px;
-  outline: none;
-  font: 32px;
   
 }

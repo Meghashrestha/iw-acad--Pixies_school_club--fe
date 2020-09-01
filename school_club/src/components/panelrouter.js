@@ -17,23 +17,32 @@ import "../css/main_body.css";
 import "../css/sub_body.css";
 import AddStaffs from "./AddStaffs";
 import uploadGallery from "./UploadGallery";
+
+import AddPresident from "./AddPresident";
 import AddMembers from './AddMembers'
+import Flags from './Flags'
+
+
 
 const PanelRouter = () => (
+    
     <Switch>
         <section className='comp-body'>
         <PrivateRoute exact path="/panel/create-club" component={CreateClub}/>
         <PrivateRoute exact path="/panel/create-news" component={CreateNews} />
         <PrivateRoute exact path="/panel/create-events" component={CreateEvents} />
-        <PrivateRoute exact path="/panel/add-staffs" component={AddStaffs} />
+        <PrivateRoute exact path="/panel/add-president" component={AddPresident} />
         <PrivateRoute exact path="/panel/add-members" component={AddMembers} />
+        <PrivateRoute exact path="/panel/flags" component={Flags} />
         <PrivateRoute exact path="/panel/application" component={Application} />
         <PrivateRoute exact path="/panel/news" component={News} />
         <PrivateRoute Route exact path="/panel/events" component={Events} />
         <PrivateRoute Route exact path="/panel/view-application" component={ViewApplication} />
         <PrivateRoute exact path="/panel/message" component={Message} />
+
         <PrivateRoute exact path="/panel/logout" component={Logout} />
         <PrivateRoute exact path="/panel/upload-gallery" component={uploadGallery} />
+
 
         </section>
     </Switch>

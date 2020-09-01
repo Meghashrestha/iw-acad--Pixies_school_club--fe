@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , withRouter, useHistory} from "react-router-dom";
 
 import { postRequest } from "../config/axios.config";
 import "../css/register.css";
 import BackArrow from "./back-arrow";
 
 function Register() {
+  const history = useHistory()
   const [register, setRegister] = useState({
     firstname: "",
     lastname: "",
@@ -29,7 +30,9 @@ function Register() {
             username: register.username,
             password: register.password,
           }
-)
+
+          )
+          history.push('/login')
           console.log(response)
         }
         catch(err){
@@ -51,13 +54,14 @@ function Register() {
     return (
       <React.Fragment>
         <BackArrow/>
-       
-        <form onSubmit={handleSubmit}>
-        <div className="form-group">
+       <div className="container col-xs-12">
+        <form className="d-xl-flex d-lg-flex d-md-block d-sm-block d-xs-block col-10 col-xl-10 col-md-12 col-sm-12 col-xs-12" onSubmit={handleSubmit}>
+          <div className="col-xl-6 col-lg-6 d-md-10 d-sm-12 d-xs-12">
+        <div className="form-group ">
             <label >First Name</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control col-xs-12"
               name="firstname"
               value= {register.firstname}
               placeholder="Name"
@@ -68,7 +72,7 @@ function Register() {
             <label >Last Name</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control col-xs-12"
               name="lastname"
               value= {register.lastname}
               placeholder="Name"
@@ -90,7 +94,7 @@ function Register() {
             <label >Email address</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control mb-5"
               name="email"
               aria-describedby="emailHelp"
               value= {register.email}
@@ -98,7 +102,9 @@ function Register() {
               onChange={handleChange}
             />
           </div>
-          <div className="container-fluid d-block ">
+          </div>
+          
+          <div className="col-xl-6 col-lg-6 d-md-10 d-sm-12 d-xs-12">
             <div className="form-group">
               <label className="mt-5">Username</label>
               <input
@@ -127,18 +133,17 @@ function Register() {
             >
               Register
             </button>
-            <div className="col ml-5 mt-3 text-left">
+            <div className="col mt-3 text-left">
               <Link to="/login">Login</Link>
             </div>
           </div>
 
 
-          <button type="submit" className="btn btn-primary">
-            Register
-          </button>
+         
         </form>
+        </div>
     </React.Fragment>
   );
 }
 
-export default Register;
+export default withRouter(Register) ;

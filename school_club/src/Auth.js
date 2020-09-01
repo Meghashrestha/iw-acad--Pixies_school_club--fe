@@ -8,7 +8,7 @@ const Auth = () => (
   <div>
     <Route exact path="/login" component={Login} />
     <Route exact path="/login/register" component={Register} />
-      </div>
+   </div>
 );
 
 export default Auth;
