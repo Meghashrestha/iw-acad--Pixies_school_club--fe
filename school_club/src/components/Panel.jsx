@@ -93,7 +93,18 @@ function Panel() {
             <Link to="/panel/message">Message</Link>
           </li>
           <li>
+
+            <Link to="/panel/upload-gallery">
+              Upload Gallery <span className="badge bg-danger">10</span>
+            </Link> 
+          </li>
+          <li>
+            <Link to="/panel/logout">
+              Logout
+            </Link>
+
             <button onClick={logout}>Logout</button>
+
 
           </li>
         </ul>

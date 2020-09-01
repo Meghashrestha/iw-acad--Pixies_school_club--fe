@@ -15,6 +15,9 @@ import Logout from './Logout';
 import Switch from "react-bootstrap/esm/Switch";
 import "../css/main_body.css";
 import "../css/sub_body.css";
+import AddStaffs from "./AddStaffs";
+import uploadGallery from "./UploadGallery";
+
 import AddPresident from "./AddPresident";
 import AddMembers from './AddMembers'
 import Flags from './Flags'
@@ -36,6 +39,11 @@ const PanelRouter = () => (
         <PrivateRoute Route exact path="/panel/events" component={Events} />
         <PrivateRoute Route exact path="/panel/view-application" component={ViewApplication} />
         <PrivateRoute exact path="/panel/message" component={Message} />
+
+        <PrivateRoute exact path="/panel/logout" component={Logout} />
+        <PrivateRoute exact path="/panel/upload-gallery" component={uploadGallery} />
+
+
         </section>
     </Switch>
 );
