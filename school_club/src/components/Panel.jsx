@@ -1,13 +1,10 @@
 import React from "react";
-import { Component } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 
-import { getRequest } from "../config/axios.config";
 import logo from "../images/default-image.png";
 import background from "../images/dashboard-background.jpg";
 import "../css/panel.css";
 import { useState } from "react";
-import { useEffect } from "react";
 
 function Panel() {
 

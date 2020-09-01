@@ -158,11 +158,6 @@ console.log(login)
     </React.Fragment>
   );
 }
-
-// const mapStateToProps = () => ({
-
-// })
-
 const mapDispatchToProps = (dispatch) => ({
   setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status)),
 });

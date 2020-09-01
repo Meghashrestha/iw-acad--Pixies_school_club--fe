@@ -12,19 +12,7 @@ function CreateNews(){
     articleDescription: '',
     all: true
   })
-    // useEffect(() => {
-    //     async function fetchMyApi() {
-    //         try{
-    //             let response = await getRequest('/post')
-    //             console.log(response.data)
-    //         }
-    //         catch(err){
-    //             console.log(err)
-    //         }
-    //     }
-    //     fetchMyApi()
-    // }, [])
-
+  
     const handleSubmit = (event) => {
         event.preventDefault();
         async function postMyApi() {    
