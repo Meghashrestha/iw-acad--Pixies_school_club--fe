@@ -44,20 +44,20 @@ function CreateEvents(){
     return(
             <div className="container">
                 <header className="text-left text-lg h2 text-cursive text-red">Events</header>
-                <form  className="col-md-8" onSubmit={handleSubmit}>
-                    <div className="form-group">
+                <form  className="col-xl-10 col-lg-12 col-md-12 col-sm-12 pl-sm-0 col-12 px-0" onSubmit={handleSubmit}>
+                    <div className="form-group pt-3 pl-1 pl-xl-4 pl-lg-4 pl-md-3 pl-sm-1">
                     <label>Event Title:</label>
-                        <input type='text' className="form-control" name='eventTitle' value={events.eventTitle} placeholder='Title' onChange={handleChange}></input>
+                        <input type='text' className="form-control w-100" name='eventTitle' value={events.eventTitle} placeholder='Title' onChange={handleChange}></input>
                         </div>
-                        <div className="form-group">
+                        <div className="form-group  pt-3 pl-1 pl-xl-4 pl-lg-4 pl-md-3 pl-sm-1">
                     
-                        <textarea name='eventDescription' className="form-control" value={events.eventDescription} placeholder='Write a description' onChange={handleChange}></textarea>
+                        <textarea name='eventDescription' className="form-control  w-100" value={events.eventDescription} placeholder='Write a description' onChange={handleChange}></textarea>
                     </div>
-                    <div className="form-group">
-                    <input className="event-date" name='eventDate' type='date' value={events.eventDate}  onChange={handleChange}></input>
+                    <div className="form-group  pt-3 pl-1 pl-xl-4 pl-lg-4 pl-md-3 pl-sm-1">
+                    <input className="event-date  w-50 pb-3" name='eventDate' type='date' value={events.eventDate}  onChange={handleChange}></input>
                     </div>
-                    <div className="form-group">
-                    <button className="btn btn-success btn-lg" type='submit'>Submit</button>
+                    <div className="form-group  pt-3 pl-1 pl-xl-4 pl-lg-4 pl-md-3 pl-sm-1">
+                    <button className="btn btn-success btn-lg mt-3 mb-4 " type='submit'>Submit</button>
                     </div>
                     
                 </form>

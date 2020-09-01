@@ -27,16 +27,7 @@ class App extends Component {
     store.dispatch(loadUser());
   }
 
-  // /**
-//  * /home -> home 
-//  * /login ->, login noavabar
-//  * /register ->  register nonavbar
-//  * /panel -> panel home -> /panel/* no navbar
-//  * /gallery -> gallery
-//  * /clubs - > clubs
-//  * /about
  
-//  */
 render(){
   return (
     <Provider store={store}>
