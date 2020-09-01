@@ -30,7 +30,7 @@ function UploadGallery() {
         <input type="file" onChange={(evt) => setImage(evt.target.files[0])}/>
       </label>
       <br/>
-      <button onClick={() => UploadGallery()}>New Book</button>
+      <button onClick={() => UploadGallery()}>Upload</button>
     </div>
   );
 }
