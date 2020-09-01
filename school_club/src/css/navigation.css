@@ -3,11 +3,12 @@
 
 
 .menu-wrap{
-    height: 7vh;
+    height: 8vh;
     border-radius:40px;
-    padding-top:12px ;
+    
    
 }
+
 
 .site-menu li:hover{
     transform: scale(1.2);
@@ -16,6 +17,7 @@
 
 .site-menu{
     font-family: 'Cormorant Garamond', serif;
+ 
 }
 
 .text-red{
@@ -23,3 +25,28 @@
     font-size:22px;
     font-weight: bold;
 }
+
+@media(max-width:991px){
+    
+.menu-wrap{
+    height: 7vh;
+    padding-bottom: 20px; 
+    
+}
+}
+
+@media(max-width:650px){
+    
+    .menu-wrap{
+        height: 7vh;
+       
+        display: flex;
+        flex-wrap: wrap;
+
+        
+        
+
+    }
+    
+    
+    }

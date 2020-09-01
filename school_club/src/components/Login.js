@@ -1,94 +1,98 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux';
-import {postRequest} from '../config/axios.config'
+import { connect } from "react-redux";
+import { postRequest } from "../config/axios.config";
 
-import BackArrow from './back-arrow'
-import {setsuperAdmin} from '../actions/message'
+import BackArrow from "./back-arrow";
+import { setsuperAdmin } from "../actions/message";
 
 import "../css/login.css";
 
-function Login(props){
-
+function Login(props) {
   const [login, setLogin] = useState({
-    username: '',
-    password: ''
-  })
+    username: "",
+    password: "",
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    async function postMyApi(){
-      const token = ''
-      try{
-        let response = await postRequest('/login/',{
+    async function postMyApi() {
+      const token = "";
+      try {
+        let response = await postRequest(
+          "/login/",
+          {
             username: login.username,
             password: login.password,
-          
-          }, false)
-          localStorage.setItem('access_token', response.data.token )
-          props.setIsSuperAdmin(true)
-          console.log('token:',   token)
-        }
-        catch(err){
-          console.log(err)
+          },
+          false
+        );
+        localStorage.setItem("access_token", response.data.token);
+        props.setIsSuperAdmin(true);
+        console.log("token:", token);
+      } catch (err) {
+        console.log(err);
       }
     }
-    postMyApi()
-  }
+    postMyApi();
+  };
 
-const handleChange = (event) => {
-  const copy = Object.assign({}, login)
-  const e = event.currentTarget
-  copy[e.name] = e.value
-  setLogin(copy)
-}
-
+  const handleChange = (event) => {
+    const copy = Object.assign({}, login);
+    const e = event.currentTarget;
+    copy[e.name] = e.value;
+    setLogin(copy);
+  };
 
   return (
     <React.Fragment>
-      <BackArrow/>
-      <div class="container col-3">
-      <form className="col-12 mt-5"onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="mt-4">Username</label>
-          <input
-            type="text"
-            name='username'
-            value={login.username}
-            className="form-control w-100"
-            id="InputEmail"
-            aria-describedby="emailHelp"
-            placeholder="Enter username"
-            onChange={handleChange}
-          />
+      <BackArrow />
+      <div class="container ">
+        <div className="row">
+          <div className="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-1"></div>
+          <form className="d-block col-xl-4 col-lg-5 col-md-8 col-sm-8 col-xs-8" onSubmit={handleSubmit}>
+            <div className="form-group ">
+              <label className="mt-4">Username</label>
+              <input
+                type="text"
+                name="username"
+                value={login.username}
+                className="form-control w-100"
+                id="InputEmail"
+                aria-describedby="emailHelp"
+                placeholder="Enter username"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group ">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                value={login.password}
+                className="form-control w-100"
+                id="InputPassword"
+                placeholder="Enter Password"
+                onChange={handleChange}
+              />
+            </div>
+            <div class="col text-center">
+              <button
+                type="submit"
+                className="btn btn-primary text-center mt-3 mb-4"
+              >
+                Login
+              </button>
+            </div>
+          </form>
         </div>
-        <div className="form-group">
-          <label >Password</label>
-          <input
-            type="password"
-            name='password'
-            value={login.password}
-            className="form-control w-100"
-            id="InputPassword"
-            placeholder="Enter Password"
-            onChange={handleChange}
-          />
-        </div>
-        <div class="col text-center">
-        <button type="submit" className="btn btn-primary text-center mt-3 mb-4">
-          Login
-        </button>
-        </div>
-      </form>
 
-      <div className="col text-center mt-4">
-        <Link to="/login/register">Register</Link>
+        <div className="col text-center mt-2">
+          <Link to="/login/register">Register</Link>
+        </div>
       </div>
-      </div>
-      
     </React.Fragment>
   );
-
 }
 
 // const mapStateToProps = () => ({
@@ -96,7 +100,7 @@ const handleChange = (event) => {
 // })
 
 const mapDispatchToProps = (dispatch) => ({
-  setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status))
-})
+  setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status)),
+});
 
 export default connect(null, mapDispatchToProps)(Login);

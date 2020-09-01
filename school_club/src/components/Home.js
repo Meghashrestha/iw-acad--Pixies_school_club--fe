@@ -15,7 +15,7 @@ class Home extends React.Component {
           <div className="site-section-cover overlay">
             <div className="container">
               <div className="row align-items-center ">
-                <div className="col-md-5 mt-5 pt-5">
+                <div className="col-md-5 col-sm-8 col-xs-12 mt-5 pt-5">
                   <span className="text-cursive h2 text-red">Welcome To Pixies</span>
                   <h1 className="mb-3 font-weight-bold text-teal">The School Club</h1>
                   <p>Amazing Place for your creativity.</p>
@@ -39,7 +39,7 @@ class Home extends React.Component {
               <h2 className="text-white h2">OUR CLUBS</h2>
             </div>
             <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-4 mb-md-2 mb-sm-2 mb-2">
                 <div className="block-2 red">
                   <h2> All Games</h2>
                   <p>
@@ -48,7 +48,7 @@ class Home extends React.Component {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-4 mb-md-2 mb-sm-2 mb-2">
                 <div className="block-2 yellow">
                   <h2>Exhibition</h2>
                   <p>
@@ -57,7 +57,7 @@ class Home extends React.Component {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-4 mb-md-2 mb-sm-2 mb-2">
                 <div className="block-2 teal">
                   <h2>Science Clubs</h2>
                   <p>
