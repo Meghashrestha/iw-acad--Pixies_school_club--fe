@@ -1,24 +1,23 @@
+
 import React, { useState, useEffect } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 import {connect} from 'react-redux';
-import {postRequest, getRequest} from '../config/axios.config'
+import {postRequest, getRequest} from '../config/axios.config'st } from "../config/axios.config";
 
-import BackArrow from './back-arrow'
-import {setsuperAdmin} from '../actions/message'
+
+import BackArrow from "./back-arrow";
+import { setsuperAdmin } from "../actions/message";
 
 import "../css/login.css";
 
-function Login(props){
-
+function Login(props) {
   const [login, setLogin] = useState({
+
     username: '',
     password: '',
     usernameError: '',
     passwordError: '',
   })
-  
-  const token = localStorage.getItem('access_token')
-
   let history = useHistory()
 
   const [check, setCheck] = useState([])
@@ -152,14 +151,12 @@ console.log(login)
         </div>
       </form>
 
-      <div className="col text-center mt-4">
-        <Link to="/login/register">Register</Link>
+        <div className="col text-center mt-2">
+          <Link to="/login/register">Register</Link>
+        </div>
       </div>
-      </div>
-      
     </React.Fragment>
   );
-
 }
 
 // const mapStateToProps = () => ({
@@ -167,7 +164,7 @@ console.log(login)
 // })
 
 const mapDispatchToProps = (dispatch) => ({
-  setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status))
-})
+  setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status)),
+});
 
 export default connect(null, mapDispatchToProps)(withRouter(Login));

@@ -1,18 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Adamina&family=Old+Standard+TT&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Adamina&family=Cormorant&family=Old+Standard+TT&display=swap");
 
-
-#sidebar {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  height: 100vh;
-  width: 20%;
-  background: #32373d;
-  color: #fff;
-  position: relative;
+.img p {
+  font-family: "Adamina", serif;
+  font-family: "Old Standard TT", serif;
+  color: black;
+  bottom: 0;
+  font-size: 0.8em;
 }
 
-#sidebar ul li a {
+.img-fluid-bg {
+  opacity: 0.6;
+}
+
+.img-logo {
+  margin-left: 26%;
+  padding-bottom: 12px;
+}
+
+#sidebar {
+  margin-left: 0;
+  margin-right: 0;
+  background: #f7dcd8;
+  color: #fff;
+  height: max-content;
+
+}
+
+ .nav-item{
+  font-family: "Adamina", serif;
+  font-family: "Cormorant", serif;
+  font-family: "Old Standard TT", serif;
+  font-size: 16px;
+  text-decoration: none;
+  
+}
+
+li a{
+  color: rgb(78, 77, 134);
+}
+li a::hover{
+  font-size: 18px;
+}
+
+
+.navigation li::hover {
+  background-color: green;
+
+}
+
+
+/* #sidebar ul li a {
   padding: 10px 30px;
   padding-left: 100px;
   display: block;
@@ -77,4 +115,4 @@
 .right_main {
   width: 80%;
   height: 100vh;
-}
+} */

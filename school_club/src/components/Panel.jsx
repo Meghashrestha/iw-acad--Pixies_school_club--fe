@@ -2,16 +2,15 @@ import React from "react";
 import { Component } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 
-import {getRequest} from '../config/axios.config'
+import { getRequest } from "../config/axios.config";
 import logo from "../images/default-image.png";
 import background from "../images/dashboard-background.jpg";
 import "../css/panel.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-// import Sidebar from './sidebar';
-
 function Panel() {
+
 
   const [user, setUser] = useState([])
 
@@ -37,35 +36,40 @@ function Panel() {
             </div>
           </div>
         </div>
+      </div>
 
-        <ul className="list-unstyled components mb-5">
-        <li className="active">
+      <div className="navigation">
+        <ul className="list-unstyled pl-0 line-height-3">
+        <li className=" mr-auto text-center pt-4 pb-2 text-primary d-block d-sm-block d-md-none">
+            Abhishek Bhattarai<hr/>
+          </li>
+
+          <li className="active mr-auto text-center text-black pt-5 pb-2">
             <Link to="/"> Go To Homepage</Link>
           </li>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel">Dashboard</Link>
+          </li>
 
-          <li >
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-club">Create Club</Link>
           </li>
-          <li>
-            <Link to="/panel/create-events">
-              Create Events
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/create-events">Create Events</Link>
           </li>
-          <li>
-            <Link to="/panel/create-news">
-              Create News
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/create-news">Create News</Link>
           </li>
+
           <li>
             <Link to="/panel/add-president">
              Add President
             </Link>
           </li>
-          <li>
-            <Link to="/panel/add-members">
-             Add Members
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/add-members">Add Members</Link>
           </li>
+
           <li>
             <Link to="/panel/flags">
              Flags
@@ -76,34 +80,26 @@ function Panel() {
               Application <span className="badge bg-danger">10</span>
             </Link> 
           </li>
-          <li>
-            <Link to="/panel/news">
-             
-              News
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/news">News</Link>
           </li>
-          <li>
-            <Link to="/panel/view-application">
-              View Application <span className="badge bg-danger">10</span>
-            </Link> 
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/view-application">View Application</Link>
           </li>
-          <li>
-            <Link to="/panel/events">
-              Events
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/events">Events</Link>
           </li>
-          <li>
-            <Link to="/panel/message">
-              Message <span className="badge bg-danger">10</span>
-            </Link>
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/message">Message</Link>
           </li>
           <li>
             <button onClick={logout}>Logout</button>
+
           </li>
         </ul>
-      </nav>
-     
-    );
-  }
+      </div>
+    </nav>
+  );
+}
 
 export default withRouter(Panel);
