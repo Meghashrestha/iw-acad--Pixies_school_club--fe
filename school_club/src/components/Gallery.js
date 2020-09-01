@@ -1,49 +1,53 @@
-import React, { Component } from 'react';
-import logo from '../images/pixies-logo.jpg';
-
-import {getRequest} from '../config/axios.config'
+import React, { useState, useEffect } from "react";
 import "../css/gallery.css";
+import logo from "../images/music.png";
+import { getRequest } from "../config/axios.config";
 
+function Gallery() {
+  const [image, setImage] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
-
-
-
-class Gallery extends Component {
-    constructor(props) {
-        super(props);
-        this.state ={activeTab: 0};
-
+  useEffect(() => {
+    async function fetchMyApi(event) {
+      try {
+        let response = await getRequest(`/gallery/`);
+        console.log(response.data.results)
+        setImage(response.data.results)
+        setIsLoading(false)
+      } catch (err) {
+        console.log(err);
+        setIsLoading(false)
+      }
     }
-    toggleCategories(){
-        if(this.state.activeTab === 0){
-            return (
-                <div><h1>This is react</h1></div>
-            )
+    fetchMyApi();
+  }, []);
+
+  return (
+    <React.Fragment>
+ 
+      
+
+          {image.map(images => {
+            return(
+              <div class="responsive">
+                <div class="gallery">
+
+                  <img
+                    src= {images.image}
+                    alt="hh"
+                  />
             
-        }
-    }
-    render() {
-        return(
-            <div className="site-section">
-            <div className="container">
-              <div className="row mb-5">
-                <div className="col-12 text-center">
-                  <span className="text-cursive h1 text-red d-block">Our Gallery</span>
-                  <h2 className="text-black">School Clubs events</h2>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-3 mb-4">
-                  <img src={logo} alt="Image" className="img-fluid"/>
-                </div>
-               
-                
-               
-              </div>
             </div>
-          </div>
-        )
-    }
+      </div>
+      
+            )
+          })}
+         
+
+      
+      
+    </React.Fragment>
+  );
 }
 
 export default Gallery;

@@ -17,7 +17,7 @@ import {loadUser} from "./actions/auth";
 
 import Create from "./components/CreateClub";
 import MainBody from './components/MainBody'
-
+import UploadGallery from './components/UploadGallery'
 import Login from './components/Login';
 import Register from './components/Register';
 
@@ -55,7 +55,7 @@ render(){
         <Navbar />
         <Routes />
         {/* <Event isLoading={isLoading} items={items} /> */}
-
+        <UploadGallery />
         <Footer />
       </Route>
     </Switch>
