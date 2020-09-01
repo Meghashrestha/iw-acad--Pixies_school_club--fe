@@ -20,6 +20,7 @@ function Application(){
                 let response = await getRequest('/view-club/')
                 console.log(response.data.results)
                 setData(response.data.results)
+                console.log('test', data)
             }
             catch(err){
                 console.log(err)

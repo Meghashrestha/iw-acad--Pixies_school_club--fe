@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , withRouter, useHistory} from "react-router-dom";
 
 import { postRequest } from "../config/axios.config";
 import "../css/register.css";
 import BackArrow from "./back-arrow";
 
 function Register() {
+  const history = useHistory()
   const [register, setRegister] = useState({
     firstname: "",
     lastname: "",
@@ -29,7 +30,9 @@ function Register() {
             username: register.username,
             password: register.password,
           }
-)
+
+          )
+          history.push('/login')
           console.log(response)
         }
         catch(err){
@@ -143,4 +146,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default withRouter(Register) ;

@@ -27,7 +27,6 @@ class App extends Component {
     store.dispatch(loadUser());
   }
 
- 
 render(){
   return (
     <Provider store={store}>
@@ -45,8 +44,6 @@ render(){
       <Route path="/">
         <Navbar />
         <Routes />
-        {/* <Event isLoading={isLoading} items={items} /> */}
-
         <Footer />
       </Route>
     </Switch>

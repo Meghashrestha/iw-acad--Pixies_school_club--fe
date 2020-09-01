@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter, useHistory } from "react-router-dom";
 
 import { getRequest } from "../config/axios.config";
 import logo from "../images/default-image.png";
@@ -10,29 +10,30 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function Panel() {
-  const [user, setUser] = useState([]);
-  return (
-    <nav id="sidebar" className="pl-0 pr-0 float-left">
-      <div className="navbar-brand col-12 pl-0 pr-0 pt-0 pr-0 d-block">
-        <div className="img position-relative">
-          <img
-            src={background}
-            alt="Image"
-            className="img-fluid-bg w-100 ml-0"
-          />
-          <div className="d-flex">
-            <img
-              src={logo}
-              alt=""
-              className="img-logo rounded-circle card-img-overlay h-60 w-50  d-none d-sm-none d-md-block"
-            ></img>
-            <img
-              src={logo}
-              alt=""
-              className="img-logo img-thumbnail card-img-overlay h-100 w-100 pl-0 ml-0 bg-dark d-block d-sm-block d-md-none"
-            ></img>
-            <p className="text-uppercase pl-5 text-xl-center position-absolute d-none d-sm-none d-md-block">Abhishek Bhattarai</p>
-            
+
+
+  const [user, setUser] = useState([])
+
+  
+  const history = useHistory()
+
+  const logout = () => {
+    localStorage.clear();
+    history.push('/login')
+  }
+  
+    return (
+     
+      <nav id="sidebar">
+        <div className="custom-menu">
+          <div className="img bg-wrap text-center py-4">
+            <img src={user.club_name} alt="Image" className="img-fluid-all" />
+            <div className="user-logo">
+              <img src={logo} alt="Image" className="img-rounded img-logo-fluid" />
+              <h3>Abhishek Bhattarai</h3>
+
+
+            </div>
           </div>
         </div>
       </div>
@@ -59,15 +60,25 @@ function Panel() {
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-news">Create News</Link>
           </li>
-          <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/add-staffs">Add Staffs</Link>
+
+          <li>
+            <Link to="/panel/add-president">
+             Add President
+            </Link>
           </li>
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/add-members">Add Members</Link>
           </li>
 
-          <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/application">Application</Link>
+          <li>
+            <Link to="/panel/flags">
+             Flags
+            </Link>
+          </li>
+          <li>
+            <Link to="/panel/application">
+              Application <span className="badge bg-danger">10</span>
+            </Link> 
           </li>
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/news">News</Link>
@@ -81,8 +92,9 @@ function Panel() {
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/message">Message</Link>
           </li>
-          <li className="nav-item  mr-auto text-center pt-2 pb-5">
-            <Link to="/panel/logout">Logout</Link>
+          <li>
+            <button onClick={logout}>Logout</button>
+
           </li>
         </ul>
       </div>
@@ -90,4 +102,4 @@ function Panel() {
   );
 }
 
-export default Panel;
+export default withRouter(Panel);
