@@ -161,11 +161,6 @@ console.log(login)
   );
 
 }
-
-// const mapStateToProps = () => ({
-
-// })
-
 const mapDispatchToProps = (dispatch) => ({
   setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status))
 })
