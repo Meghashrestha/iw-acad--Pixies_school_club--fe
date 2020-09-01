@@ -7,7 +7,7 @@ section .section-news{
     
     min-width: 55rem;
     max-width: 55rem;
-    height: 50vh;
+    height:max-content;
     
     box-shadow: 0 1.4rem 3rem rgba(0,0,0,.2);
     

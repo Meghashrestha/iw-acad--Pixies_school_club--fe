@@ -17,7 +17,6 @@ import {loadUser} from "./actions/auth";
 
 import Create from "./components/CreateClub";
 import MainBody from './components/MainBody'
-
 import Login from './components/Login';
 import Register from './components/Register';
 
@@ -27,7 +26,6 @@ class App extends Component {
     store.dispatch(loadUser());
   }
 
-  
 render(){
   return (
     <Provider store={store}>
@@ -45,6 +43,7 @@ render(){
       <Route path="/">
         <Navbar />
         <Routes />
+
         <Footer />
       </Route>
     </Switch>
