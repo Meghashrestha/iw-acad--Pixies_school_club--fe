@@ -133,7 +133,7 @@ function Register() {
             >
               Register
             </button>
-            <div className="col mt-3 text-left">
+            <div className="col mt-3 text-left ml-5">
               <Link to="/login">Login</Link>
             </div>
           </div>

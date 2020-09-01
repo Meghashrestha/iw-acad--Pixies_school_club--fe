@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 import {connect} from 'react-redux';
-import {postRequest, getRequest} from '../config/axios.config'st } from "../config/axios.config";
-
+import {postRequest, getRequest} from '../config/axios.config';
 
 import BackArrow from "./back-arrow";
 import { setsuperAdmin } from "../actions/message";
@@ -18,6 +17,8 @@ function Login(props) {
     usernameError: '',
     passwordError: '',
   })
+
+  const token = localStorage.getItem('access_token')
   let history = useHistory()
 
   const [check, setCheck] = useState([])
@@ -81,7 +82,7 @@ function Login(props) {
             }, false)
             localStorage.setItem('access_token', response.data.token )
             props.setIsSuperAdmin(true)
-            history.push('/')
+            history.push('/panel/')
           }
           catch(err){
             if(err.response.status == 400){
@@ -112,51 +113,56 @@ console.log(login)
 
   return (
     <React.Fragment>
-      <BackArrow/>
-      <div class="container col-3">
-      <form className="col-12 mt-5"onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label className="mt-4">Username</label>
-          <input
-            type="text"
-            name='username'
-            value={login.username}
-            className="form-control w-100"
-            id="InputEmail"
-            aria-describedby="emailHelp"
-            placeholder="Enter username"
-            errorText={login.usernameError}
-            onChange={handleChange}
-          />
-          <span>{login.usernameError}</span>
-        </div>
-        <div className="form-group">
-          <label >Password</label>
-          <input
-            type="password"
-            name='password'
-            value={login.password}
-            className="form-control w-100"
-            id="InputPassword"
-            placeholder="Enter Password"
-            errorText={login.passwordError}
-            onChange={handleChange}
-          />
-        </div>
-        <span>{login.passwordError}</span>
-        <div class="col text-center">
-        <button type="submit" className="btn btn-primary text-center mt-3 mb-4">
-          Login
-        </button>
-        </div>
-      </form>
-
-        <div className="col text-center mt-2">
-          <Link to="/login/register">Register</Link>
-        </div>
+    <BackArrow />
+    <div class="container ">
+      <div className="row">
+        <div className="col-xl-4 col-lg-4 col-md-2 col-sm-1 col-xs-1"></div>
+        <form className="d-block col-xl-4 col-lg-5 col-md-8 col-sm-8 col-xs-8" onSubmit={handleSubmit}>
+          <div className="form-group ">
+            <label className="mt-4">Username</label>
+            <input
+          type="text"
+          name='username'
+          value={login.username}
+          className="form-control w-100"
+          id="InputEmail"
+          aria-describedby="emailHelp"
+          placeholder="Enter username"
+          errorText={login.usernameError}
+          onChange={handleChange}
+        />
+          </div>
+          <div className="form-group ">
+            <label>Password</label>
+            <input
+          type="password"
+          name='password'
+          value={login.password}
+          className="form-control w-100"
+          id="InputPassword"
+          placeholder="Enter Password"
+          errorText={login.passwordError}
+          onChange={handleChange}
+        />
+          </div>
+          <span>{login.passwordError}</span>
+          <div class="col text-center">
+            <button
+              type="submit"
+              className="btn btn-primary text-center mt-3 mb-4"
+            >
+              Login
+            </button>
+          </div>
+        </form>
       </div>
-    </React.Fragment>
-  );
+
+      <div className="col text-center mt-1">
+        <Link to="/login/register">Register</Link>
+      </div>
+    </div>
+  </React.Fragment>
+);
 }
 
 // const mapStateToProps = () => ({
@@ -164,7 +170,7 @@ console.log(login)
 // })
 
 const mapDispatchToProps = (dispatch) => ({
-  setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status)),
+setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status)),
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(Login));

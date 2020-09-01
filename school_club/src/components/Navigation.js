@@ -10,7 +10,7 @@ class Navigation extends React.Component {
       <div>
         <div className="site-navbar site-navbar-target" role="banner">
          
-          <div className="container col-xl-10 col-lg-10 col-md-11 col-sm-12 ">
+          <div className="container col-xl-10 col-lg-10 col-md-11 col-sm-12">
             
             <div className="menu-wrap navbar-expand-md d-xl-flex d-lg-flex d-md-flex d-sm-flex  align-items-center">
               <nav

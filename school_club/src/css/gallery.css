@@ -1,34 +1,7 @@
-img{
-  width:600px; 
-  height:400px;
+.container .gallery{
+  height: 50%;
+  width: 50%;
 }
-div.gallery {
-    border: 1px solid #ccc;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-  }
   
   @media only screen and (max-width: 700px) {
     .responsive {
@@ -43,8 +16,3 @@ div.gallery {
     }
   }
   
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
