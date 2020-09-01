@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, withRouter, useHistory } from "react-router-dom";
 import {connect} from 'react-redux';
-import {postRequest} from '../config/axios.config'
+import {postRequest, getRequest} from '../config/axios.config'
 
 import BackArrow from './back-arrow'
 import {setsuperAdmin} from '../actions/message'
@@ -12,29 +12,91 @@ function Login(props){
 
   const [login, setLogin] = useState({
     username: '',
-    password: ''
+    password: '',
+    usernameError: '',
+    passwordError: '',
   })
+  
+  const token = localStorage.getItem('access_token')
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    async function postMyApi(){
-      const token = ''
+  let history = useHistory()
+
+  const [check, setCheck] = useState([])
+  const [checkName, setCheckName] = useState([])
+
+  useEffect(() => {
+    async function fetchMyApi(){
       try{
-        let response = await postRequest('/login/',{
-            username: login.username,
-            password: login.password,
-          
-          }, false)
-          localStorage.setItem('access_token', response.data.token )
-          props.setIsSuperAdmin(true)
-          console.log('token:',   token)
-        }
-        catch(err){
-          console.log(err)
+        let response = await getRequest('/user-view/')
+        setCheck(response.data.results)
+      }
+      catch(err){
+        console.log('error',err.message)
       }
     }
-    postMyApi()
+    fetchMyApi()
+  },[])
+  
+  const validate = () => {
+    let isError = false;
+    const errors = {}
+    let usernameError = ''
+    let passwordError = ''
+
+    if (login.username.length == 0 ){
+      isError = true;
+      usernameError = 'Username length must be greater than 0'
+    }
+
+    if ( login.password.length == 0){
+      isError = true;
+      passwordError = 'Password length must be greater than 0'
+    }
+    
+    if(isError){
+     
+      setLogin(prevState => ({
+        ...prevState, usernameError, passwordError
+      }))
+    }
+    return isError;
   }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const err = validate();
+    console.log('test', err)
+    if(err){
+      setLogin(prevState => ({
+        ...prevState, username: '', password: ''
+      }))
+    }
+    else{
+      async function postMyApi(){
+        const token = ''
+        try{
+          let response = await postRequest('/login/',{
+              username: login.username,
+              password: login.password,
+            
+            }, false)
+            localStorage.setItem('access_token', response.data.token )
+            props.setIsSuperAdmin(true)
+            history.push('/')
+          }
+          catch(err){
+            if(err.response.status == 400){
+              alert('Invalid username or password')
+            }
+            else{
+              alert("Oops something went wrong")
+            }
+        }
+      }
+      postMyApi()
+    }
+    }
+    
 
 const handleChange = (event) => {
   const copy = Object.assign({}, login)
@@ -43,6 +105,11 @@ const handleChange = (event) => {
   setLogin(copy)
 }
 
+console.log(login)
+  if(token){
+    history.push('/')
+    return null
+  }
 
   return (
     <React.Fragment>
@@ -59,8 +126,10 @@ const handleChange = (event) => {
             id="InputEmail"
             aria-describedby="emailHelp"
             placeholder="Enter username"
+            errorText={login.usernameError}
             onChange={handleChange}
           />
+          <span>{login.usernameError}</span>
         </div>
         <div className="form-group">
           <label >Password</label>
@@ -71,9 +140,11 @@ const handleChange = (event) => {
             className="form-control w-100"
             id="InputPassword"
             placeholder="Enter Password"
+            errorText={login.passwordError}
             onChange={handleChange}
           />
         </div>
+        <span>{login.passwordError}</span>
         <div class="col text-center">
         <button type="submit" className="btn btn-primary text-center mt-3 mb-4">
           Login
@@ -99,4 +170,4 @@ const mapDispatchToProps = (dispatch) => ({
   setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status))
 })
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(withRouter(Login));

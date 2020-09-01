@@ -27,16 +27,7 @@ class App extends Component {
     store.dispatch(loadUser());
   }
 
-  // /**
-//  * /home -> home 
-//  * /login ->, login noavabar
-//  * /register ->  register nonavbar
-//  * /panel -> panel home -> /panel/* no navbar
-//  * /gallery -> gallery
-//  * /clubs - > clubs
-//  * /about
- 
-//  */
+  
 render(){
   return (
     <Provider store={store}>
@@ -54,8 +45,6 @@ render(){
       <Route path="/">
         <Navbar />
         <Routes />
-        {/* <Event isLoading={isLoading} items={items} /> */}
-
         <Footer />
       </Route>
     </Switch>

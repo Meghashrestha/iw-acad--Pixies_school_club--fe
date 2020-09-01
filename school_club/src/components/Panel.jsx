@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter, useHistory } from "react-router-dom";
 
 import {getRequest} from '../config/axios.config'
 import logo from "../images/default-image.png";
@@ -14,22 +14,15 @@ import { useEffect } from "react";
 function Panel() {
 
   const [user, setUser] = useState([])
-  
-  // useEffect(() => {
-  //   async function fetchMyApi() {
-  //       try{
-  //           let response = await getRequest('/view-staff/')
-  //           console.log(response)
-  //           setUser(response.data.results)
-  //       }
-  //       catch(err){
-  //           console.log(err)
-  //       }
-  //   }
-  //   fetchMyApi()
-        
-  //       }, [])
 
+  
+  const history = useHistory()
+
+  const logout = () => {
+    localStorage.clear();
+    history.push('/login')
+  }
+  
     return (
      
       <nav id="sidebar">
@@ -64,8 +57,8 @@ function Panel() {
             </Link>
           </li>
           <li>
-            <Link to="/panel/add-staffs">
-             Add Staffs
+            <Link to="/panel/add-president">
+             Add President
             </Link>
           </li>
           <li>
@@ -73,7 +66,11 @@ function Panel() {
              Add Members
             </Link>
           </li>
-         
+          <li>
+            <Link to="/panel/flags">
+             Flags
+            </Link>
+          </li>
           <li>
             <Link to="/panel/application">
               Application <span className="badge bg-danger">10</span>
@@ -101,9 +98,7 @@ function Panel() {
             </Link>
           </li>
           <li>
-            <Link to="/panel/logout">
-              Logout
-            </Link>
+            <button onClick={logout}>Logout</button>
           </li>
         </ul>
       </nav>
@@ -111,4 +106,4 @@ function Panel() {
     );
   }
 
-export default Panel;
+export default withRouter(Panel);
