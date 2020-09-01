@@ -15,7 +15,7 @@ import Logout from './Logout';
 import Switch from "react-bootstrap/esm/Switch";
 import "../css/main_body.css";
 import "../css/sub_body.css";
-import AddStaffs from "./AddStaffs";
+// import AddStaffs from "./AddStaffs";
 import uploadGallery from "./UploadGallery";
 
 import AddPresident from "./AddPresident";

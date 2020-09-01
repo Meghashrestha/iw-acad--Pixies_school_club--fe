@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Open+Sans+Condensed:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Open+Sans+Condensed:wght@300&family=Shadows+Into+Light&display=swap');
 
+.site-navbar .container{
+    padding-bottom: 10px;
+}
 
 .menu-wrap{
     height: 8vh;

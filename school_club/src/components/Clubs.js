@@ -34,7 +34,7 @@ function Clubs(){
 
             return (
                 <React.Fragment>               
-                    <div class="site-section bg-info">
+                    <div class="site-section-club ">
                         <div class="container">
                             <div class="row mb-5">
                             <div class="col-12 text-center">
@@ -46,12 +46,12 @@ function Clubs(){
                                 {clubs.map(club => {
                                     return (
                                     <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <div class="package text-center bg-white">
+                                    <div class="package text-center bg-white mb-4">
                                     {/* <span class="img-wrap" id="science"><img src={science} alt="Image" class="img-fluid" /></span> */}
                                     <h3 class="text-teal">{club.club_name}</h3>
                                         <span>{club.description}</span>
                                     
-                                    <p><Link to="/clubs/description" class="btn btn-info btn-custom-1 mt-4">Learn More</Link></p>
+                                    <p><Link to="/clubs/description" class="btn btn-warning btn-custom-1 mt-4">Learn More</Link></p>
                                 </div>
                                 </div>
                                 )

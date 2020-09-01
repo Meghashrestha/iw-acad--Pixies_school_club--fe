@@ -6,14 +6,18 @@
   font-family: "Old Standard TT", serif;
   color: black;
   bottom: 0;
-  font-size: 0.8em;
+  
+  font-size: 0.7em;
 }
+
 
 .img-fluid-bg {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
-.img-logo {
+.logo {
+  height:80%;
+  width: 50%;
   margin-left: 26%;
   padding-bottom: 12px;
 }
