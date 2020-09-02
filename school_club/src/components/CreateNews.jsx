@@ -22,8 +22,10 @@ function CreateNews(){
                         article_description: article.articleDescription,
                         all: article.all
                 })
+                alert("Successfully Posted")
             }    
             catch(err){
+              alert("Something went wrong")
                 console.log(err)
             }    
         }

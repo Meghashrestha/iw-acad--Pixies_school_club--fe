@@ -19,7 +19,7 @@ function Clubs(){
             setIsLoading(true)
             try{
                 let response = await getRequest('/view-club/')
-                console.log(response)
+                console.log('data',response.data.results)
                 setClubs(response.data.results)
                 setIsLoading(false)
             }

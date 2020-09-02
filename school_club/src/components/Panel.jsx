@@ -9,9 +9,14 @@ import { useState } from "react";
 function Panel() {
   const [user, setUser] = useState([])
 
-  
-  const history = useHistory()
+  const f_name = localStorage.getItem('first_name')
+  const l_name = localStorage.getItem('last_name')
+  const member = localStorage.getItem('is_member')
+  const staff = localStorage.getItem('is_staff')
+  const admin = localStorage.getItem('is_superuser')
 
+  const history = useHistory()
+  
   const logout = () => {
     localStorage.clear();
     history.push('/')
@@ -36,7 +41,7 @@ function Panel() {
               alt=""
               className="img-logo img-thumbnail card-img-overlay h-100 w-100 pl-0 ml-0 bg-dark d-block d-sm-block d-md-none"
             ></img>
-            <p className="text-uppercase pl-5 text-xl-center text-lg-left text-md-left position-absolute d-none d-sm-none d-md-block">Abhishek Bhattarai</p>
+            <p className="text-uppercase pl-5 text-xl-center text-lg-left text-md-left position-absolute d-none d-sm-none d-md-block">{f_name}  {l_name}</p>
             
           </div>
         </div>
@@ -45,54 +50,76 @@ function Panel() {
       <div className="navigation">
         <ul className="list-unstyled pl-0 line-height-3">
         <li className=" mr-auto text-center pt-4 pb-2 text-primary d-block d-sm-block d-md-none">
-            Abhishek Bhattarai<hr/>
+        {f_name} {l_name}<hr/>
           </li>
 
           <li className="active mr-auto text-center text-red pt-5 pb-2">
             <Link to="/"> Go To Homepage</Link>
           </li>
+
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel">Dashboard</Link>
           </li>
 
+          {  !staff &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-club">Create Club</Link>
           </li>
+          }
+
+           { staff && 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-events">Create Events</Link>
           </li>
+            }
+
+           { staff &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-news">Create News</Link>
           </li>
+            }
+
+            { !admin  && 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/add-president">Add President</Link>
           </li>
+          }
+
+          { admin, staff &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/add-members">Add Members</Link>
           </li>
-          <li className="nav-item  mr-auto text-center pt-2 pb-2" >
-            <Link to="/panel/flags">
-             Flags
-            </Link>
-          </li>
+           }
+
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/upload-gallery">Gallery</Link>
           </li>
+          
+
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/application">Application</Link>
           </li>
+
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/news">News</Link>
           </li>
+
+          { admin, staff &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/view-application">View Application</Link>
           </li>
+        }
+
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/events">Events</Link>
           </li>
+
+        { member &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/message">Message</Link>
           </li>
+    }
+
           <li className="nav-item  mr-auto text-center pt-2 pb-5 w-75 ml-xl-4 ml-lg-4 ml-md-1 ml-sm-0">
             <button className="btn btn-primary" onClick={logout}>Logout</button>
           </li>

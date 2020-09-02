@@ -1,6 +1,5 @@
 
-import React, { Component, useState, useEffect } from "react";
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
 
 import { getRequest, postRequest} from '../config/axios.config'
 import "../css/contact-form.css";
@@ -10,16 +9,14 @@ function ContactForm(){
     messageTitle: "",
     messageBody: "",
     club:"",
-    // username:'',
   })
+  
   const [data, setData] = useState([])
   useEffect(() => {
     async function fetchMyAPI() {
         try{
             let response = await getRequest('/view-club/')
-            console.log(response.data.results)
             setData(response.data.results)
-            console.log('test', data)
         }
         catch(err){
             console.log(err)
@@ -37,8 +34,7 @@ function ContactForm(){
             let response = await postRequest('/contact-president/',{
               message_title: contact.messageTitle,
               message: contact.messageBody,
-              club: contact.club,
-              // username:contact.username
+              club: contact.club_name,
             })
             
         } 
@@ -55,8 +51,6 @@ function ContactForm(){
     const e = event.currentTarget
     copy[e.name] = e.value
     setContact(copy) 
-    // console.log(contact.username)
-    console.log(contact.club)
  }
 
   return (
@@ -81,9 +75,10 @@ function ContactForm(){
       
         <textarea name='messageBody' className="form-control" value={contact.messageBody} placeholder='Write a Message' onChange={handleChange}></textarea>
       </div>
-      <select name='club_name'  value={contact.club} onChange={handleChange}>
+      <select className='col-3' name='club_name'  value={contact.club_name} onChange={handleChange}>
+      <option>Select Club</option>
                     {
-                            data.map(opt => <option key={opt.id}>{opt.club}</option>)
+                            data.map(opt => <option key={opt.id}>{opt.club_name}</option>)
                     }
                 </select>
      <button className="btn btn-warning " type="submit" value="Submit"> Message</button>

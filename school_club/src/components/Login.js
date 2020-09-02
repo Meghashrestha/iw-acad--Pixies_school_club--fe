@@ -68,6 +68,9 @@ function Login(props) {
             localStorage.setItem('last_name', response.data.last_name )
             localStorage.setItem('middle_name', response.data.middle_name )
             localStorage.setItem('email', response.data.email )
+            localStorage.setItem('is_staff', response.data.is_staff )
+            localStorage.setItem('is_member', response.data.is_member )
+            localStorage.setItem('is_superuser', response.data.is_superuser )
 
             props.setIsSuperAdmin(true)
             history.push('/panel/')
