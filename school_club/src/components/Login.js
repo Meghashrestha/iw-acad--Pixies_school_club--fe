@@ -80,7 +80,13 @@ function Login(props) {
               password: login.password,
             
             }, false)
+            localStorage.setItem('id', response.data.email )
             localStorage.setItem('access_token', response.data.token )
+            localStorage.setItem('first_name', response.data.first_name )
+            localStorage.setItem('last_name', response.data.last_name )
+            localStorage.setItem('middle_name', response.data.middle_name )
+            localStorage.setItem('email', response.data.email )
+
             props.setIsSuperAdmin(true)
             history.push('/panel/')
           }
