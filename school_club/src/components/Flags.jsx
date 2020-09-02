@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest} from '../config/axios.config'
+import {patchRequest, getRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
 
 
 function Flags(){
-    const [user, setUser] = useState({
-        staff: '',
-    })
+    const [status, setStatus] = useState()
+    const toggleStatus = (event) =>{
+        setStatus(value => !value);
+        console.log(event.target.checked)
+    } 
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -29,8 +31,8 @@ function Flags(){
         event.preventDefault();
         async function postMyApi() {    
             try{
-                let response = await postRequest('/admin/set-flag/',{
-                    is_staff: user.staff
+                let response = await patchRequest('/admin/set-flag/',{
+                    is_staff: status
                 })
             }    
             catch(err){
@@ -40,20 +42,12 @@ function Flags(){
         postMyApi()
     }
 
-    const handleChange = (event) => {
-        const copy1 = Object.assign({}, user)
-        const e = event.currentTarget
-        copy1[e.name] = e.value
-    }
-
-
     return(
         <React.Fragment>
             <div>
                 <h1> Assign FLags</h1>
                 <form onSubmit={handleSubmit}>
-                <input type="radio" name="staff" value={user.staff} onChange={handleChange}/> Staff
-                <input type="radio" name="staff" value={user.member} onChange={handleChange}/> Not staff
+                <input type="checkbox" onChange={toggleStatus} checked={status}/> 
                 <button type='submit'>Add</button>
                 </form>
             </div>

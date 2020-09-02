@@ -37,10 +37,11 @@ function CreateClub(props){
                                 description: club.description,
                                 // logo: fd
                         })
-                        
+                        alert('Successfully created club')
                     } 
                     catch(err){
                         console.log(err)
+                        alert("Error")
                     }    
                 }  
                 postMyApi()   

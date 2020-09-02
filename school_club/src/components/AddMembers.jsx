@@ -1,69 +1,102 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest} from '../config/axios.config'
+import {postRequest, getRequest, patchRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
 
 
-function AddMembers(){
-    const [events, setEvents] = useState({
-        eventTitle: '',
-        eventDescription: '',
-        eventDate: ',',
-        all: false
-    })
+function AddMember(){
+    const [data, setData] = useState(0)
+    const [club, setClub] = useState([])
+    const [member, setMember] = useState([])
+    
+    useEffect(() => {
+        async function fetchMyMember() {
+          try{
+              let response = await getRequest('/user-view/')
+              console.log('id123',response.data.results)
+              setMember(response.data.results)
+              console.log('testdata',member)
+          }
+          catch(err){
+              console.log(err)
+          }
+          
+        }
+        
+        fetchMyMember()
+       
+  },[])
+
+    useEffect(() => {
+        async function fetchMyClub() {
+            try{
+                let response = await getRequest('/view-club/')
+                setClub(response.data.results)
+                console.log(response.data.results)
+            }
+            catch(err){
+                console.log(err)
+            }
+            
+          }
+          fetchMyClub()
+        },[])
+         
+         
 
     const handleSubmit = (event) => {
         event.preventDefault();
         async function postMyApi() {    
             try{
-                let response = await postRequest('/post-event/',{
-                        event_title: events.eventTitle,
-                        event_description: events.eventDescription,
-                        event_date: events.eventDate,
+                let response = await postRequest('/add-member/',{
+                    club_name: data.club,
+                    user: data.member,
                 })
             }    
             catch(err){
-                console.log(err)
+                console.log(err.message)
             }    
         }
         postMyApi()
     }
-
-    const handleChange = (event) => {
-        const copy = Object.assign({}, events)
-
+       
+    const handleChangeI = (event) => {
+        const copy2 = Object.assign({}, data)
         const e = event.currentTarget
-        copy[e.name] = e.value
-
-        setEvents(copy)
-        console.log(event.eventDate)
+        copy2[e.name] = e.value
+        setData(copy2)
     }
 
-
+    console.log('yser',data)
+    console.log('club',data.club)
 
     return(
-            <div className="container">
-                <header className="text-left text-lg h2 text-cursive text-red">Events</header>
-                <form  className="col-md-8" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                    <label>Event Title:</label>
-                        <input type='text' className="form-control" name='eventTitle' value={events.eventTitle} placeholder='Title' onChange={handleChange}></input>
-                        </div>
-                        <div className="form-group">
+        <React.Fragment>
+            <div>
+                <h1>member Assign</h1>
+                <form onSubmit={handleSubmit}>
+
+                    <select name='member' value={data.member} onChange={handleChangeI}>
+                        <option value=''>Select User</option>
+                       {    
+                           member.map(user => <option key={user.id} value={user.id}>{user.username}</option>)
+                       }
+                       </select>
+
+                    <select name='club' value={data.club} onChange={handleChangeI}>
                     
-                        <textarea name='eventDescription' className="form-control" value={events.eventDescription} placeholder='Write a description' onChange={handleChange}></textarea>
-                    </div>
-                    <div className="form-group">
-                    <input className="event-date" name='eventDate' type='date' value={events.eventDate}  onChange={handleChange}></input>
-                    </div>
-                    <div className="form-group">
-                    <button className="btn btn-success btn-lg" type='submit'>Submit</button>
-                    </div>
-                    
+                    <option value=''>Select Club</option>
+                       {
+                           club.map(clubs => <option key={clubs.id} value={clubs.id}>{clubs.club_name}</option>)
+                       }
+                    </select>
+                    <button type='submit'>Assign Member</button>
+
                 </form>
             </div>
+        </React.Fragment>
     )
 
 }
 
-export default AddMembers;
+export default AddMember;

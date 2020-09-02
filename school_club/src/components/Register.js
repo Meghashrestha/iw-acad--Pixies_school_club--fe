@@ -14,33 +14,109 @@ function Register() {
     email: "",
     username: "",
     password: "",
+    usernameError: '',
+    passwordError: '',
+    firstnameError: "",
+    lastnameError: "",
+    middlenameError: "",
+    emailError: "",
   });
+
+  const validate = () => {
+    let isError = false;
+    let usernameError = ''
+    let passwordError = ''
+    let firstnameError = ''
+    let lastnameError = ''
+    let middlenameError = ''
+    let emailError = ''
+
+    if (register.username.length == 0 ){
+      isError = true;
+      usernameError = 'Username length must be greater than 0'
+    }
+
+    if ( register.password.length == 0){
+      isError = true;
+      passwordError = 'Password length must be greater than 0'
+    }
+
+    if (register.firstname.length == 0 ){
+      isError = true;
+      firstnameError = 'First name length must be greater than 0'
+    }
+
+    if (register.middlename.length == 0 ){
+      isError = true;
+      middlenameError = 'Middle name length must be greater than 0'
+    }
+
+    if ( register.lastname.length == 0){
+      isError = true;
+      lastnameError = 'Last name length must be greater than 0'
+    }
+
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if ( reg.test(register.email) == false){
+      isError = true;
+      emailError = 'Invalid email address'
+    }
+
+    if(isError){
+     
+      setRegister(prevState => ({
+        ...prevState, usernameError, passwordError, firstnameError, middlenameError, lastnameError, emailError
+      }))
+    }
+    return isError;
+
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    async function postMyApi(){
-      try{
-        let response = await postRequest('/add-user/',{
-          
-            first_name: register.firstname,
-            last_name: register.lastname,
-            middle_name: register.middlename,
-            email: register.email,
-            username: register.username,
-            password: register.password,
+    const err = validate(); 
+    
+    if(!err){
+      setRegister(prevState => ({
+        ...prevState, 
+        username: '',
+        password: '',
+        firstname: "",
+        lastname: "",
+        middlename: "",
+        email: "",
+      }))
+    }
+    else{
+      async function postMyApi(){
+        try{
+          let response = await postRequest('/add-user/',{
+            
+              first_name: register.firstname,
+              last_name: register.lastname,
+              middle_name: register.middlename,
+              email: register.email,
+              username: register.username,
+              password: register.password,
+            }, false
+            )
+            history.push('/login')
+            console.log(response)
+            alert('success')
           }
-
-          )
-          history.push('/login')
-          console.log(response)
+          catch(err){
+            if(err.response.status == 400){
+              alert('Invalid form data')
+            }
+            else{
+              alert("Oops something went wrong")
         }
-        catch(err){
-          console.log(err)
       }
+     
     }
     postMyApi();
-  };
+  }
+};
 
   const handleChange = (event) => {
     const copy = Object.assign({}, register);
@@ -48,8 +124,6 @@ function Register() {
     copy[e.name] = e.value;
     setRegister(copy);
   };
-
-
 
     return (
       <React.Fragment>
@@ -65,6 +139,7 @@ function Register() {
               name="firstname"
               value= {register.firstname}
               placeholder="Name"
+              errorText={register.firstnameError}
               onChange={handleChange}
             />
           </div>
@@ -76,6 +151,7 @@ function Register() {
               name="lastname"
               value= {register.lastname}
               placeholder="Name"
+              errorText={register.lastnameError}
               onChange={handleChange}
             />
           </div>
@@ -87,6 +163,7 @@ function Register() {
               name="middlename"
               value= {register.middlename}
               placeholder="Name"
+              errorText={register.middlenameError}
               onChange={handleChange}
             />
           </div>
@@ -99,6 +176,7 @@ function Register() {
               aria-describedby="emailHelp"
               value= {register.email}
               placeholder="Enter email"
+              errorText={register.emailError}
               onChange={handleChange}
             />
           </div>
@@ -113,6 +191,7 @@ function Register() {
                 name="username"
                 value={register.username}
                 placeholder="username"
+                errorText={register.usernameError}
                 onChange={handleChange}
               />
             </div>
@@ -124,6 +203,7 @@ function Register() {
                 name="password"
                 value={register.password}
                 placeholder="Password"
+                errorText={register.passwordError}
                 onChange={handleChange}
               />
             </div>
