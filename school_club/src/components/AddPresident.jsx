@@ -1,24 +1,42 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest} from '../config/axios.config'
+import {postRequest, getRequest, patchRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
 
 
 function AddPresident(){
-    const [user, setUser] = useState({
-        name: '',
-        club: '',
-    })
+    // const [presidentData, setPresidentData] = useState(0)
+    // const [clubData, setClubData] = useState(0)
+    const [data, setData] = useState(0)
     const [club, setClub] = useState([])
     const [president, setPresident] = useState([])
+    const [status, setStatus] = useState()
+    const [id, setId] = useState(0)
+    
+    useEffect(() => {
+        async function fetchMyPresident() {
+          try{
+              let response = await getRequest('/user-view/')
+              console.log('id123',response.data.results)
+              setPresident(response.data.results)
+              console.log('testdata',president)
+          }
+          catch(err){
+              console.log(err)
+          }
+          
+        }
+        
+        fetchMyPresident()
+       
+  },[])
 
     useEffect(() => {
         async function fetchMyClub() {
             try{
                 let response = await getRequest('/view-club/')
-                console.log('club:', response.data.results)
                 setClub(response.data.results)
-                console.log('club cdata',club)
+                console.log(response.data.results)
             }
             catch(err){
                 console.log(err)
@@ -28,72 +46,75 @@ function AddPresident(){
           fetchMyClub()
         },[])
          
-          useEffect(() => {
-          async function fetchMyPresident() {
-            try{
-                let response = await getRequest('/user-view/')
-                console.log('user', response.data.results[0])
-                setPresident(response.data.results)
-                console.log('preseident data',president)
-            }
-            catch(err){
-                console.log(err)
-            }
-            
-          }
-          
-          fetchMyPresident()
          
-    },[])
 
     const handleSubmit = (event) => {
         event.preventDefault();
         async function postMyApi() {    
             try{
                 let response = await postRequest('/add-president/',{
-                    club_name: club,
-                    user: president,
+                    club_name: data.club,
+                    user: data.president,
+                })
+            }    
+            catch(err){
+                console.log(err.message)
+            }    
+        }
+        postMyApi()
+
+        async function patchtMyApi() {    
+            try{
+                let response = await patchRequest(`/info/view-profile/${data.president}/`,{
+                    is_staff: status
                 })
             }    
             catch(err){
                 console.log(err)
             }    
         }
-        postMyApi()
+        patchtMyApi()
     }
 
-    const handleChange = (event) => {
-        
-        console.log(event.currentTarget.value)
+    const handleChangeI = (event) => {
+        const copy2 = Object.assign({}, data)
+        const e = event.currentTarget
+        copy2[e.name] = e.value
+        setData(copy2)
     }
 
-    // const handleChangeII = (event) => {
-    //     const copy2 = Object.assign({}, club)
-    //     const e = event.currentTarget
-    //     copy2[e.name] = e.value
-    //     setclub(copy2)
-    // }
-console.log('test111', president)
-console.log('test222', club)
+    const toggleStatus = (event) =>{
+        setStatus(value => !value);
+        console.log(event.target.checked)
+    } 
 
-
+    console.log('yser',data)
+    console.log('club',data.club)
+    console.log(status)
     return(
         <React.Fragment>
             <div>
                 <h1>President Assign</h1>
                 <form onSubmit={handleSubmit}>
-                    <select name='president' value={user.name} onChange={handleChange}>
-                        <option value=''>Select</option>
+                    {/* {president.map(user => setId(user.id))} */}
+                
+                    <select name='president' value={data.president} onChange={handleChangeI}>
+                        <option value=''>Select User</option>
                        {    
-                           president.map(user => <option key={user.id} value={user.username}>{user.username}</option>)
+                           president.map(user => <option key={user.id} value={user.id}>{user.username}</option>)
                        }
-                    </select>
-                    <select name='club' value={user.club} onChange={handleChange}>
+                       </select>
+
+                    <select name='club' value={data.club} onChange={handleChangeI}>
+                    
+                    <option value=''>Select Club</option>
                        {
-                           club.map(clubs => <option key={clubs.id}>{clubs.club_name}</option>)
+                           club.map(clubs => <option key={clubs.id} value={clubs.id}>{clubs.club_name}</option>)
                        }
                     </select>
-                    <button type='submit'>Add</button>
+                    <input type="checkbox" onChange={toggleStatus} value={status} checked={status}/> 
+                    <button type='submit'>Assign President</button>
+
                 </form>
             </div>
         </React.Fragment>

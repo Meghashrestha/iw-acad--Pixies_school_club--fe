@@ -111,8 +111,9 @@ function Application(){
             />
           </div>
                 <select name='club_name'  value={application.club_name} onChange={handleChange}>
+                <option value='' key=''>Select Club</option>
                     {
-                            data.map(opt => <option key={opt.id}>{opt.club_name}</option>)
+                            data.map(opt => <option key={opt.id} value={opt.club_name}>{opt.club_name}</option>)
                     }
                 </select>
                     <button type='submit'>Submit</button>

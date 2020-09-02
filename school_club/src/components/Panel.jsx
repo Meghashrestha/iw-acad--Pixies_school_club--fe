@@ -65,7 +65,7 @@ function Panel() {
             <Link to="/panel/create-news">Create News</Link>
           </li>
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/add-staffs">Add Staffs</Link>
+            <Link to="/panel/add-president">Add President</Link>
           </li>
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/add-members">Add Members</Link>

@@ -11,7 +11,6 @@ import "../css/login.css";
 
 function Login(props) {
   const [login, setLogin] = useState({
-
     username: '',
     password: '',
     usernameError: '',
@@ -21,25 +20,8 @@ function Login(props) {
   const token = localStorage.getItem('access_token')
   let history = useHistory()
 
-  const [check, setCheck] = useState([])
-  const [checkName, setCheckName] = useState([])
-
-  useEffect(() => {
-    async function fetchMyApi(){
-      try{
-        let response = await getRequest('/user-view/')
-        setCheck(response.data.results)
-      }
-      catch(err){
-        console.log('error',err.message)
-      }
-    }
-    fetchMyApi()
-  },[])
-  
   const validate = () => {
     let isError = false;
-    const errors = {}
     let usernameError = ''
     let passwordError = ''
 
@@ -61,11 +43,11 @@ function Login(props) {
     }
     return isError;
   }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const err = validate();
-    console.log('test', err)
+
     if(err){
       setLogin(prevState => ({
         ...prevState, username: '', password: ''
@@ -128,7 +110,7 @@ console.log(login)
           id="InputEmail"
           aria-describedby="emailHelp"
           placeholder="Enter username"
-          errorText={login.usernameError}
+          errorText={login.passwordError}
           onChange={handleChange}
         />
           </div>
