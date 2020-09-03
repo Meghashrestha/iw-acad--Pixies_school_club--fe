@@ -45,7 +45,7 @@ class CreateClub extends Component {
       <div className="App">
         <form onSubmit={this.handleSubmit}>
           <p>
-          <label>Event Title:</label>
+          <label>Create Club:</label>
             <input type="text" placeholder='Title' name='club_name' value={this.state.club_name} onChange={this.handleChange} ></input>
           </p>
           <p>
