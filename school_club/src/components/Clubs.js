@@ -47,7 +47,7 @@ function Clubs(){
                                     return (
                                     <div class="col-lg-4 mb-4 mb-lg-0">
                                     <div class="package text-center bg-white mb-4">
-                                    {/* <span class="img-wrap" id="science"><img src={science} alt="Image" class="img-fluid" /></span> */}
+                                    <span class="img-wrap"><img src={club.logo} alt="Image" class="img-fluid" /></span>
                                     <h3 class="text-teal">{club.club_name}</h3>
                                         <span>{club.description}</span>
                                     
