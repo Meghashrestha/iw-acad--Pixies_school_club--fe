@@ -61,11 +61,11 @@ function Panel() {
             <Link to="/panel">Dashboard</Link>
           </li>
 
-          {  !staff &&
+          {/* {  !staff && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-club">Create Club</Link>
           </li>
-          }
+          // }
 
            { staff && 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
