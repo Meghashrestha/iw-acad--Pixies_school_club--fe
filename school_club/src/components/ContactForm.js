@@ -76,12 +76,14 @@ function ContactForm(){
       
         <textarea name='messageBody' className="form-control" value={contact.messageBody} placeholder='Write a Message' onChange={handleChange}></textarea>
       </div>
-      <select className='col-3' name='club_name'  value={contact.club_name} onChange={handleChange}>
+      <div className="form-group mt-3">
+      <select className="form-control col-4" name='club_name'  value={contact.club_name} onChange={handleChange}>
       <option>Select Club</option>
                     {
                             data.map(opt => <option key={opt.id}>{opt.club_name}</option>)
                     }
                 </select>
+                </div>
      <button className="btn btn-warning " type="submit" value="Submit"> Message</button>
     </form>
     </React.Fragment>

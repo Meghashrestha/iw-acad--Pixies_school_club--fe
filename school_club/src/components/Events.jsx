@@ -32,7 +32,7 @@ function Events() {
         <div className="row">
           {events.map(event => {
             return(
-              <div className="col-xl-8 col-lg-10 col-md-8">
+              <div className="col-xl-8 col-lg-10 col-md-8 mb-5">
               <div className="card">
                 <div className="card-body d-block">
                   {/* <div className="img-fluid rounded-circle w-100 mb-3"> */}

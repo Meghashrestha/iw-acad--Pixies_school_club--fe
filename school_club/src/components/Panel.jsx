@@ -57,65 +57,65 @@ function Panel(props) {
             <Link to="/panel">Dashboard</Link>
           </li>
 
-          { props.userInfo.isSuperAdmin &&
+          {/* { (props.userInfo.isSuperAdmin && !props.userInfo.isStaff) && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-club">Create Club</Link>
           </li>
-          }
+          {/* } */}
 
-           { props.userInfo.isStaff && 
+           {/* { props.userInfo.isStaff &&  */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-events">Create Events</Link>
           </li>
-            }
+            {/* } */}
 
-           {  props.userInfo.isStaff && 
+           {/* {  props.userInfo.isStaff &&  */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/create-news">Create News</Link>
           </li>
-            }
+            {/* } */}
 
-          { props.userInfo.isSuperAdmin &&
+          {/* { props.userInfo.isSuperAdmin && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/add-president">Add President</Link>
           </li>
-          }
+          {/* } */}
 
-          { (props.userInfo.isMember) &&
+          {/* { (props.userInfo.isMember) && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/add-members">Add Members</Link>
           </li>
-           }
+           {/* } */}
 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/upload-gallery">Gallery</Link>
           </li>
           
-          { props.userInfo.isMember &&
+          {/* { props.userInfo.isMember && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/application">Application</Link>
           </li>
-        }
+        {/* } */}
 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/news">News</Link>
           </li>
 
-          { (props.userInfo.isSuperAdmin || props.userInfo.isStaff) &&
+          {/* { (props.userInfo.isSuperAdmin || props.userInfo.isStaff) && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/view-application">View Application</Link>
           </li>
-        }
+        {/* } */}
 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/events">Events</Link>
           </li>
 
-        { props.userInfo.isMember &&
+        {/* { props.userInfo.isMember && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/message">Message</Link>
           </li>
-    }
+    {/* } */}
 
           <li className="nav-item  mr-auto text-center pt-2 pb-5 w-75 ml-xl-4 ml-lg-4 ml-md-1 ml-sm-0">
             <button className="btn btn-primary" onClick={logout}>Logout</button>
