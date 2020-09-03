@@ -14,6 +14,7 @@ function Register() {
     email: "",
     username: "",
     password: "",
+
     usernameError: '',
     passwordError: '',
     firstnameError: "",
@@ -34,33 +35,38 @@ function Register() {
     if (register.username.length == 0 ){
       isError = true;
       usernameError = 'Username length must be greater than 0'
+      console.log(usernameError)
     }
 
     if ( register.password.length == 0){
       isError = true;
       passwordError = 'Password length must be greater than 0'
+      console.log(passwordError)
     }
 
     if (register.firstname.length == 0 ){
       isError = true;
       firstnameError = 'First name length must be greater than 0'
-    }
-
-    if (register.middlename.length == 0 ){
-      isError = true;
-      middlenameError = 'Middle name length must be greater than 0'
+      console.log(firstnameError)
     }
 
     if ( register.lastname.length == 0){
       isError = true;
       lastnameError = 'Last name length must be greater than 0'
+      console.log(lastnameError)
     }
 
-    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if ( reg.test(register.email) == false){
+    if ( register.email.length == 0){
       isError = true;
-      emailError = 'Invalid email address'
+      emailError = 'Last name length must be greater than 0'
+      console.log(emailError)
     }
+    // const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // if ( reg.test(register.email) == false){
+    //   isError = true;
+    //   emailError = 'Invalid email address'
+    // }
+    console.log("datataat",isError)
 
     if(isError){
      
@@ -76,7 +82,7 @@ function Register() {
     event.preventDefault();
     const err = validate(); 
     
-    if(!err){
+    if(err){
       setRegister(prevState => ({
         ...prevState, 
         username: '',
@@ -86,8 +92,10 @@ function Register() {
         middlename: "",
         email: "",
       }))
+      console.log("error", err)
     }
     else{
+      console.log("error pos")
       async function postMyApi(){
         try{
           let response = await postRequest('/add-user/',{
@@ -187,7 +195,7 @@ function Register() {
               <label className="mt-5">Username</label>
               <input
                 type="text"
-                className="form-control "
+                className="form-control"
                 name="username"
                 value={register.username}
                 placeholder="username"

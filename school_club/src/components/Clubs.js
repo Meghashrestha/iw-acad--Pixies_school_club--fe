@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect} from 'react';
+import { Link, withRouter, Redirect, useHistory  } from 'react-router-dom'
+import {connect} from 'react-redux';
 
 import "../css/Club.css";
 import Club_description from './Club_description'
 import {getRequest} from '../config/axios.config'
+import { setDesp } from "../actions/message";
 
-function Clubs(){
+function Clubs(props){
 
     const [clubs, setClubs] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    let history = useHistory()
 
     useEffect(() => {
         async function fetchMyApi() {
@@ -28,6 +31,12 @@ function Clubs(){
             
             }, [])
 
+            const handleClick = (description) => {
+               props.setDesp(description) 
+               console.log('/clubs/description')
+               return history.push('/clubs/description/')
+            }
+
             return (
                 <React.Fragment>               
                     <div class="site-section-club ">
@@ -46,7 +55,7 @@ function Clubs(){
                                     <span class="img-wrap"><img src={club.logo} alt="Image" class="img-fluid" /></span>
                                     <h3 class="text-teal">{club.club_name}</h3>
                                         <span>{club.description}</span>
-                                    <p><Link to="/clubs/description" class="btn btn-warning btn-custom-1 mt-4">Learn More</Link></p>
+                                    <p onClick={() => handleClick(club.description)} class="btn btn-warning btn-custom-1 mt-4">Learn More</p>
                                 </div>
                                 </div>
                                 )
@@ -58,4 +67,8 @@ function Clubs(){
         );
 }
 
-export default Clubs;
+const mapDispatchToProps = (dispatch) => ({
+    setDesp: (user) => dispatch(setDesp(user)),
+    });
+    
+    export default connect(null, mapDispatchToProps)(withRouter(Clubs));
