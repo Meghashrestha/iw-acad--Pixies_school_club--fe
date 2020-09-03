@@ -43,10 +43,12 @@ function Application(){
                             club_name: application.club_name
                        
                 })
-                console.log(application.firstname)
-            }catch(err){
-                console.log(err)
-            }
+                alert("Successfully sent")
+              }    
+              catch(err){
+                  alert("Something went wrong")
+                  console.log(err.message)
+              }    
         }
         
         postMyApi()

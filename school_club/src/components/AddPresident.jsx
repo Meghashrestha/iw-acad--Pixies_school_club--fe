@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest, patchRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
+import {postRequest, getRequest, patchRequest} from '../config/axios.config'
 
 
 function AddPresident(){
-    // const [presidentData, setPresidentData] = useState(0)
-    // const [clubData, setClubData] = useState(0)
     const [data, setData] = useState(0)
     const [club, setClub] = useState([])
     const [president, setPresident] = useState([])
     const [status, setStatus] = useState()
     const [id, setId] = useState(0)
+    const member = false
     
     useEffect(() => {
         async function fetchMyPresident() {
@@ -56,8 +55,10 @@ function AddPresident(){
                     club_name: data.club,
                     user: data.president,
                 })
+                alert("Successfully assigned president to the club")
             }    
             catch(err){
+                alert("Something went wrong")
                 console.log(err.message)
             }    
         }
@@ -66,7 +67,8 @@ function AddPresident(){
         async function patchtMyApi() {    
             try{
                 let response = await patchRequest(`/info/view-profile/${data.president}/`,{
-                    is_staff: status
+                    is_staff: status,
+                    is_member: member
                 })
             }    
             catch(err){

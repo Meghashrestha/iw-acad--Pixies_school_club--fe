@@ -52,8 +52,10 @@ function AddMember(){
                     club_name: data.club,
                     user: data.member,
                 })
+                alert("Successfully added member to the club")
             }    
             catch(err){
+                alert("Something went wrong")
                 console.log(err.message)
             }    
         }
@@ -66,10 +68,6 @@ function AddMember(){
         copy2[e.name] = e.value
         setData(copy2)
     }
-
-    console.log('yser',data)
-    console.log('club',data.club)
-
     return(
         <React.Fragment>
             <div>
