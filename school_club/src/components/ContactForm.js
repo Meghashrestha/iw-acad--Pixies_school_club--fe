@@ -36,11 +36,12 @@ function ContactForm(){
               message: contact.messageBody,
               club: contact.club_name,
             })
-            
-        } 
-        catch(err){
-            console.log(err)
-        }    
+            alert("Successfully sent")
+            }    
+            catch(err){
+                alert("Something went wrong")
+                console.log(err.message)
+            }    
     }  
     postMyApi()       
   }

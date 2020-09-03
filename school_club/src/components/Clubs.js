@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import "../css/Club.css";
-import science  from '../images/science.png';
-import art from '../images/art.png';
-import drama from '../images/drama.png';
-import music from '../images/music.png';
-import sports from '../images/sports.png';
-import photography from '../images/photography.png';
 import { Link } from 'react-router-dom'
+
+import "../css/Club.css";
+import Club_description from './Club_description'
 import {getRequest} from '../config/axios.config'
 
 function Clubs(){
@@ -50,7 +46,6 @@ function Clubs(){
                                     {/* <span class="img-wrap" id="science"><img src={science} alt="Image" class="img-fluid" /></span> */}
                                     <h3 class="text-teal">{club.club_name}</h3>
                                         <span>{club.description}</span>
-                                    
                                     <p><Link to="/clubs/description" class="btn btn-warning btn-custom-1 mt-4">Learn More</Link></p>
                                 </div>
                                 </div>

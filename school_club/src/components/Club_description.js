@@ -72,7 +72,6 @@ function Club_description(){
                              </div>
                              <div class="col-md-5 ml-auto pl-md-5">
                                  <span class="text-cursive h5 text-red">About our club</span>
-                                 <h3 class="text-black">WHAT DOES OUR CLUB DO?</h3>
                                  <p><span>{description}</span></p>
                                  
                                  <span class="text-cursive h5 text-red">INTERESTED?</span>
