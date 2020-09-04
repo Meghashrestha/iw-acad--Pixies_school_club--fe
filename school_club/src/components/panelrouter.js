@@ -11,6 +11,8 @@ import Dashoard from './dashboard';
 import Events from './Events';
 import Gallery from './Gallery';
 import Message from './Message';
+import ViewMessage from './ViewMessage';
+
 import ViewApplication from './ViewApplication'
 import Logout from './Logout';
 import Switch from "react-bootstrap/esm/Switch";
@@ -41,6 +43,8 @@ const PanelRouter = () => (
         <PrivateRoute Route exact path="/panel/events" component={Events} />
         <PrivateRoute Route exact path="/panel/view-application" component={ViewApplication} />
         <PrivateRoute exact path="/panel/message" component={Message} />
+        <PrivateRoute exact path="/panel/view-message" component={ViewMessage} />
+
 
         <PrivateRoute exact path="/panel/logout" component={Logout} />
         <PrivateRoute exact path="/panel/upload-gallery" component={uploadGallery} />
