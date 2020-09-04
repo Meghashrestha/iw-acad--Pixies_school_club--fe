@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { Link, withRouter} from 'react-router-dom'
 import science from '../images/description/science.png';
-import { Link } from 'react-router-dom'
-
+import {connect} from 'react-redux';
 import {getRequest} from '../config/axios.config'
 
 
 
-function Club_description(){
+function Club_description(props){
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
 
@@ -40,8 +40,7 @@ function Club_description(){
                              </div>
                              <div class="col-md-5 ml-auto pl-md-5">
                                  <span class="text-cursive h5 text-red">About our club</span>
-                                 <h3 class="text-black">WHAT DOES OUR CLUB DO?</h3>
-                                 <p><span>{description}</span></p>
+                                 <p><span>{props.description}</span></p>
                                  
                                  <span class="text-cursive h5 text-red">INTERESTED?</span>
                     
@@ -56,4 +55,8 @@ function Club_description(){
         );
 }
 
-export default Club_description;
+const mapStateToProps = (state) => ({
+    description: state.auth.description
+    });
+    
+    export default connect(mapStateToProps, null)(withRouter(Club_description));

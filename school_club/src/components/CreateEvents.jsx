@@ -21,8 +21,10 @@ function CreateEvents(){
                         event_description: events.eventDescription,
                         event_date: events.eventDate,
                 })
+                alert("Successfully created event")
             }    
             catch(err){
+                alert("Something went wrong")
                 console.log(err)
             }    
         }

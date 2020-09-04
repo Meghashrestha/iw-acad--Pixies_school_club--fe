@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import {postRequest, getRequest} from '../config/axios.config'
+import {postRequest} from '../config/axios.config'
 
 import "../css/CreateNews.css";
 
@@ -42,15 +42,7 @@ function CreateNews(){
     return(
         <React.Fragment>
         <header className="text-left text-cursive text-red d-block">Publish News</header>
-        
-
-
-        
-     
-
-      
-
-      <form className="col-xl-10 col-lg-10 col-md-12 col-sm-12" onSubmit={handleSubmit}>
+              <form className="col-xl-10 col-lg-10 col-md-12 col-sm-12" onSubmit={handleSubmit}>
             <div className="form-group w-100  pt-3 pl-4 ">
               <label className="mt-4">Title</label><br/>
               <input type='text' name='articleTitle' value={article.articleTitle} placeholder='Title' onChange={handleChange}></input>
