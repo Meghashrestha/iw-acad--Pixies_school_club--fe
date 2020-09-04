@@ -9,6 +9,20 @@ import { Content } from "react-mdl";
 function ViewApplication() {
   const [application, setApplication] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [club, setClub] = useState([]);
+
+  useEffect(() => {
+    async function fetchMyClub() {
+      try {
+        let response = await getRequest("/view-club/");
+        setClub(response.data.results);
+        console.log(response.data.results);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchMyClub();
+  }, []);
 
   useEffect(() => {
     async function fetchMyApi(event) {
@@ -46,6 +60,7 @@ function ViewApplication() {
                     <p className="card-body text-sm text-sm-left ">
                     Name : {applications.name}<br/>
                     Interested Club : {applications.club_name}<br/>
+                    
                     Interest Reason : {applications.interest_reason}<br/>
                     Email : {applications.email}<br/>
                     </p>
