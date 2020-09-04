@@ -24,43 +24,41 @@ function News() {
 
   return (
     <React.Fragment>
-      <header className="text-lg text-cursive text-red text-left mt-5">
-        News
-      </header>
+    <header className="text-lg text-cursive text-red text-left mt-5">
+      News
+    </header>
 
-      <div className="container">
-        <div className="row">
-          {article.map((articles) => {
-            return (
-              <div className="col-lg-8 col-md-10 col-xs-12">
-                <div className="card">
-                  <div className="card-body d-block ">
-                    <img
-                      src={logo}
-                      alt="logo.jpg"
-                      className="img-fluid float-left rounded-circle w-50 "
-                    />
-                    <br />
-                    <h2 className="card-body text-md-left mb-0">
-                      {articles.article_title}
-                    </h2>
-                    <div className="card-body text-sm text-sm-left ">
-                      <p className="card-body text-sm text-sm-left ">
-                        {articles.article_description}
-                      </p>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span>-{articles.created_by}</span>
-                    </div>
-                  </div>
+    <div className="container">
+      <div className="row">
+        {article.map((articles) => {
+          return (
+            <div className="col-lg-8 col-md-10 col-xs-12">
+            <div className="card">
+              <div className="card-body d-block ">
+                <img
+                  src={logo}
+                  alt="logo.jpg"
+                  className="img-fluid float-left rounded-circle w-50 "
+                />
+                <br />
+                <h2 className="card-body text-md-left mb-0">{articles.article_title}</h2>
+                <div className="card-body text-sm text-sm-left ">
+                  <p className="card-body text-sm text-sm-left ">
+                  {articles.article_description}
+                  </p>
+                </div>
+                <br></br>
+                <div>
+                  <span>-{articles.created_by}</span>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+            </div>
+          );
+        })}
       </div>
-    </React.Fragment>
+    </div>
+  </React.Fragment>
   );
 }
 
