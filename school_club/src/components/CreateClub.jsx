@@ -44,19 +44,31 @@ class CreateClub extends Component {
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <label>Create Club</label>
+          </div>
+          <div className="form-group">
+
+          <label >Club Name</label>
           <p>
-          <label>Create Club:</label>
-            <input type="text" placeholder='Title' name='club_name' value={this.state.club_name} onChange={this.handleChange} ></input>
+            <input type="text" placeholder='Club Name' name='club_name' value={this.state.club_name} onChange={this.handleChange} ></input>
           </p>
+          </div>
+          <div className="form-group">
+          <label >Description</label>
           <p>
-            <input type="text" placeholder='Content' name='description'  value={this.state.description} onChange={this.handleChange}></input>
+            <input type="text" placeholder='Description' name='description'  value={this.state.description} onChange={this.handleChange}></input>
 
           </p>
+          </div>
+          <div className="form-group">
+          <label >Club Logo</label>
           <p>
             <input type="file"
                    id="image"
                    accept="image/png, image/jpeg"  onChange={this.handleImageChange} required/>
           </p>
+          </div>
           <input type="submit"/>
         </form>
       </div>

@@ -5,9 +5,8 @@ import {getRequest, postRequest} from '../config/axios.config'
 
 function Application(){
     const[application, setApplication] = useState({
-        firstname: "",
-        lastname: "",
-        middlename: "",
+        name: "",
+        interest_reason: "",
         email: "",
         club_name: '',
     })
@@ -36,19 +35,17 @@ function Application(){
             try{
                 let response = await postRequest('member-application/',
                 {
-                            first_name: application.firstname,
-                            last_name: application.lastname,
-                            middle_name: application.middlename,
+                            name: application.name,
+                            interest_reason: application.interest_reason,
                             email: application.email,
                             club_name: application.club_name
                        
                 })
-                alert("Successfully sent")
-              }    
-              catch(err){
-                  alert("Something went wrong")
-                  console.log(err.message)
-              }    
+
+                console.log(application.name)
+            }catch(err){
+                console.log(err)
+            }
         }
         
         postMyApi()
@@ -68,38 +65,34 @@ function Application(){
             <section>
                 <form onSubmit={handleSubmit}>
                 <div className="form-group">
-            <label >First Name</label>
+            <label >Name</label>
             <input
               type="text"
               className="form-control"
-              name="firstname"
-              value= {application.firstname}
+              name="name"
+              value= {application.name}
               placeholder="Name"
               onChange={handleChange}
             />
           </div>
+          <select name='club_name'  value={application.club_name} onChange={handleChange}>
+                <option value='' key=''>Select Club</option>
+                    {
+                            data.map(opt => <option key={opt.id} value={opt.id}>{opt.club_name}</option>)
+                    }
+                </select>
           <div className="form-group">
-            <label >Last Name</label>
+            <label >Why are you interested to join this club?</label>
             <input
               type="text"
               className="form-control"
-              name="lastname"
-              value= {application.lastname}
-              placeholder="Name"
+              name="interest_reason"
+              value= {application.interest_reason}
+              placeholder="interest_reason"
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label >Middle Name</label>
-            <input
-              type="text"
-              className="form-control"
-              name="middlename"
-              value= {application.middlename}
-              placeholder="Name"
-              onChange={handleChange}
-            />
-          </div>
+       
           <div className="form-group">
             <label >Email address</label>
             <input
@@ -112,12 +105,7 @@ function Application(){
               onChange={handleChange}
             />
           </div>
-                <select name='club_name'  value={application.club_name} onChange={handleChange}>
-                <option value='' key=''>Select Club</option>
-                    {
-                            data.map(opt => <option key={opt.id} value={opt.club_name}>{opt.club_name}</option>)
-                    }
-                </select>
+ 
                     <button type='submit'>Submit</button>
                 </form>
             </section>
