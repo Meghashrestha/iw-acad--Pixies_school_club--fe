@@ -13,7 +13,6 @@ const isUserAuthenticated = () => {
 }
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
-  console.log(isUserAuthenticated())
 return(
   <Route
     {...rest}
@@ -28,7 +27,6 @@ return(
         //   console.log(isUserAuthenticated())
         //     return <Component {...props} />;
         if(isUserAuthenticated()){
-          console.log('data')
           return <Component {...props} />;
         }
         else{

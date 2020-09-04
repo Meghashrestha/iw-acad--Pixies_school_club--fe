@@ -11,7 +11,7 @@ import Des from "./Des";
 import Panel from "./components/Panel";
 import PanelRouter from './components/panelrouter';
 import {Provider} from 'react-redux';
-import store from './store';
+import {store} from './store';
 import PrivateRoute from "./common/PrivateRoute";
 import {loadUser} from "./actions/auth";
 

@@ -14,7 +14,7 @@ function ViewApplication() {
     async function fetchMyApi(event) {
       try {
         let response = await getRequest(`/view-application/`);
-        console.log(response.data.results)
+        console.log(response.data)
         setApplication(response.data.results)
         setIsLoading(false)
       } catch (err) {
@@ -29,7 +29,7 @@ function ViewApplication() {
   return (
     <React.Fragment>
       <header className="text-left text-cursive h2 text-red d-block">
-        News
+        Applications
       </header>
       
       <div className="container">
@@ -44,18 +44,20 @@ function ViewApplication() {
                   <h2 className="card-body text-md-left mb-0"></h2>
                   <div className="card-body text-sm text-sm-left ">
                     <p className="card-body text-sm text-sm-left ">
-                    First Name : {applications.first_name}<br/>
-                    Middle Name : {applications.middle_name}<br/>
+                    Name : {applications.name}<br/>
+                    Interested Club : {applications.club}<br/>
+                    Interest Reason : {applications.middle_name}<br/>
                     Last Name: {applications.last_name}<br/>
                     Email : {applications.email}<br/>
-                    Interested Club : {applications.club}<br/>
                     </p>
                     
                   </div>
                   <div className="col text-center mt-1">
                       <Link to="/panel/add-members">Accept</Link>
                   </div>
-                
+                  <div className="col text-center mt-1">
+                      <Link to="/panel/view-application">Reject</Link>
+                  </div>
                  
   
                  

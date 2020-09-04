@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {postRequest, getRequest} from '../config/axios.config';
 
 import BackArrow from "./back-arrow";
-import { setsuperAdmin } from "../actions/message";
+import { setUser } from "../actions/message";
 
 import "../css/login.css";
 
@@ -62,26 +62,30 @@ function Login(props) {
               password: login.password,
             
             }, false)
-            localStorage.setItem('id', response.data.email )
             localStorage.setItem('access_token', response.data.token )
-            localStorage.setItem('first_name', response.data.first_name )
-            localStorage.setItem('last_name', response.data.last_name )
-            localStorage.setItem('middle_name', response.data.middle_name )
-            localStorage.setItem('email', response.data.email )
-            localStorage.setItem('is_staff', response.data.is_staff )
-            localStorage.setItem('is_member', response.data.is_member )
-            localStorage.setItem('is_superuser', response.data.is_superuser )
-
-            props.setIsSuperAdmin(true)
+            console.log(response.data)
+            const userInfo = {
+              isSuperAdmin: response.data.is_superuser,
+              isStaff: response.data.is_staff,
+              isMember: response.data.is_member,
+              first_name: response.data.first_name,
+              last_name: response.data.last_name,
+              middle_name: response.data.middle_name,
+              email: response.data.email,
+              id: response.data.id,
+              }
+            props.setUser(userInfo)
             history.push('/panel/')
           }
           catch(err){
-            if(err.response.status == 400){
-              alert('Invalid username or password')
-            }
-            else{
-              alert("Oops something went wrong")
-            }
+            console.log(err)
+            // if(err.response.status == 400){
+              
+            //   alert('Invalid username or password')
+            // }
+            // else{
+            //   alert("Oops something went wrong")
+            // }
         }
       }
       postMyApi()
@@ -156,7 +160,7 @@ console.log(login)
 );
 }
 const mapDispatchToProps = (dispatch) => ({
-setIsSuperAdmin: (status) => dispatch(setsuperAdmin(status)),
+setUser: (user) => dispatch(setUser(user)),
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(Login));

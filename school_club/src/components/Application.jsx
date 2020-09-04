@@ -41,6 +41,7 @@ function Application(){
                             club_name: application.club_name
                        
                 })
+
                 console.log(application.name)
             }catch(err){
                 console.log(err)
