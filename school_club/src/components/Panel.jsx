@@ -82,12 +82,13 @@ function Panel(props) {
             <Link to="/panel/add-members">Add Members</Link>
           </li>
            }
-
+        { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/upload-gallery">Gallery</Link>
           </li>
-          
-          { props.userInfo.isMember &&
+        }
+
+          { (!props.userInfo.isMember && !props.userInfo.isStaff &&  !props.userInfo.isSuperAdmin) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/application">Application</Link>
           </li>
@@ -108,7 +109,7 @@ function Panel(props) {
         }
 
 
-        { props.userInfo.isMember &&
+        { (!props.userInfo.isMember && !props.userInfo.isStaff &&  !props.userInfo.isSuperAdmin) && 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/message">Send Message</Link>
           </li>

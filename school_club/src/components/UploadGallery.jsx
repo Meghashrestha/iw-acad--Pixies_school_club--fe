@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 
 import {postRequest, getRequest} from '../config/axios.config'
 
@@ -34,7 +35,7 @@ function UploadGallery() {
       </label>
       </div>
       
-      <button className="btn btn-dark" onClick={() => UploadGallery()}>Upload</button>
+      <Link to="/panel/upload-gallery"><button className="btn btn-dark" onClick={() => UploadGallery()}>Upload</button></Link>
       </form>
       </div>
     
