@@ -119,6 +119,9 @@ function Panel(props) {
 
     { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
+          
+            <Link to="/panel/message">Send a Message</Link>
+
             <Link to="/panel/members">Manage Members</Link>
           </li>
        }
@@ -126,6 +129,7 @@ function Panel(props) {
     { props.userInfo.isStaff &&
     <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/view-message">View Message</Link>
+
           </li>
 
       }

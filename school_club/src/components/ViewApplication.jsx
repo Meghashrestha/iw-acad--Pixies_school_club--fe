@@ -30,32 +30,41 @@ function ViewApplication() {
       <header className="text-lg text-cursive text-red text-left mt-5">
         Applications
       </header>
-
-      {/* {application.map(applications => { */}
-      {/* return( */}
-
-      <div className="card col-4">
-        <div className="card-body col-12 ">
-          <div className="card-body text-sm text-sm-left col-12 ">
-            <p className="card-body text-sm text-sm-left ">
-              Name : {applications.name}
-              <br />
-              Interested Club : {applications.club}
-              <br />
-              Interest Reason : {applications.middle_name}
-              <br />
-              Last Name: {applications.last_name}
-              <br />
-              Email : {applications.email}
-              <br />
-            </p>
-          </div>
-          <div className="col text-center mt-1">
-            <Link to="/panel/add-members">Accept</Link>
-          </div>
-          <div className="col text-center mt-1">
-            <Link to="/panel/view-application">Reject</Link>
-          </div>
+      
+      <div className="container">
+        <div className="row">
+          {application.map(applications => {
+            return(
+              <div className="col-lg-8 col-md-10 col-xs-12">
+              <div className="card">
+                <div className="card-body d-block">
+                  
+               
+                  <h2 className="card-body text-md-left mb-0"></h2>
+                  <div className="card-body text-sm text-sm-left ">
+                    <p className="card-body text-sm text-sm-left ">
+                    Name : {applications.name}<br/>
+                    Interested Club : {applications.club_name}<br/>
+                    Interest Reason : {applications.interest_reason}<br/>
+                    Email : {applications.email}<br/>
+                    </p>
+                    
+                  </div>
+                  <div className="col text-center mt-1">
+                      <Link to="/panel/add-members">Accept</Link>
+                  </div>
+                  <div className="col text-center mt-1">
+                      <Link to="/panel/view-application">Reject</Link>
+                  </div>
+                 
+  
+                 
+                </div>
+              </div>
+            </div>
+            )
+          })}
+         
         </div>
 
         {/* ) */}
