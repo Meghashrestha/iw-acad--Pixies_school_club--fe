@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../css/News.css";
 import { Link, withRouter, useHistory } from "react-router-dom";
 
-import logo from "../images/music.png";
 import { getRequest, deleteRequest} from '../config/axios.config'
 import { Content } from "react-mdl";
 
@@ -47,6 +46,7 @@ function ViewMessage() {
                     Message Title : {applications.message_title}<br/>
                     Message : {applications.message}<br/>
                     Club: {applications.club}<br/>
+                    Sent By: {applications.sent_by}<br/>
                  
                     </p>
                     

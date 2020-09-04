@@ -1,14 +1,17 @@
-
 import React, { useState, useEffect } from "react";
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
-import { getRequest, postRequest} from '../config/axios.config'
 import "../css/contact-form.css";
+import { getRequest, postRequest} from '../config/axios.config'
 
-function ContactForm(){
+
+function ContactForm(props){
   const [contact, setContact] = useState({
     messageTitle: "",
     messageBody: "",
     club:"",
+    sent_by: '',
   })
   
   const [data, setData] = useState([])
@@ -35,6 +38,7 @@ function ContactForm(){
               message_title: contact.messageTitle,
               message: contact.messageBody,
               club: contact.club_name,
+              sent_by: props.sent_by
             })
             alert("Successfully sent")
             }    
@@ -90,4 +94,9 @@ function ContactForm(){
   );
 }
 
-export default ContactForm;
+const mapStateToProps = (state) => ({
+  sent_by: state.auth.first_name
+  });
+  
+  export default connect(mapStateToProps, null)(withRouter(ContactForm));
+
