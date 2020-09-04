@@ -45,9 +45,8 @@ function ViewApplication() {
                   <div className="card-body text-sm text-sm-left ">
                     <p className="card-body text-sm text-sm-left ">
                     Name : {applications.name}<br/>
-                    Interested Club : {applications.club}<br/>
-                    Interest Reason : {applications.middle_name}<br/>
-                    Last Name: {applications.last_name}<br/>
+                    Interested Club : {applications.club_name}<br/>
+                    Interest Reason : {applications.interest_reason}<br/>
                     Email : {applications.email}<br/>
                     </p>
                     
