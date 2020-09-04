@@ -117,6 +117,20 @@ function Panel(props) {
           </li>
     {/* } */}
 
+    { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
+          <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/members">Manage Members</Link>
+          </li>
+       }
+
+    { props.userInfo.isStaff &&
+    <li className="nav-item  mr-auto text-center pt-2 pb-2">
+            <Link to="/panel/view-message">View Message</Link>
+          </li>
+
+      }
+
+
           <li className="nav-item  mr-auto text-center pt-2 pb-5 w-75 ml-xl-4 ml-lg-4 ml-md-1 ml-sm-0">
             <button className="btn btn-danger" onClick={logout}>Logout</button>
           </li>
