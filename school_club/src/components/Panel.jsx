@@ -50,7 +50,7 @@ function Panel(props) {
           </li>
 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel">Dashboard</Link>
+            <Link to="/panel/dashboard">Dashboard</Link>
           </li>
 
           { (props.userInfo.isSuperAdmin) &&

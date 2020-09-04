@@ -20,6 +20,7 @@ import "../css/main_body.css";
 import "../css/sub_body.css";
 // import AddStaffs from "./AddStaffs";
 import uploadGallery from "./UploadGallery";
+import Dashboard from "./dashboard";
 
 import AddPresident from "./AddPresident";
 import AddMembers from './AddMembers';
@@ -33,7 +34,7 @@ const PanelRouter = () => (
     
     <Switch>
         <section className='comp-body'>
-        <PrivateRoute exact path="/panel/dashboard" component={Dashoard}/>
+        <PrivateRoute exact path="/panel/dashboard" component={Dashboard}/>
         <PrivateRoute exact path="/panel/create-club" component={CreateClub}/>
         <PrivateRoute exact path="/panel/create-news" component={CreateNews} />
         <PrivateRoute exact path="/panel/create-events" component={CreateEvents} />
