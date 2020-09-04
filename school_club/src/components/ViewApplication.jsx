@@ -33,7 +33,6 @@ function ViewApplication() {
       </header>
       
       <div className="container">
-        <h1>TEST</h1>
         <div className="row">
           {application.map(applications => {
             return(
@@ -45,11 +44,11 @@ function ViewApplication() {
                   <h2 className="card-body text-md-left mb-0"></h2>
                   <div className="card-body text-sm text-sm-left ">
                     <p className="card-body text-sm text-sm-left ">
-                    First Name : {applications.first_name}<br/>
-                    Middle Name : {applications.middle_name}<br/>
+                    Name : {applications.name}<br/>
+                    Interested Club : {applications.club}<br/>
+                    Interest Reason : {applications.middle_name}<br/>
                     Last Name: {applications.last_name}<br/>
                     Email : {applications.email}<br/>
-                    Interested Club : {applications.club}<br/>
                     </p>
                     
                   </div>
