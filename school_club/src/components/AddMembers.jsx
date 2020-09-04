@@ -5,10 +5,11 @@ import "../css/CreateEvent.css";
 
 
 function AddMember(){
+  const [member, setMember] = useState([])
     const [data, setData] = useState(0)
     const [club, setClub] = useState([])
-    const [member, setMember] = useState([])
-    
+    const [status, setStatus] = useState();
+    console.log('status',status)
     useEffect(() => {
         async function fetchMyMember() {
           try{
@@ -32,7 +33,6 @@ function AddMember(){
             try{
                 let response = await getRequest('/view-club/')
                 setClub(response.data.results)
-                console.log(response.data.results)
             }
             catch(err){
                 console.log(err)
@@ -60,14 +60,37 @@ function AddMember(){
             }    
         }
         postMyApi()
-    }
+   
        
+    async function patchtMyApi() {
+        
+        try {
+          let response = await patchRequest(
+            `/info/view-profile/${data.member}/`,
+            {
+              is_member: status,
+            }
+          );
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      patchtMyApi();
+    
+}
+
     const handleChangeI = (event) => {
         const copy2 = Object.assign({}, data)
         const e = event.currentTarget
         copy2[e.name] = e.value
         setData(copy2)
     }
+
+    const toggleStatus = (event) => {
+        setStatus((value) => !value);
+        console.log(event.target.checked);
+      };
+
     return(
         <React.Fragment>
             <div>
@@ -82,8 +105,8 @@ function AddMember(){
                            member.map(user => <option key={user.id} value={user.id}>{user.username}</option>)
                        }
                        </select>
-</div>
-<div className="form-group col-12 col-xl-8 col-lg-8 col-md-12 col-sm-12">
+             </div>
+                    <div className="form-group col-12 col-xl-8 col-lg-8 col-md-12 col-sm-12">
                     <select name='club' className="form-control" value={data.club} onChange={handleChangeI}>
                     
                     <option value=''>Select Club</option>
@@ -92,6 +115,15 @@ function AddMember(){
                        }
                     </select>
                     </div>
+                    <div className="form-group col-12 col-sm-12 col-lg-12 text-cursive">
+          <input
+            type="checkbox"
+              className="col-3 col-xl-2 col-lg-2 col-md-2 col-sm-2"  
+            onChange={toggleStatus}
+            value={status}
+            checked={status}
+          />Confirm Member
+        </div>
                     <button className="btn btn-info ml-2 ml-sm-2 ml-md-2 ml-lg-2 ml-xl-3 mb-3 " type="submit" value="Submit">
             Add
           </button>
@@ -102,5 +134,6 @@ function AddMember(){
     )
 
 }
+
 
 export default AddMember;

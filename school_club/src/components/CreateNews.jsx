@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 import {postRequest} from '../config/axios.config'
-
 import "../css/CreateNews.css";
 
 
-function CreateNews(){
+function CreateNews(props){
 
   const [article, setArticle] = useState({
     articleTitle: '',
     articleDescription: '',
-    all: true
+    created_by: ''
   })
-  
+  console.log(props.created_by)
     const handleSubmit = (event) => {
         event.preventDefault();
         async function postMyApi() {    
@@ -20,7 +21,7 @@ function CreateNews(){
                 let response = await postRequest('/post-article/',{
                         article_title: article.articleTitle,
                         article_description: article.articleDescription,
-                        all: article.all
+                        created_by: props.created_by
                 })
                 alert("Successfully Posted")
             }    
@@ -67,4 +68,8 @@ function CreateNews(){
 
 }
 
-export default CreateNews;
+const mapStateToProps = (state) => ({
+  created_by: state.auth.first_name
+  });
+  
+  export default connect(mapStateToProps, null)(withRouter(CreateNews));
