@@ -5,9 +5,9 @@ import "../css/CreateEvent.css";
 
 
 function AddMember(){
+  const [member, setMember] = useState([])
     const [data, setData] = useState(0)
     const [club, setClub] = useState([])
-    const [member, setMember] = useState([])
     const [status, setStatus] = useState();
     console.log('status',status)
     useEffect(() => {
@@ -105,7 +105,7 @@ function AddMember(){
                            member.map(user => <option key={user.id} value={user.id}>{user.username}</option>)
                        }
                        </select>
-                    </div>
+             </div>
                     <div className="form-group col-12 col-xl-8 col-lg-8 col-md-12 col-sm-12">
                     <select name='club' className="form-control" value={data.club} onChange={handleChangeI}>
                     
