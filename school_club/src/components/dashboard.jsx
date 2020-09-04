@@ -35,15 +35,7 @@ function Dashboard() {
               <div className="col-lg-8 col-md-10 col-xs-12">
               <div className="card">
                 <div className="card-body d-block">
-                  {/* <div className="img-fluid rounded-circle w-100 mb-3"> */}
-                  <img
-                    src={logo}
-                    alt="logo.jpg"
-                    className="img-fluid float-left rounded-circle w-50 "
-                  />
-           
-                  <br />
-  
+               
             
                   <h2 className="card-body text-md-left mb-0">{articles.article_title}</h2>
                   <div className="card-body text-sm text-sm-left ">

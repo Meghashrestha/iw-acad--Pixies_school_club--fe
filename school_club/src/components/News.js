@@ -36,11 +36,11 @@ function News() {
               <div className="card">
                 <div className="card-body d-block">
                   {/* <div className="img-fluid rounded-circle w-100 mb-3"> */}
-                  <img
+                  {/* <img
                     src={logo}
                     alt="logo.jpg"
                     className="img-fluid float-left rounded-circle w-50 "
-                  />
+                  /> */}
                   {/* </div> */}
   
                   {/* <div className="news-post_info"> */}
