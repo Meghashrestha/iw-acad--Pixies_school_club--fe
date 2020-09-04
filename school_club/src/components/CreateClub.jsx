@@ -36,6 +36,7 @@ class CreateClub extends Component {
     })
         .then(res => {
           console.log(res.data);
+          alert("Successfully created club")
         })
         .catch(err => console.log(err))
   };

@@ -20,8 +20,10 @@ import "../css/sub_body.css";
 import uploadGallery from "./UploadGallery";
 
 import AddPresident from "./AddPresident";
-import AddMembers from './AddMembers'
-import Flags from './Flags'
+import AddMembers from './AddMembers';
+import ManagePresident from './ManagePresident';
+import ManageMember from './ManageMember';
+import Flags from './Flags';
 
 
 
@@ -40,6 +42,8 @@ const PanelRouter = () => (
         <PrivateRoute exact path="/panel/news" component={News} />
         <PrivateRoute Route exact path="/panel/events" component={Events} />
         <PrivateRoute Route exact path="/panel/view-application" component={ViewApplication} />
+        <PrivateRoute Route exact path="/panel/presidents" component={ManagePresident} />
+        <PrivateRoute Route exact path="/panel/members" component={ManageMember} />
         <PrivateRoute exact path="/panel/message" component={Message} />
 
         <PrivateRoute exact path="/panel/logout" component={Logout} />

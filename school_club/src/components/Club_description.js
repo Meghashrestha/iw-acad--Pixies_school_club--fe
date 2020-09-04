@@ -16,7 +16,6 @@ function Club_description(props){
                 let response = await getRequest('/view-club/')
                 setName(response.data.club_name)
                 setDescription(response.data.description)
-                console.log('data', response.data.results[0].club_name)
                 setName(response.data.results[0].club_name)
                 setDescription(response.data.results[0].description)
             }

@@ -79,13 +79,13 @@ function Login(props) {
           }
           catch(err){
             console.log(err)
-            // if(err.response.status == 400){
+            if(err.response.status == 400){
               
-            //   alert('Invalid username or password')
-            // }
-            // else{
-            //   alert("Oops something went wrong")
-            // }
+              alert('Invalid username or password')
+            }
+            else{
+              alert("Oops something went wrong")
+            }
         }
       }
       postMyApi()
