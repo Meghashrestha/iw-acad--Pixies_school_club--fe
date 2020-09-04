@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 import {postRequest, getRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
 
 
-function CreateEvents(){
+function CreateEvents(props){
     const [events, setEvents] = useState({
         eventTitle: '',
         eventDescription: '',
         eventDate: ',',
-        all: false
+        created_by: '',
     })
 
     const handleSubmit = (event) => {
@@ -20,6 +22,7 @@ function CreateEvents(){
                         event_title: events.eventTitle,
                         event_description: events.eventDescription,
                         event_date: events.eventDate,
+                        created_by: props.created_by
                 })
                 alert("Successfully created event")
             }    
@@ -68,4 +71,8 @@ function CreateEvents(){
 
 }
 
-export default CreateEvents;
+const mapStateToProps = (state) => ({
+    created_by: state.auth.first_name
+    });
+    
+    export default connect(mapStateToProps, null)(withRouter(CreateEvents));

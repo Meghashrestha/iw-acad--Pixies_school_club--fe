@@ -1,14 +1,13 @@
 import React, { useState, useEffect} from 'react';
-import { Link, withRouter, Redirect, useHistory  } from 'react-router-dom'
+import { withRouter, useHistory  } from 'react-router-dom'
 import {connect} from 'react-redux';
 
-import "../css/Club.css";
 import {getRequest} from '../config/axios.config'
-import { setDesp } from "../actions/message";
 
-function Clubs(props){
+function ManageMember(props){
 
-    const [clubs, setClubs] = useState([])
+    const [members, setMembers] = useState([])
+    const [isMember, setIsMember] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     let history = useHistory()
 
@@ -16,11 +15,13 @@ function Clubs(props){
         async function fetchMyApi() {
             setIsLoading(true)
             try{
-                let response = await getRequest('/view-club/')
-                setClubs(response.data.results)
+                let response = await getRequest('/user-view/')
+                console.log('members to add',response.data.results)
+                setMembers(response.data.results)
                 setIsLoading(false)
             }
             catch(err){
+                console.log(err)
                 setIsLoading(false)
             }
         }
@@ -30,6 +31,7 @@ function Clubs(props){
 
             const handleClick = (description) => {
                props.setDesp(description) 
+               console.log('/clubs/description')
                return history.push('/clubs/description/')
             }
 
@@ -44,14 +46,12 @@ function Clubs(props){
                             </div>
                             </div>
                             <div class="row">
-                                {clubs.map(club => {
+                                {members.map(member => {
                                     return (
                                     <div class="col-lg-4 mb-4 mb-lg-0">
                                     <div class="package text-center bg-white mb-4">
-                                    <span class="img-wrap"><img src={club.logo} alt="Image" class="img-fluid" /></span>
-                                    <h3 class="text-teal">{club.club_name}</h3>
-                                        <span>{club.description}</span>
-                                    <p onClick={() => handleClick(club.description)} class="btn btn-warning btn-custom-1 mt-4">Learn More</p>
+                                        <h3 class="text-teal">{member.first_name} {member.last_name}</h3> =>  <h3 class="text-teal">{member.club_name} </h3>
+                                        <h3 class="text-teal">{member.user}</h3>
                                 </div>
                                 </div>
                                 )
@@ -63,8 +63,10 @@ function Clubs(props){
         );
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    setDesp: (user) => dispatch(setDesp(user)),
-    });
+// const mapDispatchToProps = (dispatch) => ({
+//     setDesp: (user) => dispatch(setDesp(user)),
+//     });
     
-    export default connect(null, mapDispatchToProps)(withRouter(Clubs));
+//     export default connect(null, mapDispatchToProps)(withRouter(ManageMember));
+
+export default ManageMember
