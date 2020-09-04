@@ -7,6 +7,7 @@ import CreateNews from './CreateNews';
 import CreateEvents from './CreateEvents';
 import Application from './Application';
 import News from './News';
+import Dashoard from './dashboard';
 import Events from './Events';
 import Gallery from './Gallery';
 import Message from './Message';
@@ -28,6 +29,7 @@ const PanelRouter = () => (
     
     <Switch>
         <section className='comp-body'>
+        <PrivateRoute exact path="/panel/dashboard" component={Dashoard}/>
         <PrivateRoute exact path="/panel/create-club" component={CreateClub}/>
         <PrivateRoute exact path="/panel/create-news" component={CreateNews} />
         <PrivateRoute exact path="/panel/create-events" component={CreateEvents} />
