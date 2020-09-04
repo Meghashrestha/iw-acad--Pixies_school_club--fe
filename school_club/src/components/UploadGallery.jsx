@@ -22,7 +22,7 @@ function UploadGallery() {
 
   return (
     <div className="UploadGallery">
-      <h3>Upload images with React</h3>
+      <h3>UPLOAD IMAGES</h3>
     
   
       <label>
