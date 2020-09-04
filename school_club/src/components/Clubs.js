@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Link, withRouter, Redirect, useHistory  } from 'react-router-dom'
 import {connect} from 'react-redux';
+import image from "../images/about.png";
 
 import "../css/Club.css";
 import Club_description from './Club_description'
@@ -40,7 +41,10 @@ function Clubs(props){
             return (
                 <React.Fragment>               
                     <div class="site-section-club ">
-                        <div class="container">
+                        <div class="container col-12 position-relative">
+                        <div className=" image-fluid pb-5 position-absolute ">
+        <img src={image} alt="Image" className="img-fluid" />
+        </div>
                             <div class="row mb-5">
                             <div class="col-12 text-center">
                                 <span class="text-cursive h2 text-red d-block">Pixies</span>
@@ -48,9 +52,10 @@ function Clubs(props){
                             </div>
                             </div>
                             <div class="row">
+                                
                                 {clubs.map(club => {
                                     return (
-                                    <div class="col-lg-4 mb-4 mb-lg-0">
+                                    <div class="col-lg-2 mb-4 ml-5 mb-lg-0 center">
                                     <div class="package text-center bg-white mb-4">
                                     <span class="img-wrap"><img src={club.logo} alt="Image" class="img-fluid" /></span>
                                     <h3 class="text-teal">{club.club_name}</h3>

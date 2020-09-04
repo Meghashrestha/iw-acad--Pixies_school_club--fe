@@ -9,53 +9,47 @@ import Auth from "./Auth";
 import Des from "./Des";
 // import Event from "./components/Event/Event";
 import Panel from "./components/Panel";
-import PanelRouter from './components/panelrouter';
-import {Provider} from 'react-redux';
-import {store} from './store';
+import PanelRouter from "./components/panelrouter";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import PrivateRoute from "./common/PrivateRoute";
-import {loadUser} from "./actions/auth";
+import { loadUser } from "./actions/auth";
 
 import Create from "./components/CreateClub";
-import MainBody from './components/MainBody'
-import Login from './components/Login';
-import Register from './components/Register';
+import MainBody from "./components/MainBody";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 class App extends Component {
- 
-  componentDidMount(){
+  componentDidMount() {
     store.dispatch(loadUser());
   }
 
-render(){
-  return (
-    <Provider store={store}>
-    <Router>
-    <Switch>
-      <Route path="/clubs/description">
-        <Des />
-      </Route>
-      <Route path="/login">
-        <Auth />
-      </Route>
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route path="/clubs/description">
+              <Des />
+            </Route>
+            <Route path="/login">
+              <Auth />
+            </Route>
 
-      <PrivateRoute path="/panel" component={MainBody}/>
+            <PrivateRoute path="/panel" component={MainBody} />
 
-      <Route path="/">
-        <Navbar />
-        <Routes />
-
-        <Footer />
-      </Route>
-    </Switch>
-  </Router>
-  
-  </Provider>
-  );
+            <Route path="/">
+              <Navbar />
+              <div className="overflow-hidden">
+                <Routes />
+              </div>
+              <Footer />
+            </Route>
+          </Switch>
+        </Router>
+      </Provider>
+    );
+  }
 }
- 
-};
 export default App;
-
-
-
-

@@ -24,16 +24,16 @@ function News() {
 
   return (
     <React.Fragment>
-      <header className="text-left text-cursive h2 text-red d-block">
-        News
-      </header>
+       <header className="text-lg text-cursive text-red text-left mt-5">
+          News
+        </header>
       
       <div className="container">
         <div className="row">
           {article.map(articles => {
             return(
               <div className="col-lg-8 col-md-10 col-xs-12">
-              <div className="card">
+              <div className="card mb-4">
                 <div className="card-body d-block">
                   {/* <div className="img-fluid rounded-circle w-100 mb-3"> */}
                   <img

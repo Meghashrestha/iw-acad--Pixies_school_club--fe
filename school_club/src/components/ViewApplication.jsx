@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/News.css";
+// import "../css/News.css";
 import { Link, withRouter, useHistory } from "react-router-dom";
 
 import logo from "../images/music.png";
@@ -28,27 +28,31 @@ function ViewApplication() {
 
   return (
     <React.Fragment>
-      <header className="text-left text-cursive h2 text-red d-block">
-        Applications
-      </header>
+       <header className="text-lg text-cursive text-red text-left mt-5">
+          Applications
+        </header>
       
-      <div className="container">
-        <div className="row">
-          {application.map(applications => {
-            return(
-              <div className="col-lg-8 col-md-10 col-xs-12">
-              <div className="card">
-                <div className="card-body d-block">
+        
+          {/* {application.map(applications => { */}
+            {/* return( */}
+              
+              <div className="card col-4">
+                <div className="card-body col-12 ">
                   
                
-                  <h2 className="card-body text-md-left mb-0"></h2>
-                  <div className="card-body text-sm text-sm-left ">
+                  
+                  <div className="card-body text-sm text-sm-left col-12 ">
                     <p className="card-body text-sm text-sm-left ">
-                    Name : {applications.name}<br/>
+                    {/* Name : {applications.name}<br/>
                     Interested Club : {applications.club}<br/>
                     Interest Reason : {applications.middle_name}<br/>
                     Last Name: {applications.last_name}<br/>
-                    Email : {applications.email}<br/>
+                    Email : {applications.email}<br/> */}
+                    Name : nameXYZ
+                    Interested Club : nameXYZ
+                    Interest Reason : nameXYZe_name
+                    Last Name: nameXYZnam
+                    Email : nameXYZ
                     </p>
                     
                   </div>
@@ -61,14 +65,14 @@ function ViewApplication() {
                  
   
                  
-                </div>
+               
               </div>
-            </div>
-            )
-          })}
+            
+            {/* ) */}
+          {/* })} */}
          
         </div>
-      </div>
+     
       
       
       

@@ -6,6 +6,7 @@
   }
 
 
+
   ul.list li{
     display: inline;
     padding-left: 7px;
@@ -29,17 +30,21 @@
   } 
 
   .about h5{
+    color: rgb(255, 255, 255);
     font-family: 'EB Garamond', serif;
   }
   .quick h5{
+    color: rgb(255, 255, 255);
     font-family: 'EB Garamond', serif;
   }
   .contact h5{
+    color: rgb(255, 255, 255);
     font-family: 'EB Garamond', serif;
   }
 
   .page-footer{
-    background-color: #bbbbbb;
+    background-color: #424246;
+    position: relative;
   }
 
   .quick ul{

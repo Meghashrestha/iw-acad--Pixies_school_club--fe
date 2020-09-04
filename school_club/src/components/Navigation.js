@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../css/navigation.css";
 import logo from "../images/transparent-pixies-logo.png";
+import image from "../images/about.png";
 
 import { Link } from "react-router-dom";
 
@@ -12,8 +13,8 @@ class Navigation extends React.Component {
   render() {
     return (
       <div >
-        <ul className="list-unstyled px-5 small-nav d-block d-block d-sm-none">
-
+        <ul className="list-unstyled px-5 bg-teal small-nav d-block d-block d-sm-none">
+        
           <spam className="text-cursive tex-red bg-aqua col-12 mb-3">PIXIES</spam>
           
           <li className="pt-3">
@@ -29,12 +30,12 @@ class Navigation extends React.Component {
                   </li><hr/>
                   <li>
                     <Link to="/gallery">Gallery</Link>
-                  </li>
+                  </li><hr/>
                   {this.state.token && (
-                    <li>
+                    <li className="text-cursive">
                       <Link to="/panel">Panel</Link>
                     </li>
-                  )}<hr/>
+                  )}
                   {!this.state.token && (
                     <li>
                       <Link to="/login">
@@ -44,7 +45,7 @@ class Navigation extends React.Component {
                       </Link>
                     </li>)}
           </ul>
-        <div className="site-navbar site-navbar-target d-none d-sm-block" role="banner">
+        <div className="site-navbar site-navbar-target d-none d-sm-block pb-5" role="banner">
           
           <div className="container col-xl-10 col-lg-10 col-md-11 col-sm-12">
             <div className="menu-wrap navbar-expand-md d-xl-flex d-lg-flex d-md-flex d-sm-flex  align-items-center">
@@ -70,7 +71,11 @@ class Navigation extends React.Component {
                   </li>
                   {this.state.token && (
                     <li>
-                      <Link to="/panel">Panel</Link>
+                      <Link to="/panel">
+                      <p className="text-red text-xl-right  text-lg-right  text-md-right">
+                          Panel
+                        </p>
+                      </Link>
                     </li>
                   )}
                   {!this.state.token && (

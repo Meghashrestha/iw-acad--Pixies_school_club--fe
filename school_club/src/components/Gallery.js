@@ -24,19 +24,25 @@ function Gallery() {
 
   return (
     <React.Fragment>
+      <div className="dummy d-none d-sm-block "></div>
+      <header className="text-center text-red">Gallery</header>
+      <div className="col-4 d-inline pt-5">
       {image.map((images) => {
         return (
-          <div clasName="row d-flex">
-            <div className="col-12">
+          <React.Fragment>
+         
+            <div className="image-wrap">
+              
               <img
                 src={images.image}
                 alt=""
-                className="img-fluid col-4 border-black px-3 py-3"
+                className="image-gallery px-2 py-3"
               />
             </div>
-          </div>
+         </React.Fragment>
         );
       })}
+      </div>
     </React.Fragment>
   );
 }

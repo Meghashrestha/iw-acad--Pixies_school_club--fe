@@ -71,7 +71,7 @@ function Panel(props) {
 
            {/* {  props.userInfo.isStaff &&  */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/create-news">Create News</Link>
+            <Link to="/panel/create-news">Publish News</Link>
           </li>
             {/* } */}
 
@@ -93,7 +93,7 @@ function Panel(props) {
           
           {/* { props.userInfo.isMember && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/application">Application</Link>
+            <Link to="/panel/application">Join Club</Link>
           </li>
         {/* } */}
 
@@ -103,7 +103,7 @@ function Panel(props) {
 
           {/* { (props.userInfo.isSuperAdmin || props.userInfo.isStaff) && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/view-application">View Application</Link>
+            <Link to="/panel/view-application">View Club Application</Link>
           </li>
         {/* } */}
 
@@ -113,12 +113,12 @@ function Panel(props) {
 
         {/* { props.userInfo.isMember && */}
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/message">Message</Link>
+            <Link to="/panel/message">Send a Message</Link>
           </li>
     {/* } */}
 
           <li className="nav-item  mr-auto text-center pt-2 pb-5 w-75 ml-xl-4 ml-lg-4 ml-md-1 ml-sm-0">
-            <button className="btn btn-primary" onClick={logout}>Logout</button>
+            <button className="btn btn-danger" onClick={logout}>Logout</button>
           </li>
         </ul>
       </div>

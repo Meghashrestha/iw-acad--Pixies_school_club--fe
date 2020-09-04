@@ -45,7 +45,7 @@ function CreateEvents(){
 
     return(
             <div className="container">
-                <header className="text-left text-lg h2 text-cursive text-red">Events</header>
+                <header className="text-left text-lg h2 text-cursive text-red mt-5">Events</header>
                 <form  className="col-xl-10 col-lg-12 col-md-12 col-sm-12 pl-sm-0 col-12 px-0" onSubmit={handleSubmit}>
                     <div className="form-group pt-3 pl-1 pl-xl-4 pl-lg-4 pl-md-3 pl-sm-1">
                     <label>Event Title:</label>

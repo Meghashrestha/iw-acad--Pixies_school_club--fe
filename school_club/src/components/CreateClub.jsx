@@ -42,36 +42,37 @@ class CreateClub extends Component {
 
   render() {
     return (
-      <div className="App">
-        <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <label>Create Club</label>
-          </div>
-          <div className="form-group">
+
+      <React.Fragment>
+        <header className="text-left text-cursive text-red d-block mt-5">Create Club</header>
+        <form onSubmit={this.handleSubmit} className="col-12 col-lg-8 col-md-12 col-sm-12 ml-lg-4 ml-md-2 ml-sm-1 ml-0 pl-4 pt-3 pb-3">
+        
+          <div className="form-group col-12 col-lg-12 col-md-12 col-sm-12">
 
           <label >Club Name</label>
-          <p>
+         
             <input type="text" placeholder='Club Name' name='club_name' value={this.state.club_name} onChange={this.handleChange} ></input>
-          </p>
+          
           </div>
-          <div className="form-group">
+          <div className="form-group col-12 col-lg-12 col-md-12 col-sm-12">
           <label >Description</label>
-          <p>
+          
             <input type="text" placeholder='Description' name='description'  value={this.state.description} onChange={this.handleChange}></input>
 
-          </p>
+          
           </div>
-          <div className="form-group">
+          <div className="form-group col-12 col-lg-12 col-md-12 col-sm-12">
           <label >Club Logo</label>
-          <p>
+          
             <input type="file"
                    id="image"
+                   className="logo-club border-bottom-0"
                    accept="image/png, image/jpeg"  onChange={this.handleImageChange} required/>
-          </p>
+          
           </div>
-          <input type="submit"/>
+          <button className="btn btn-info col-3 mb-3 mt-3 ml-3" type="submit">Create</button>
         </form>
-      </div>
+      </React.Fragment>
     );
   }
 }
