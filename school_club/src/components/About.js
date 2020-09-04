@@ -1,6 +1,7 @@
 import React from "react";
+import "../css/about.css";
 
-import image from "../images/hero_1.jpg";
+import image from "../images/about.png";
 
 class About extends React.Component {
   render() {
@@ -8,9 +9,7 @@ class About extends React.Component {
       <div className="site-section">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
-              <img src={image} alt="" className="img-fluid" />
-            </div>
+            
             <div className="col-md-5 ml-auto pl-md-5">
               <span className="text-cursive h5 text-red">About Us</span>
               <h3 className="text-black">Bring Fun Life To You.</h3>
