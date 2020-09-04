@@ -116,12 +116,12 @@ function Panel(props) {
        }
         { props.userInfo.isSuperAdmin &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/presidents">Manage Presidents</Link>
+            <Link to="/panel/presidents">Presidents</Link>
           </li>
        }
       { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/members">Manage Members</Link>
+            <Link to="/panel/members">Members</Link>
           </li>
        }
 
