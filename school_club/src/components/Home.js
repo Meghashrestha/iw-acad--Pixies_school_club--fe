@@ -1,29 +1,34 @@
 import React from "react";
-import image from '../images/background1.png';
+import image from "../images/background1.png";
+import "../css/home.css";
 
-import {Navbar, Nav} from 'react-bootstrap';
-import logo from '../images/transparent-pixies-logo.png';
-
-
+import { Navbar, Nav } from "react-bootstrap";
+import logo from "../images/transparent-pixies-logo.png";
 
 class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
         <div className="ftco-blocks-cover-1">
-          
           <div className="site-section-cover overlay">
             <div className="container">
               <div className="row align-items-center ">
                 <div className="col-md-5 col-sm-8 col-xs-12 mt-5 pt-5">
-                  <span className="text-cursive h2">Welcome To Pixies</span>
-                  <h1 className="mb-3 font-weight-bold text-teal">The School Club</h1>
+                  <span className="text-cursive text-black h2">
+                    Welcome To Pixies
+                  </span>
+                  <h1 className="mb-3 font-weight-bold text-teal">
+                    The School Club
+                  </h1>
                   <p>Amazing Place for your creativity.</p>
-                  <p className="mt-5"><a href="/about" className="btn py-4 btn-danger text-black">Learn More</a></p>
+                  <p className="mt-5">
+                    <a href="/about" className="btn py-4 btn-danger text-black">
+                      Learn More
+                    </a>
+                  </p>
                 </div>
                 <div className="col-md-7 ml-auto align-center">
                   <img src={image} alt="Image" className="img-fluid" />
-                  
                 </div>
               </div>
             </div>
@@ -36,7 +41,7 @@ class Home extends React.Component {
               <span className="text-cursive h2 text-red d-block">
                 Pixies: The School Club
               </span>
-              <h2 className="text-black h2">OUR CLUBS</h2>
+              <h2 className="text-black h2 pb-3">OUR CLUBS</h2>
             </div>
             <div className="row">
               <div className="col-lg-4 mb-md-2 mb-sm-2 mb-2">
@@ -68,7 +73,6 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          
         </div>
       </React.Fragment>
     );

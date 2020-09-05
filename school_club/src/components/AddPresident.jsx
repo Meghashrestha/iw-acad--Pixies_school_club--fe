@@ -87,7 +87,7 @@ function AddPresident() {
   return (
     <React.Fragment>
       <div>
-        <header className="text-lg text-cursive text-red text-left mt-5">
+        <header className="text-left text-cursive text-red d-block mt-5">
           Add President
         </header>
         <form
