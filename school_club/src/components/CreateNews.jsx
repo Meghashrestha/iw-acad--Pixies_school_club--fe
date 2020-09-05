@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-
 import {postRequest} from '../config/axios.config'
 import "../css/CreateNews.css";
 
@@ -11,7 +10,7 @@ function CreateNews(props){
   const [article, setArticle] = useState({
     articleTitle: '',
     articleDescription: '',
-    created_by: ''
+    created_by: '',
   })
   console.log(props.created_by)
     const handleSubmit = (event) => {

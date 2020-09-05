@@ -60,7 +60,7 @@ function News() {
                   </div>
                   <br></br>
                   <div>
-                    <span>-{articles.created_by}</span>
+                    <span>POSTED BY - {articles.created_by}</span>
                   </div>
                 </div>
               </div>

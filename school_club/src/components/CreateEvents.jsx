@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-
 import {postRequest, getRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
 
@@ -10,7 +9,7 @@ function CreateEvents(props){
     const [events, setEvents] = useState({
         eventTitle: '',
         eventDescription: '',
-        eventDate: ',',
+        eventDate: '',
         created_by: '',
     })
 

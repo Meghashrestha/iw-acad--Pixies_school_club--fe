@@ -42,9 +42,9 @@ function Dashboard() {
                     <p className="card-body text-sm text-sm-left ">
                     {articles.article_description}
                     </p>
+                    <span>POSTED BY - {articles.created_by}</span>
               
                   </div>
-                  <br></br>
   
                   
                 </div>
