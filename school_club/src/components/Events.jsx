@@ -27,20 +27,20 @@ function Events() {
       <header className="text-left text-cursive h2 text-red d-block">
         Events
       </header>
-
+      
       <div className="container">
         <div className="row">
-          {events.map((event) => {
-            return (
+          {events.map(event => {
+            return(
               <div className="col-xl-8 col-lg-10 col-md-8 mb-5">
-                <div className="card">
+              <div className="card">
                 <div className="card-body d-block">
-                 <img
+                 {/* <img
                     src={logo}
                     alt="logo.jpg"
                     className="img-fluid float-left rounded-circle w-50 "
-                  />
-                  <span className="card-body text-md-right h5 text-cursive">
+                  /> */}
+                  <span className="card-body text-md-right h5 text-cursive">Happening on: 
                   {event.event_date}
                   </span>
                   <br />
@@ -50,14 +50,18 @@ function Events() {
                     {event.event_description}
                     </p>
                    <span>-{event.created_by}</span>
-                   </div>
                   </div>
                 </div>
               </div>
-            );
+            </div>
+            )
           })}
+         
         </div>
       </div>
+      
+      
+      
     </React.Fragment>
   );
 }

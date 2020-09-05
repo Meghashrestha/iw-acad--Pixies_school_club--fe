@@ -27,7 +27,7 @@ function Panel(props) {
             className="img-fluid-bg w-100 h-50 ml-0"
           />
           <div className="d-flex">
-            <img
+          <img
               src={logo}
               alt=""
               className="img col-8 logo rounded-circle card-img-overlay d-none d-sm-none d-md-block"
@@ -37,14 +37,14 @@ function Panel(props) {
               alt=""
               className="img-logo img-thumbnail card-img-overlay h-100 w-100 pl-0 ml-0 bg-dark d-block d-sm-block d-md-none"
             ></img>
-            <p className="text-uppercase pl-5 text-xl-center text-lg-left text-md-left position-absolute d-none d-sm-none d-md-block">{props.userInfo.first_name}</p>
+            <p className="text-uppercase pl-5 text-xl-center text-lg-left text-md-left position-absolute d-none d-sm-none d-md-block">{props.userInfo.first_name}{props.userInfo.last_name}</p>
             
           </div>
         </div>
       </div>
 
       <div className="navigation">
-        <ul className="list-unstyled pl-0 line-height-3">
+      <ul className="list-unstyled pl-0 line-height-3">
         <li className=" mr-auto text-center pt-4 pb-2 text-primary d-block d-sm-block d-md-none">
         {props.userInfo.first_name} {props.userInfo.last_name}<hr/>
           </li>
@@ -54,7 +54,7 @@ function Panel(props) {
           </li>
 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel">Dashboard</Link>
+            <Link to="/panel/dashboard">Dashboard</Link>
           </li>
 
           { (props.userInfo.isSuperAdmin) &&
@@ -71,7 +71,7 @@ function Panel(props) {
 
            {  (props.userInfo.isStaff && !props.userInfo.isSuperAdmin ) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/create-news">Publish News</Link>
+            <Link to="/panel/create-news">Create News</Link>
           </li>
            }
 
@@ -86,14 +86,15 @@ function Panel(props) {
             <Link to="/panel/add-members">Add Members</Link>
           </li>
            }
-
+        { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/upload-gallery">Gallery</Link>
           </li>
-          
-          { props.userInfo.isMember &&
+        }
+
+          { (!props.userInfo.isMember && !props.userInfo.isStaff &&  !props.userInfo.isSuperAdmin) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/application">Join Club</Link>
+            <Link to="/panel/application">Application</Link>
           </li>
        }
 
@@ -107,12 +108,12 @@ function Panel(props) {
 
           { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/view-application">View Club Application</Link>
+            <Link to="/panel/view-application">View Application</Link>
           </li>
         }
 
 
-        { props.userInfo.isMember &&
+        { (!props.userInfo.isMember && !props.userInfo.isStaff &&  !props.userInfo.isSuperAdmin) && 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/message">Send Message</Link>
           </li>
@@ -120,12 +121,12 @@ function Panel(props) {
        }
         { props.userInfo.isSuperAdmin &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/presidents">Manage Presidents</Link>
+            <Link to="/panel/presidents">Presidents</Link>
           </li>
        }
       { (!props.userInfo.isSuperAdmin && props.userInfo.isStaff) &&
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
-            <Link to="/panel/members">Manage Members</Link>
+            <Link to="/panel/members">Members</Link>
           </li>
        }
 
@@ -136,7 +137,7 @@ function Panel(props) {
 
       }
           <li className="nav-item  mr-auto text-center pt-2 pb-5 w-75 ml-xl-4 ml-lg-4 ml-md-1 ml-sm-0">
-            <button className="btn btn-danger" onClick={logout}>Logout</button>
+            <button className="btn btn-primary" onClick={logout}>Logout</button>
           </li>
         </ul>
       </div>
