@@ -49,7 +49,7 @@ function Events() {
                     <p className="card-body text-sm text-sm-left ">
                     {event.event_description}
                     </p>
-                   <span>-{event.created_by}</span>
+                   <span>POSTED BY - {event.created_by}</span>
                   </div>
                 </div>
               </div>
