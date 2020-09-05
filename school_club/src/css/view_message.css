@@ -5,8 +5,8 @@ section .section-news{
 .card{
     font-family: 'Roboto',sans-serif;
     
-    min-width: 40rem;
-    max-width: 40rem;
+    min-width: 30rem;
+    max-width: 30rem;
     height:min-content;
     margin-bottom: 10px;
     box-shadow: 0 1.4rem 3rem rgba(0,0,0,.2);
@@ -14,47 +14,10 @@ section .section-news{
     border-radius: 10px;
     background-color: rgb(243, 241, 241);
     /* margin-left: 22px; */
-    padding-bottom: 2%;
+
 
 }
 
-.card .img-fluid {
-    /* margin-top: 5%; */
-    min-width:100px;
-    max-width:100px;
-    height: 7rem;
-    
-    transform: translateX(-4rem);
-}
-
-.card .img-fluid img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-}
-
-.news-post_img::before{
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: .5rem .5rem 3rem 1px rgba(0, 0,  0, .05);
-    border-radius:5rem ;
-    
-
-}
-
-.news-post_date span{
-    display: block;
-    color: rgba(0,0,0,.5);
-    font-size: 1rem;
-    margin: .5rem 0;
-
-}
 
 .news-post_title{
     font-size: 2.5rem;
@@ -69,12 +32,6 @@ section .section-news{
     color: rgba(0,0,0, .7);
 }
 
-.card .btn{
-    margin-left: 10%;
-    height: 40px;
-    width: max-content;
-   
-}
 
 
 .card .card-body p{
@@ -82,6 +39,7 @@ section .section-news{
     padding-left: 20px;
     align-content: center;
     font-family: sans-serif;
+    padding-bottom: 0;
 }
 
 .card-body h2{
