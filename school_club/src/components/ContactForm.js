@@ -60,7 +60,7 @@ function ContactForm(props){
 
   return (
     <React.Fragment>
-    <header className="text-lg text-cursive text-red text-left">Message</header>
+    <header className="text-lg text-cursive text-red text-left mt-5">Message</header>
     <form className="message-form" onSubmit={handleSubmit}>
       <div className="form-group">
       <label>
@@ -80,7 +80,8 @@ function ContactForm(props){
       
         <textarea name='messageBody' className="form-control" value={contact.messageBody} placeholder='Write a Message' onChange={handleChange}></textarea>
       </div>
-      <div className="form-group mt-3">
+      <div className="form-group mt-3 d-inline">
+        <label >To</label>
       <select className="form-control col-4" name='club_name'  value={contact.club_name} onChange={handleChange}>
       <option>Select Club</option>
                     {
@@ -88,7 +89,7 @@ function ContactForm(props){
                     }
                 </select>
                 </div>
-     <button className="btn btn-warning " type="submit" value="Submit"> Message</button>
+     <button className="btn btn-warning" type="submit" value="Submit"> Message</button>
     </form>
     </React.Fragment>
   );

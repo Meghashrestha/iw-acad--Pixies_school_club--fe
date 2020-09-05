@@ -1,5 +1,8 @@
-body {
-    background-image: url("../images/about.png");
-    height: 600vh;
-    width: 500vh;
+
+
+   .site-section{
+       height: 25%;
+       margin-left: -20px;
+      
+       
    }

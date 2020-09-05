@@ -10,8 +10,9 @@ header  {
 }
 
 
+
 form{  
-  padding-left: 40%;
+ 
   
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   
@@ -29,11 +30,13 @@ form{
 
 
 
+
+
 /* 
 .section-form .wrap-input {
   position: relative;
   line-height: 2;
-  border-bottom: 2px solid #ae69ee;
+  
   padding-bottom: 1px;
   margin-bottom: 27px;
   margin-left: 20px;

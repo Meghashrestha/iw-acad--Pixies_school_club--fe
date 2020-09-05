@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-
+import '../css/application.css';
 import {getRequest, postRequest} from '../config/axios.config'
 
 function Application(){
@@ -62,10 +62,12 @@ function Application(){
    
     return(
         <React.Fragment>
-            <section>
-                <form onSubmit={handleSubmit}>
-                <div className="form-group">
-            <label >Name</label>
+             <header className="text-lg text-cursive text-red text-left mt-5">
+          Be a Member
+        </header>
+                <form onSubmit={handleSubmit} className="col-7 px-2 py-3">
+                <div className="form-group col-12 d-flex">
+            <label className="pr-3 col-3" >Name</label>
             <input
               type="text"
               className="form-control"
@@ -75,29 +77,32 @@ function Application(){
               onChange={handleChange}
             />
           </div>
-          <select name='club_name'  value={application.club_name} onChange={handleChange}>
+          <div className="form-group col-12 d-flex">
+          <label className="pr-3 col-3" >Select Club</label>
+          <select  name='club_name' className="form-control col-6"  value={application.club_name} onChange={handleChange}>
                 <option value='' key=''>Select Club</option>
                     {
                             data.map(opt => <option key={opt.id} value={opt.id}>{opt.club_name}</option>)
                     }
                 </select>
-          <div className="form-group">
-            <label >Why are you interested to join this club?</label>
+            </div>   
+            <div className="form-group col-12">
+            <label className="pr-3 pl-3">Why are you interested to join this club?</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control ml-3"
               name="interest_reason"
               value= {application.interest_reason}
-              placeholder="interest_reason"
+              placeholder="Write a note"
               onChange={handleChange}
             />
           </div>
        
           <div className="form-group">
-            <label >Email address</label>
+            <label className="ml-4" >Email address</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control ml-4"
               name="email"
               aria-describedby="emailHelp"
               value= {application.email}
@@ -106,9 +111,9 @@ function Application(){
             />
           </div>
  
-                    <button type='submit'>Submit</button>
+                    <button className="btn btn-warning pl-3 pr-3 col-4 mt-3 ml-4 mb-3" type='submit'>Submit</button>
                 </form>
-            </section>
+            
         </React.Fragment>
     )
 }

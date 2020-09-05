@@ -29,11 +29,11 @@ class Footer extends Component {
                   <img
                     src={twitter}
                     alt=""
-                    className="img social-site-icon"
+                    className=" social-site-icon"
                   ></img>
                 </li>
                 <li>
-                  <img src={linkedin} alt="" className="social-site-icon"></img>
+                  <img src={linkedin} alt="" className="social-site-icon "></img>
                 </li>
                 <li>
                   <img
@@ -81,7 +81,7 @@ class Footer extends Component {
             </div>
           </div>
         </div>
-        <p className="text-center mb-0 pb-5">Copyright &copy; All rights reserved.</p>
+        <p className="text-center text-black mb-0 pb-5">Copyright &copy; All rights reserved.</p>
       </footer>
     );
   }

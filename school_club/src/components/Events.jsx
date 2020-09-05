@@ -4,19 +4,19 @@ import logo from "../images/music.png";
 import { getRequest } from "../config/axios.config";
 
 function Events() {
-  const [events, setEvents] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchMyApi(event) {
       try {
         let response = await getRequest(`/event/`);
-        console.log(response)
-        setEvents(response.data.results)
-        setIsLoading(false)
+        console.log(response);
+        setEvents(response.data.results);
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
-        setIsLoading(false)
+        setIsLoading(false);
       }
     }
     fetchMyApi();

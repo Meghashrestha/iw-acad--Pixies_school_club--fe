@@ -9,7 +9,7 @@ function Logout (){
 
         return(
             <div>
-                <button type='submit' onClick={logout}> Logout </button>
+                <input type='submit'  onClick={logout}> </input>
             </div>
         );
 }

@@ -23,7 +23,7 @@ function Panel(props) {
             className="img-fluid-bg w-100 h-50 ml-0"
           />
           <div className="d-flex">
-            <img
+          <img
               src={logo}
               alt=""
               className="img col-8 logo rounded-circle card-img-overlay d-none d-sm-none d-md-block"
@@ -40,7 +40,7 @@ function Panel(props) {
       </div>
 
       <div className="navigation">
-        <ul className="list-unstyled pl-0 line-height-3">
+      <ul className="list-unstyled pl-0 line-height-3">
         <li className=" mr-auto text-center pt-4 pb-2 text-primary d-block d-sm-block d-md-none">
         {props.userInfo.first_name} {props.userInfo.last_name}<hr/>
           </li>

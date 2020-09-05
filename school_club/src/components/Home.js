@@ -16,10 +16,10 @@ class Home extends React.Component {
             <div className="container">
               <div className="row align-items-center ">
                 <div className="col-md-5 col-sm-8 col-xs-12 mt-5 pt-5">
-                  <span className="text-cursive h2 text-red">Welcome To Pixies</span>
+                  <span className="text-cursive h2">Welcome To Pixies</span>
                   <h1 className="mb-3 font-weight-bold text-teal">The School Club</h1>
                   <p>Amazing Place for your creativity.</p>
-                  <p className="mt-5"><a href="/about" className="btn btn-primary py-4 btn-custom-1">Learn More</a></p>
+                  <p className="mt-5"><a href="/about" className="btn py-4 btn-danger text-black">Learn More</a></p>
                 </div>
                 <div className="col-md-7 ml-auto align-center">
                   <img src={image} alt="Image" className="img-fluid" />
@@ -36,7 +36,7 @@ class Home extends React.Component {
               <span className="text-cursive h2 text-red d-block">
                 Pixies: The School Club
               </span>
-              <h2 className="text-white h2">OUR CLUBS</h2>
+              <h2 className="text-black h2">OUR CLUBS</h2>
             </div>
             <div className="row">
               <div className="col-lg-4 mb-md-2 mb-sm-2 mb-2">
