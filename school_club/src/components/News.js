@@ -24,56 +24,56 @@ function News() {
 
   return (
     <React.Fragment>
-    <header className="text-left text-cursive h2 text-red d-block">
-      News
-    </header>
-    
-    <div className="container">
-      <div className="row">
-        {article.map(articles => {
-          return(
-            <div className="col-lg-8 col-md-10 col-xs-12">
-            <div className="card">
+      <header className="text-left text-cursive h2 text-red d-block">
+        News
+      </header>
+      
+      <div className="container">
+        <div className="row">
+          {article.map(articles => {
+            return(
+              <div className="col-lg-8 col-md-10 col-xs-12">
+              <div className="card">
 
-              <div className="card-body d-block">
-                {/* <div className="img-fluid rounded-circle w-100 mb-3"> */}
-                {/* <img
-                  src={logo}
-                  alt="logo.jpg"
-                  className="img-fluid float-left rounded-circle w-50 "
-                /> */}
-                {/* </div> */}
+                <div className="card-body d-block">
+                  {/* <div className="img-fluid rounded-circle w-100 mb-3"> */}
+                  {/* <img
+                    src={logo}
+                    alt="logo.jpg"
+                    className="img-fluid float-left rounded-circle w-50 "
+                  /> */}
+                  {/* </div> */}
+  
+                  {/* <div className="news-post_info"> */}
+                  {/* <div className="news-post_date"> */}
+                    {/* <span className="card-body text-md-right h5 text-cursive">
+                      2020-01-01
+                    </span> */}
 
-                {/* <div className="news-post_info"> */}
-                {/* <div className="news-post_date"> */}
-                  {/* <span className="card-body text-md-right h5 text-cursive">
-                    2020-01-01
-                  </span> */}
 
-
-                <br />
-                <h2 className="card-body text-md-left mb-0">{articles.article_title}</h2>
-                <div className="card-body text-sm text-sm-left ">
-                  <p className="card-body text-sm text-sm-left ">
-                  {articles.article_description}
-                  </p>
-                </div>
-                <br></br>
-                <div>
-                  <span>-{articles.created_by}</span>
+                  <br />
+                  <h2 className="card-body text-md-left mb-0">{articles.article_title}</h2>
+                  <div className="card-body text-sm text-sm-left ">
+                    <p className="card-body text-sm text-sm-left ">
+                    {articles.article_description}
+                    </p>
+                  </div>
+                  <br></br>
+                  <div>
+                    <span>-{articles.created_by}</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          )
-        })}
-       
+            )
+          })}
+         
+        </div>
       </div>
-    </div>
-    
-    
-    
-  </React.Fragment>
+      
+      
+      
+    </React.Fragment>
   );
 }
 
