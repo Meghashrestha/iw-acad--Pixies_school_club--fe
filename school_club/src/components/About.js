@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "../css/about.css";
 
 import image from "../images/about.png";
@@ -20,13 +21,13 @@ class About extends React.Component {
               <h3 className="text-black">Bring Fun Life To You.</h3>
               <p>
                 <span>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
-                  harum, magni sequi nostrum maxime enim.
+                Student activities are an integral part of the school program.
+Generally approved by the principal and under the direct supervision of the staff, 
+activities are contributed to the educational objectives of the school.
                 </span>
                 <span>
-                  Magnam id atque dicta deleniti, ipsam ipsum distinctio.
-                  Facilis praesentium voluptatem accusamus, earum veritatis,
-                  laudantium.
+                We offer a wide variety of clubs and activities for students. 
+For more information about joining an activities or starting a new club,<Link to="/clubs"><span className="text-red">Become a member</span></Link>.
                 </span>
               </p>
             </div>
