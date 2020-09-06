@@ -41,7 +41,7 @@ export default class ViewApplication extends React.Component {
         </header>
         <form className="col-3 mb-4" onSubmit={this.handleSubmit}>
           <label className="text-left text-red">
-            Delete ID :
+            Reject Application ID:
             <div className="form-group w-100 pt-0">
               <input type="text" name="id" onChange={this.handleChange} />
             </div>
