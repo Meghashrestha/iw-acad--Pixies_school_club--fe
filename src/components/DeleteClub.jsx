@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
 
 import "../css/News.css";
+import {getRequest, deleteRequest} from '../config/axios.config';
 
 export default class DeleteClub extends React.Component {
   state = {
@@ -16,21 +16,28 @@ export default class DeleteClub extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .delete(`http://127.0.0.1:8000/delete-club/${this.state.id}`)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
-    alert("Successfully deleted");
-  };
+    async function delMyAPI() {
+      try {
+        let response = await deleteRequest(`delete-club/${this.state.id}`);
+        alert("Successfully deleted");
+      } 
+      catch (err) {
+        console.log(err);
+      }
+    }
+    delMyAPI();
+    }
 
-  componentDidMount() {
-    axios.get(`http://127.0.0.1:8000/view-club/`).then((res) => {
-      const clubs = res.data.results;
-      this.setState({ clubs });
-    });
+  async componentDidMount() {
+    try {
+      let response = await getRequest(`view-club/`);
+      this.setState({ clubs: response.data.results });
+    } 
+    catch (err) {
+      console.log(err);
+    }
   }
+
 
   render() {
     return (

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
+
+import {postRequest} from '../config/axios.config'
 
 class CreateClub extends Component {
   state = {
@@ -27,20 +28,25 @@ class CreateClub extends Component {
     form_data.append("logo", this.state.logo, this.state.logo.name);
     form_data.append("club_name", this.state.club_name);
     form_data.append("description", this.state.description);
-    let url = "http://127.0.0.1:8000/add-club/";
-    axios
-      .post(url, form_data, {
-        headers: {
-          "content-type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        alert("Successfully created club");
-      })
-      .catch((err) => console.log(err));
-  };
 
+    async function postMyAPI() {
+      try {
+        let response = await postRequest(`/add-club/`);
+        alert("Successfully created club");
+      } 
+      catch (err) {
+        console.log(err);
+      }
+    }
+    postMyAPI();
+    }
+
+      // .post(url, form_data, {
+      //   headers: {
+      //     "content-type": "multipart/form-data",
+      //   },
+      // })
+     
   render() {
     return (
       <React.Fragment>
