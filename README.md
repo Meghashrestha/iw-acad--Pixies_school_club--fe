@@ -1,55 +1,16 @@
-Pixies School Club
-===
-This project is an online platform that eases the activities of the Clubs of any college by partially shifting its activities online.
-
-This project was created using React.
-
-Full documentation for the React project is available at https://reactjs.org/docs/getting-started.html
+Project- Club is an online platform that eases the activities of the Clubs of any college by partially shifting its activities online. 
 
 
-Team member : 
-===
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Aakash Dangol : aakash.dangol101@gmail.com
+Team member :
+Aakash Dangol : aakash.dangol101@gmail.com<br />
+Abishek bhattarai : absekbhattarai@gmail.com<br />
+Megha Shrestha : meghashrestha30@gmail.com<br />
 
-Abishek bhattarai : absekbhattarai@gmail.com
+### `npm start`
 
-Megha Shrestha : meghashrestha30@gmail.com
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Requirements
-===
-node - 10.19.0
 
-npm	6.14.4	
-
-Languages & tools
-===
-
-HTML
-Bootstrap for some templating
-JavaScript
-CSS
-
-Installation
-===
-
-You will need node and npm installed globally on your machine.
-
-npm install
-npm install react-scripts
-npm installing redux-persist
-
-To Run Test Suite:
-===
-
-npm test
-
-To Start Server:
-===
-
-npm start
-
-To Visit App:
-===
-
-localhost:3000/
