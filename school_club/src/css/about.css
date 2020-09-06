@@ -1,6 +1,7 @@
 
 
    .site-section{
+       overflow: hidden;
        height: 25%;
        margin-left: -20px;
       

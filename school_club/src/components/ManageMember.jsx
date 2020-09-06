@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, useHistory } from "react-router-dom";
-import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import "../css/manage.css";
-import { getRequest, patchRequest } from "../config/axios.config";
+import { getRequest} from "../config/axios.config";
 
 function ManageMember(props) {
   const [members, setMembers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  let history = useHistory();
 
   useEffect(() => {
     async function fetchMyApi() {

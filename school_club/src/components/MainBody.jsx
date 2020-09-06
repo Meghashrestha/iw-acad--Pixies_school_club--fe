@@ -1,11 +1,10 @@
 import React from 'react';
 import {Component} from 'react';
-import { Link } from 'react-router-dom'
 
-import PanelRouter from './panelrouter'
-import Panel from './Panel'
 import '../css/main_body.css'
 import '../css/panel.css'
+import PanelRouter from './panelrouter'
+import Panel from './Panel'
 
 class Main extends Component{
     render(){

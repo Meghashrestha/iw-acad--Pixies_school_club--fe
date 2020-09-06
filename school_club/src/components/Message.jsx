@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import ContactForm from './ContactForm'
-import {postRequest} from '../config/axios.config'
 
 class Message extends Component{
     render(){

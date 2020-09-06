@@ -4,6 +4,7 @@ import science from "../images/description/science.png";
 import { connect } from "react-redux";
 import { getRequest } from "../config/axios.config";
 import BackArrow from "./back-arrow";
+
 function Club_description(props) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -14,8 +15,8 @@ function Club_description(props) {
         let response = await getRequest("/view-club/");
         setName(response.data.club_name);
         setDescription(response.data.description);
-        setName(response.data.results[0].club_name);
-        setDescription(response.data.results[0].description);
+        // setName(response.data.results[0].club_name);
+        // setDescription(response.data.results[0].description);
       } catch (err) {
         console.log(err);
       }

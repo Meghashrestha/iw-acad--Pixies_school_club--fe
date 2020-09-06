@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-
 import { postRequest, getRequest, patchRequest } from "../config/axios.config";
+
 import "../css/CreateEvent.css";
 
 function AddMember() {
@@ -9,6 +9,7 @@ function AddMember() {
   const [club, setClub] = useState([]);
   const [status, setStatus] = useState();
   console.log("status", status);
+  
   useEffect(() => {
     async function fetchMyMember() {
       try {

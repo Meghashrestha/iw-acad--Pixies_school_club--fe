@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { Link, withRouter, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import "../css/News.css";
 
 export default class ViewApplication extends React.Component {

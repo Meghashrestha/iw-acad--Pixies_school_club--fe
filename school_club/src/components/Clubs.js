@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, withRouter, Redirect, useHistory } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import image from "../images/about.png";
 
@@ -53,7 +53,6 @@ function Clubs(props) {
                       <img src={club.logo} alt="Image" class="img-fluid" />
                     </span>
                     <h3 class="text-teal">{club.club_name}</h3>
-                    {/* <span>{club.description}</span> */}
                     <div className="col-8 text-left">
                       <p
                         onClick={() => handleClick(club.description)}

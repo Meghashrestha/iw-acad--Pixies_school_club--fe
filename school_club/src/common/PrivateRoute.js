@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {connect} from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
@@ -17,15 +17,6 @@ return(
   <Route
     {...rest}
     render={(props) => {
-        // if (auth.isLoading){
-        //   console.log('loadingg')
-        //     return <h2>Loading...</h2>;
-        // } else if (!isUserAuthenticated()) {
-        //   console.log(isUserAuthenticated())
-        //     return <Redirect to="/login" />;
-        // } else {
-        //   console.log(isUserAuthenticated())
-        //     return <Component {...props} />;
         if(isUserAuthenticated()){
           return <Component {...props} />;
         }

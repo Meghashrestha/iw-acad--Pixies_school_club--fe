@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+
+
 import "../css/navigation.css";
 import logo from "../images/transparent-pixies-logo.png";
-import image from "../images/about.png";
-
-import { Link } from "react-router-dom";
 
 class Navigation extends React.Component {
   state = {

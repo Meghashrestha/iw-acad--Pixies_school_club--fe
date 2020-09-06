@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { postRequest } from "../config/axios.config";
+
 import "../css/CreateNews.css";
+import { postRequest } from "../config/axios.config";
 
 function CreateNews(props) {
   const [article, setArticle] = useState({

@@ -1,7 +1,6 @@
-import { USER_LOADED, USER_LOADING, AUTH_ERROR, SET_USER, SET_DESP} from '../actions/types';
+import { USER_LOADED, USER_LOADING, AUTH_ERROR, SET_USER, SET_DESP, RESET_USER} from '../actions/types';
 
 const initialsState ={
-    token : localStorage.getItem('token'),
     isAuthenticated: null,
     isLoading: false,
     isSuperAdmin: false,
@@ -43,7 +42,11 @@ export default function (state= initialsState,action) {
                     ...state,
                     ...action.payload
                 }     
-             case SET_DESP:
+            case RESET_USER:
+                localStorage.clear()
+                return initialsState
+
+            case SET_DESP:
                 return{
                     ...state,
                     description: action.payload

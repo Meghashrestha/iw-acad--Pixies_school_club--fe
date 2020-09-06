@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 import "../css/application.css";
 import { getRequest, postRequest } from "../config/axios.config";
 
@@ -97,19 +98,6 @@ function Application(props) {
             onChange={handleChange}
           />
         </div>
-
-        {/* <div className="form-group">
-            <label className="ml-4" >Email address</label>
-            <input
-              type="email"
-              className="form-control ml-4"
-              name="email"
-              aria-describedby="emailHelp"
-              value= {application.email}
-              placeholder="Enter email"
-              onChange={handleChange}
-            />
-          </div> */}
 
         <button
           className="btn btn-warning pl-3 pr-3 col-4 mt-3 ml-4 mb-3"

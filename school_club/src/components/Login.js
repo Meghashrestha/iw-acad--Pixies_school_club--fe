@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { postRequest, getRequest } from "../config/axios.config";
 
+import "../css/login.css";
+import { postRequest } from "../config/axios.config";
 import BackArrow from "./back-arrow";
 import { setUser } from "../actions/message";
 
-import "../css/login.css";
 
 function Login(props) {
   const [login, setLogin] = useState({
@@ -24,12 +24,12 @@ function Login(props) {
     let usernameError = "";
     let passwordError = "";
 
-    if (login.username.length == 0) {
+    if (login.username.length === 0) {
       isError = true;
       usernameError = "Username length must be greater than 0";
     }
 
-    if (login.password.length == 0) {
+    if (login.password.length === 0) {
       isError = true;
       passwordError = "Password length must be greater than 0";
     }
@@ -67,7 +67,6 @@ function Login(props) {
             false
           );
           localStorage.setItem("access_token", response.data.token);
-          console.log(response.data);
           const userInfo = {
             isSuperAdmin: response.data.is_superuser,
             isStaff: response.data.is_staff,
@@ -82,7 +81,7 @@ function Login(props) {
           history.push("/panel/dashboard");
         } catch (err) {
           console.log(err);
-          if (err.response.status == 400) {
+          if (err.response.status === 400) {
             alert("Invalid username or password");
           } else {
             alert("Oops something went wrong");
