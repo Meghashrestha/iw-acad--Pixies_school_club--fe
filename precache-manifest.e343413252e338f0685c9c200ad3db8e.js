@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "531fc1e7c4a2d15fb8f3a48bab6b30ce",
+    "revision": "2899e92bde6a07cbb5d493bc666eb6c7",
     "url": "/sky1o1/iw-acad--Pixies_school_club--fe/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/2.e4346227.chunk.css"
   },
   {
-    "revision": "59060ba44d8d68fe7ed2",
-    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.79402012.chunk.css"
+    "revision": "a6462bdf53ff8416938a",
+    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.147d9a91.chunk.css"
   },
   {
     "revision": "f4a0aa34bd15790c324c",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.e0c0a118.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "59060ba44d8d68fe7ed2",
-    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.d0b8a1b1.chunk.js"
+    "revision": "a6462bdf53ff8416938a",
+    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.83bda012.chunk.js"
   },
   {
     "revision": "3b2ac79aae6031a86358",

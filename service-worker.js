@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sky1o1/iw-acad--Pixies_school_club--fe/precache-manifest.6a74301f1defc5be0b4987ade1997394.js"
+  "/sky1o1/iw-acad--Pixies_school_club--fe/precache-manifest.e343413252e338f0685c9c200ad3db8e.js"
 );
 
 self.addEventListener('message', (event) => {
