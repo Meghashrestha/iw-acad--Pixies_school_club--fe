@@ -2,7 +2,7 @@
   "name": "school_club",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/sky1o1/iw-acad--Pixies_school_club--fe",
+  "homepage": "https://sky1o1.github.io/iw-acad--Pixies_school_club--fe/index.html/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^4.2.4",
