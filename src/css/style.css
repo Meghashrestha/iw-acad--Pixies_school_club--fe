@@ -2236,7 +2236,6 @@ h5,
 .white-dots:before {
   position: absolute;
   content: "";
-  background-image: url("../images/white-dots.png");
   z-index: -1;
   background-repeat: repeat;
   top: -50px;
