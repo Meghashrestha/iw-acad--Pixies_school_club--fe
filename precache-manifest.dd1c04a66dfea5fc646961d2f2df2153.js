@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2899e92bde6a07cbb5d493bc666eb6c7",
+    "revision": "272cc8d40e2141e2e72e70a13a098aaa",
     "url": "/sky1o1/iw-acad--Pixies_school_club--fe/index.html"
   },
   {
-    "revision": "f4a0aa34bd15790c324c",
+    "revision": "afc355f005ebbe9841b4",
     "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/2.e4346227.chunk.css"
   },
   {
-    "revision": "a6462bdf53ff8416938a",
-    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.147d9a91.chunk.css"
+    "revision": "c5f9b49193093d995f47",
+    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.f0f016c6.chunk.css"
   },
   {
-    "revision": "f4a0aa34bd15790c324c",
-    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.e0c0a118.chunk.js"
+    "revision": "afc355f005ebbe9841b4",
+    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.b70eeca5.chunk.js"
   },
   {
     "revision": "e1d2b252d73a4c2bc4d6802ca4ba1aa0",
-    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.e0c0a118.chunk.js.LICENSE.txt"
+    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.b70eeca5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a6462bdf53ff8416938a",
-    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.83bda012.chunk.js"
+    "revision": "c5f9b49193093d995f47",
+    "url": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.cb72efbc.chunk.js"
   },
   {
     "revision": "3b2ac79aae6031a86358",

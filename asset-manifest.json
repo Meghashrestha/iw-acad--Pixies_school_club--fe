@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.147d9a91.chunk.css",
-    "main.js": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.83bda012.chunk.js",
-    "main.js.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.83bda012.chunk.js.map",
+    "main.css": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.f0f016c6.chunk.css",
+    "main.js": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.cb72efbc.chunk.js",
+    "main.js.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/main.cb72efbc.chunk.js.map",
     "runtime-main.js": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/runtime-main.c82e54c2.js",
     "runtime-main.js.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/runtime-main.c82e54c2.js.map",
     "static/css/2.e4346227.chunk.css": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/2.e4346227.chunk.css",
-    "static/js/2.e0c0a118.chunk.js": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.e0c0a118.chunk.js",
-    "static/js/2.e0c0a118.chunk.js.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.e0c0a118.chunk.js.map",
+    "static/js/2.b70eeca5.chunk.js": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.b70eeca5.chunk.js",
+    "static/js/2.b70eeca5.chunk.js.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.b70eeca5.chunk.js.map",
     "index.html": "/sky1o1/iw-acad--Pixies_school_club--fe/index.html",
-    "precache-manifest.e343413252e338f0685c9c200ad3db8e.js": "/sky1o1/iw-acad--Pixies_school_club--fe/precache-manifest.e343413252e338f0685c9c200ad3db8e.js",
+    "precache-manifest.dd1c04a66dfea5fc646961d2f2df2153.js": "/sky1o1/iw-acad--Pixies_school_club--fe/precache-manifest.dd1c04a66dfea5fc646961d2f2df2153.js",
     "service-worker.js": "/sky1o1/iw-acad--Pixies_school_club--fe/service-worker.js",
     "static/css/2.e4346227.chunk.css.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/2.e4346227.chunk.css.map",
-    "static/css/main.147d9a91.chunk.css.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.147d9a91.chunk.css.map",
-    "static/js/2.e0c0a118.chunk.js.LICENSE.txt": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.e0c0a118.chunk.js.LICENSE.txt",
+    "static/css/main.f0f016c6.chunk.css.map": "/sky1o1/iw-acad--Pixies_school_club--fe/static/css/main.f0f016c6.chunk.css.map",
+    "static/js/2.b70eeca5.chunk.js.LICENSE.txt": "/sky1o1/iw-acad--Pixies_school_club--fe/static/js/2.b70eeca5.chunk.js.LICENSE.txt",
     "static/media/001-facebook.png": "/sky1o1/iw-acad--Pixies_school_club--fe/static/media/001-facebook.7c8d991e.png",
     "static/media/010-linkedin.png": "/sky1o1/iw-acad--Pixies_school_club--fe/static/media/010-linkedin.898c0407.png",
     "static/media/011-instagram.png": "/sky1o1/iw-acad--Pixies_school_club--fe/static/media/011-instagram.4f7cb5fb.png",
@@ -28,8 +28,8 @@
   "entrypoints": [
     "static/js/runtime-main.c82e54c2.js",
     "static/css/2.e4346227.chunk.css",
-    "static/js/2.e0c0a118.chunk.js",
-    "static/css/main.147d9a91.chunk.css",
-    "static/js/main.83bda012.chunk.js"
+    "static/js/2.b70eeca5.chunk.js",
+    "static/css/main.f0f016c6.chunk.css",
+    "static/js/main.cb72efbc.chunk.js"
   ]
 }
