@@ -1,7 +1,7 @@
 import React from "react";
+import axios from "axios";
 
 import "../css/News.css";
-import {getRequest, deleteRequest} from '../config/axios.config'
 
 export default class DeleteUser extends React.Component {
   state = {
@@ -16,27 +16,20 @@ export default class DeleteUser extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    async function delMyAPI() {
-      try {
-        let response = await deleteRequest(`info/view-profile/${this.state.id}`);
-        alert("Successfully deleted");
-      } 
-      catch (err) {
-        console.log(err);
-      }
-    }
-    delMyAPI();
-    }
+    axios
+      .delete(`http://127.0.0.1:8000/info/view-profile/${this.state.id}`)
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+    alert("Successfully deleted");
+  };
 
-  async componentDidMount() {
-    try {
-      let response = await getRequest(`info/view-profile/`);
-      const profiles = response.data.results;
+  componentDidMount() {
+    axios.get(`http://127.0.0.1:8000/info/view-profile/`).then((res) => {
+      const profiles = res.data.results;
       this.setState({ profiles });
-    } 
-    catch (err) {
-      console.log(err);
-    }
+    });
   }
 
   render() {

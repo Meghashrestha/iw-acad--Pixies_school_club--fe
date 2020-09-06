@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "../css/News.css";
-import {getRequest, deleteRequest }  from '../config/axios.config'
 
 export default class ViewApplication extends React.Component {
   state = {
@@ -18,29 +17,21 @@ export default class ViewApplication extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    async function delMyAPI() {
-      try {
-        let response = await deleteRequest(`/delete-application/${this.state.id}`);
-        alert("Successfully deleted");
-      } 
-      catch (err) {
-        console.log(err);
-      }
-    }
-    delMyAPI();
-    }
+    axios
+      .delete(`http://127.0.0.1:8000/delete-application/${this.state.id}`)
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
+    alert("Successfully deleted");
+  };
 
-  async componentDidMount() {
-    try {
-      let response = await getRequest(`view-application/`);
-      this.setState({ application: response.data.results });
-    } 
-    catch (err) {
-      console.log(err);
-    }
+  componentDidMount() {
+    axios.get(`http://127.0.0.1:8000/view-application/`).then((res) => {
+      const application = res.data.results;
+      this.setState({ application });
+    });
   }
-
-  
 
   render() {
     return (
