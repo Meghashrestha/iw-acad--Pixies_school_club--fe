@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
+
 import "../css/view_message.css";
-
-import { Link, withRouter, useHistory } from "react-router-dom";
-
-import { getRequest, deleteRequest } from "../config/axios.config";
-import { Content } from "react-mdl";
+import { getRequest } from "../config/axios.config";
 
 function ViewMessage() {
   const [application, setApplication] = useState([]);

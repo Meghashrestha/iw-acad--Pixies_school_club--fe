@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import "../css/add_president.css";
-
 import { postRequest, getRequest, patchRequest } from "../config/axios.config";
 
 function AddPresident() {

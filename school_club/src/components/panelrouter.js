@@ -1,27 +1,22 @@
 import React from "react";
-import { Route } from "react-router-dom";
 
+
+import "../css/main_body.css";
+import "../css/sub_body.css";
 import PrivateRoute from "../common/PrivateRoute";
 import CreateClub from "./CreateClub";
 import CreateNews from "./CreateNews";
 import CreateEvents from "./CreateEvents";
 import Application from "./Application";
 import News from "./News";
-import Dashoard from "./dashboard";
 import Events from "./Events";
-import Gallery from "./Gallery";
 import Message from "./Message";
 import ViewMessage from "./ViewMessage";
-
 import ViewApplication from "./ViewApplication";
 import Logout from "./Logout";
 import Switch from "react-bootstrap/esm/Switch";
-import "../css/main_body.css";
-import "../css/sub_body.css";
-// import AddStaffs from "./AddStaffs";
 import uploadGallery from "./UploadGallery";
 import Dashboard from "./dashboard";
-
 import AddPresident from "./AddPresident";
 import AddMembers from "./AddMembers";
 import ManagePresident from "./ManagePresident";

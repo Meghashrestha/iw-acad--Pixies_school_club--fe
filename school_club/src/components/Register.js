@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 
-import { postRequest } from "../config/axios.config";
+
 import "../css/register.css";
+import { postRequest } from "../config/axios.config";
 import BackArrow from "./back-arrow";
 
 function Register() {
@@ -32,40 +33,40 @@ function Register() {
     let middlenameError = "";
     let emailError = "";
 
-    if (register.username.length == 0) {
+    if (register.username.length === 0) {
       isError = true;
       usernameError = "Username length must be greater than 0";
       console.log(usernameError);
     }
 
-    if (register.password.length == 0) {
+    if (register.password.length === 0) {
       isError = true;
       passwordError = "Password length must be greater than 0";
       console.log(passwordError);
     }
 
-    if (register.firstname.length == 0) {
+    if (register.firstname.length === 0) {
       isError = true;
       firstnameError = "First name length must be greater than 0";
       console.log(firstnameError);
     }
 
-    if (register.lastname.length == 0) {
+    if (register.lastname.length === 0) {
       isError = true;
       lastnameError = "Last name length must be greater than 0";
       console.log(lastnameError);
     }
 
-    if (register.email.length == 0) {
+    if (register.email.length === 0) {
       isError = true;
       emailError = "Last name length must be greater than 0";
       console.log(emailError);
     }
-    // const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // if ( reg.test(register.email) == false){
-    //   isError = true;
-    //   emailError = 'Invalid email address'
-    // }
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if ( reg.test(register.email) === false){
+      isError = true;
+      emailError = 'Invalid email address'
+    }
     console.log("datataat", isError);
 
     if (isError) {

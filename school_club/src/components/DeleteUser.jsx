@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Link, withRouter, useHistory } from "react-router-dom";
+
 import "../css/News.css";
 
 export default class DeleteUser extends React.Component {

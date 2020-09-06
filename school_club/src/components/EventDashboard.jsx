@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "../css/News.css";
-import logo from "../images/music.png";
 import { getRequest } from "../config/axios.config";
-import { Link, withRouter, useHistory } from "react-router-dom";
+
 
 function Events() {
   const [events, setEvents] = useState([]);

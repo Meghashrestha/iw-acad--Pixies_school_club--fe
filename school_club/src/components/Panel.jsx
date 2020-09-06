@@ -2,17 +2,23 @@ import React from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
+import "../css/panel.css";
+import { resetUser } from '../actions/message'
 import logo from "../images/default-image.png";
 import background from "../images/dashboard-background.jpg";
-import "../css/panel.css";
-import { useState } from "react";
+
 
 function Panel(props) {
   const history = useHistory();
   const logout = () => {
-    localStorage.clear();
+    props.reset_login()
     history.push("/");
   };
+
+  console.log(props.userInfo.isSuperAdmin)
+  console.log(props.userInfo.isStaff)
+  console.log(props.userInfo.isMember)
+
   return (
     <nav id="sidebar" className="pl-0 pr-0 float-left">
       <div className="navbar-brand col-12 pl-0 pr-0 pt-0 pr-0 d-block">
@@ -34,7 +40,7 @@ function Panel(props) {
               className="img-logo img-thumbnail card-img-overlay h-100 w-100 pl-0 ml-0 bg-dark d-block d-sm-block d-md-none"
             ></img>
             <p className="text-uppercase pl-5 text-xl-center text-lg-left text-md-left position-absolute d-none d-sm-none d-md-block">
-              {props.userInfo.first_name}
+              {props.userInfo.first_name}{' '}{' '}
               {props.userInfo.last_name}
             </p>
           </div>
@@ -44,7 +50,7 @@ function Panel(props) {
       <div className="navigation">
         <ul className="list-unstyled pl-0 line-height-3">
           <li className=" mr-auto text-center pt-4 pb-2 text-primary d-block d-sm-block d-md-none">
-            {props.userInfo.first_name} {props.userInfo.last_name}
+            {props.userInfo.first_name}{' '} {' '}{props.userInfo.last_name}
             <hr />
           </li>
 
@@ -56,11 +62,11 @@ function Panel(props) {
             <Link to="/panel/dashboard">Dashboard</Link>
           </li>
 
-          {props.userInfo.isSuperAdmin && (
+          {(props.userInfo.isSuperAdmin && props.userInfo.isStaff)&& 
             <li className="nav-item  mr-auto text-center pt-2 pb-2">
               <Link to="/panel/create-club">Create Club</Link>
             </li>
-          )}
+           }
 
           {props.userInfo.isStaff && !props.userInfo.isSuperAdmin && (
             <li className="nav-item  mr-auto text-center pt-2 pb-2">
@@ -80,24 +86,24 @@ function Panel(props) {
             </li>
           )}
 
-          {props.userInfo.isStaff && !props.userInfo.isSuperAdmin && (
+          {(props.userInfo.isStaff && !props.userInfo.isSuperAdmin )&& 
             <li className="nav-item  mr-auto text-center pt-2 pb-2">
               <Link to="/panel/add-members">Add Members</Link>
             </li>
-          )}
-          {!props.userInfo.isSuperAdmin && props.userInfo.isStaff && (
+          }
+          {(props.userInfo.isSuperAdmin || props.userInfo.isStaff  )&& 
             <li className="nav-item  mr-auto text-center pt-2 pb-2">
               <Link to="/panel/upload-gallery">Upload Photos</Link>
             </li>
-          )}
+       }
 
           {!props.userInfo.isStaff &&
             !props.userInfo.isSuperAdmin &&
-            !props.userInfo.isMember && (
+            !props.userInfo.isMember && 
               <li className="nav-item  mr-auto text-center pt-2 pb-2">
                 <Link to="/panel/application">Join a Club</Link>
               </li>
-            )}
+         }
 
           <li className="nav-item  mr-auto text-center pt-2 pb-2">
             <Link to="/panel/news">News</Link>
@@ -113,11 +119,11 @@ function Panel(props) {
             </li>
           )}
 
-          {!props.userInfo.isStaff && !props.userInfo.isSuperAdmin && (
+          {(!props.userInfo.isStaff && !props.userInfo.isSuperAdmin ) && 
             <li className="nav-item  mr-auto text-center pt-2 pb-2">
               <Link to="/panel/message">Send Message</Link>
             </li>
-          )}
+         }
           {props.userInfo.isSuperAdmin && (
             <li className="nav-item  mr-auto text-center pt-2 pb-2">
               <Link to="/panel/presidents">Presidents</Link>
@@ -159,4 +165,9 @@ const mapStateToProps = (state) => ({
   userInfo: state.auth,
 });
 
-export default connect(mapStateToProps, null)(withRouter(Panel));
+const mapDispatchToProps = (dispatch) => ({
+  reset_login: () => dispatch(resetUser())
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Panel));

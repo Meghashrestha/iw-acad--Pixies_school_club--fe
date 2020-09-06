@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../css/gallery.css";
 
+import "../css/gallery.css";
 import { getRequest } from "../config/axios.config";
 
 function Gallery() {

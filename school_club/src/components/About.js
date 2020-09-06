@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "../css/about.css";
 
+import "../css/about.css";
 import image from "../images/about.png";
 
 class About extends React.Component {

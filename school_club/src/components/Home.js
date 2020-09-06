@@ -1,9 +1,7 @@
 import React from "react";
 import image from "../images/background1.png";
-import "../css/home.css";
 
-import { Navbar, Nav } from "react-bootstrap";
-import logo from "../images/transparent-pixies-logo.png";
+import "../css/home.css";
 
 class Home extends React.Component {
   render() {

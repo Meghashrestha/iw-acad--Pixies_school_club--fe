@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, useHistory } from "react-router-dom";
-import { connect } from "react-redux";
-import "../css/manage.css";
+import { useHistory } from "react-router-dom";
 
-import { getRequest, patchRequest } from "../config/axios.config";
+import "../css/manage.css";
+import { getRequest} from "../config/axios.config";
 
 function ManagePresident(props) {
   const [president, setPresident] = useState([]);
-  const [isPresident, setIsPresident] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState();
 
   let history = useHistory();
 
@@ -29,38 +26,6 @@ function ManagePresident(props) {
     fetchMyApi();
   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    async function patchtMyApi() {
-      try {
-        let response = await patchRequest(
-          `/info/view-profile/${isPresident.member}`,
-          {
-            is_staff: status,
-          }
-        );
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    patchtMyApi();
-  };
-
-  const handleChangeI = (event) => {
-    const copy2 = Object.assign({}, isPresident);
-    const e = event.currentTarget;
-    copy2[e.name] = e.value;
-    setIsPresident(copy2);
-  };
-
-  const toggleStatus = (event) => {
-    setStatus((value) => !value);
-    console.log(event.target.checked);
-  };
-
-  console.log(isPresident.isPresident);
-  console.log(president);
   return (
     <React.Fragment>
       <header className="text-left text-cursive text-red d-block mt-5">

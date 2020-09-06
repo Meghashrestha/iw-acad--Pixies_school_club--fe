@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { postRequest, getRequest } from "../config/axios.config";
+
 import "../css/CreateEvent.css";
+import { postRequest } from "../config/axios.config";
 
 function CreateEvents(props) {
   const [events, setEvents] = useState({

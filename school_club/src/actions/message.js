@@ -1,4 +1,4 @@
-import { CREATE_MESSAGE, SET_USER, SET_DESP} from './types';
+import { SET_USER, SET_DESP, RESET_USER} from './types';
 
 
 export const setUser = user =>{
@@ -16,3 +16,11 @@ export const setDesp = user =>{
 
     };
 };
+
+export const resetUser = () =>{
+    return {
+        type: RESET_USER,
+
+    };
+};
+

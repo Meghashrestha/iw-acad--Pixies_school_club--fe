@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import {patchRequest, getRequest} from '../config/axios.config'
 import "../css/CreateEvent.css";
+import {patchRequest, getRequest} from '../config/axios.config'
 
 
 function Flags(){
