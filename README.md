@@ -37,6 +37,7 @@ You will need node and npm installed globally on your machine.
 
 npm install
 npm install react-scripts
+npm installing redux-persist
 
 To Run Test Suite:
 ===
