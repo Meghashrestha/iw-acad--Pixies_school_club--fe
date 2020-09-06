@@ -10,8 +10,21 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import PrivateRoute from "./common/PrivateRoute";
 import { loadUser } from "./actions/auth";
-
+import "./css/style.css";
 import MainBody from "./components/MainBody";
+
+{
+  /* <link rel="stylesheet" href="fonts/icomoon/style.css"> */
+}
+
+{
+  /* <link rel="stylesheet" href="css/jquery.fancybox.min.css"> */
+}
+
+{
+  /* <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="css/aos.css"> */
+}
 
 class App extends Component {
   componentDidMount() {
