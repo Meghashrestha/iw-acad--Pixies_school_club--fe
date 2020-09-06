@@ -48,8 +48,8 @@ class Home extends React.Component {
                 <div className="block-2 red">
                   <h2> All Games</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Minima nesciunt, mollitia, hic enim id culpa.
+                  How do you keep your kids busy on a rainy day? Card games, energetic activities, indoor games,
+                   thinking games and outdoor activities - we have them all!
                   </p>
                 </div>
               </div>
@@ -57,8 +57,7 @@ class Home extends React.Component {
                 <div className="block-2 yellow">
                   <h2>Exhibition</h2>
                   <p>
-                    Lorem ipsum dolor sit, consectetur adipisicing elit. Minima
-                    nesciunt, mollitia, hic enim id culpa.
+                    Providing opportunities that helps student delineate what they are capable of. We organize various exhibitions that helps explore ideas and knowledge.
                   </p>
                 </div>
               </div>
@@ -66,8 +65,8 @@ class Home extends React.Component {
                 <div className="block-2 teal">
                   <h2>Science Clubs</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Minima nesciunt, mollitia, hic enim id culpa.
+                  We facilitate a series of development workshops that involve participation of science teachers, young science enthusiasts
+                  and scientists.
                   </p>
                 </div>
               </div>
